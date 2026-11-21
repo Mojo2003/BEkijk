@@ -85,11 +85,11 @@ export function ChannelsView({
         })}
       </div>
 
-      {/* GitHub KijkBE guide.json & fetch_epg.py export */}
+      {/* GitHub BEkijk guide.json & fetch_epg.py export */}
       <section className="rounded-2xl border border-white/10 bg-[#131822] p-6 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <div className="space-y-1 max-w-2xl">
           <h2 className="font-display text-base font-semibold text-white">
-            KijkBE GitHub Export (fetch_epg.py &amp; guide.json)
+            BEkijk GitHub Export (fetch_epg.py &amp; guide.json)
           </h2>
           <p className="text-sm text-slate-400 leading-relaxed">
             Inclusief bijgewerkte XMLTV-koppeling voor Play (Play.be), Play Fictie (PlayFictie.be) en Play Actie (PlayActie.be), Europe/Brussels tijdzone en automatische genre-herkenning.

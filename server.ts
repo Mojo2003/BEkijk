@@ -23,7 +23,7 @@ async function startServer() {
       const data = await buildGuideResponse({ dayOffset, windowMode });
       res.json(data);
     } catch (err) {
-      console.error('[KijkBE] /api/guide error:', err);
+      console.error('[BEkijk] /api/guide error:', err);
       res.status(500).json({ error: 'Kon de TV-gids niet laden.' });
     }
   });
@@ -36,7 +36,7 @@ async function startServer() {
       const data = await buildGuideResponse({ dayOffset, windowMode, forceRefresh: true });
       res.json(data);
     } catch (err) {
-      console.error('[KijkBE] /api/refresh error:', err);
+      console.error('[BEkijk] /api/refresh error:', err);
       res.status(500).json({ error: 'Kon de EPG-feed niet verversen.' });
     }
   });
@@ -47,7 +47,7 @@ async function startServer() {
       res.setHeader('Content-Type', 'application/json; charset=utf-8');
       res.json(legacy);
     } catch (err) {
-      console.error('[KijkBE] /api/guide.json error:', err);
+      console.error('[BEkijk] /api/guide.json error:', err);
       res.status(500).json({ error: 'Kon guide.json niet genereren.' });
     }
   });
@@ -60,8 +60,34 @@ async function startServer() {
       res.setHeader('Content-Disposition', 'attachment; filename="fetch_epg.py"');
       res.send(content);
     } catch (err) {
-      console.error('[KijkBE] /api/fetch_epg.py error:', err);
+      console.error('[BEkijk] /api/fetch_epg.py error:', err);
       res.status(404).json({ error: 'fetch_epg.py niet gevonden.' });
+    }
+  });
+
+  const ALLOWED_TV_FILES = new Set([
+    'AndroidManifest.xml',
+    'EpgModels.kt',
+    'TvAppLauncher.kt',
+    'TvGuideScreen.kt',
+  ]);
+
+  app.get('/api/android-tv/:filename', (req, res) => {
+    const filename = req.params.filename;
+    if (!ALLOWED_TV_FILES.has(filename)) {
+      return res.status(404).json({ error: 'Bestand niet gevonden.' });
+    }
+    try {
+      const filePath = path.resolve(process.cwd(), 'android-tv', filename);
+      const content = fs.readFileSync(filePath, 'utf-8');
+      res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+      if (req.query.download === '1') {
+        res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+      }
+      return res.send(content);
+    } catch (err) {
+      console.error('[BEkijk] /api/android-tv error:', err);
+      return res.status(500).json({ error: 'Kon Android TV-bestand niet lezen.' });
     }
   });
 
@@ -80,7 +106,7 @@ async function startServer() {
   }
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`KijkBE server running on http://0.0.0.0:${PORT}`);
+    console.log(`BEkijk server running on http://0.0.0.0:${PORT}`);
   });
 }
 

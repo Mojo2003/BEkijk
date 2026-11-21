@@ -1,20 +1,21 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Bookmark, Calendar, Grid, Monitor, RefreshCw, Search, Tv, X } from 'lucide-react';
+import { Bookmark, Calendar, Grid, Monitor, RefreshCw, Search, Smartphone, Tv, X } from 'lucide-react';
 import type { Channel, GuideResponse, Program, WindowMode } from './types/epg.ts';
 import { NowNextView } from './components/NowNextView.tsx';
 import { TimelineGuide } from './components/TimelineGuide.tsx';
 import { ChannelsView } from './components/ChannelsView.tsx';
 import { WatchlistView, type SavedProgramItem } from './components/WatchlistView.tsx';
+import { AndroidTvView } from './components/AndroidTvView.tsx';
 import { ProgramDetailModal } from './components/ProgramDetailModal.tsx';
 
-type NavTab = 'now' | 'timeline' | 'channels' | 'watchlist';
+type NavTab = 'timeline' | 'now' | 'channels' | 'watchlist' | 'androidtv';
 type RegionFilter = 'all' | 'vlaams' | 'waals' | 'nl' | 'favorites';
 
-const FAV_STORAGE_KEY = 'kijkbe_favorite_channels_v1';
-const WATCHLIST_STORAGE_KEY = 'kijkbe_watchlist_v1';
+const FAV_STORAGE_KEY = 'bekijk_favorite_channels_v1';
+const WATCHLIST_STORAGE_KEY = 'bekijk_watchlist_v1';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<NavTab>('now');
+  const [activeTab, setActiveTab] = useState<NavTab>('timeline');
   const [regionFilter, setRegionFilter] = useState<RegionFilter>('all');
   const [genreFilter, setGenreFilter] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -32,7 +33,7 @@ export default function App() {
 
   const [favorites, setFavorites] = useState<string[]>(() => {
     try {
-      const saved = localStorage.getItem(FAV_STORAGE_KEY);
+      const saved = localStorage.getItem(FAV_STORAGE_KEY) || localStorage.getItem('kijkbe_favorite_channels_v1');
       return saved ? JSON.parse(saved) : ['vrt1', 'canvas', 'vtm', 'play4'];
     } catch {
       return ['vrt1', 'canvas', 'vtm', 'play4'];
@@ -41,7 +42,7 @@ export default function App() {
 
   const [watchlist, setWatchlist] = useState<SavedProgramItem[]>(() => {
     try {
-      const saved = localStorage.getItem(WATCHLIST_STORAGE_KEY);
+      const saved = localStorage.getItem(WATCHLIST_STORAGE_KEY) || localStorage.getItem('kijkbe_watchlist_v1');
       return saved ? JSON.parse(saved) : [];
     } catch {
       return [];
@@ -168,10 +169,11 @@ export default function App() {
   }, [guide, regionFilter, genreFilter, searchQuery, favorites]);
 
   const navItems: Array<{ id: NavTab; label: string }> = [
-    { id: 'now', label: 'Nu & Straks' },
     { id: 'timeline', label: 'TV-Gids' },
+    { id: 'now', label: 'Nu & Straks' },
     { id: 'channels', label: 'Zenders' },
     { id: 'watchlist', label: 'Kijklijst' },
+    { id: 'androidtv', label: 'Android TV' },
   ];
 
   const brusselsClock = useMemo(() => {
@@ -191,10 +193,10 @@ export default function App() {
           {/* Zone 1: Single-line Brand Wordmark */}
           <button
             type="button"
-            onClick={() => setActiveTab('now')}
+            onClick={() => setActiveTab('timeline')}
             className="font-display text-xl font-bold tracking-tight text-white whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 rounded-md"
           >
-            KijkBE
+            BEkijk
           </button>
 
           {/* Zone 2: 4 Single-line Nav Links (Desktop) */}
@@ -228,7 +230,7 @@ export default function App() {
               type="button"
               onClick={() => {
                 setIsTvMode((prev) => !prev);
-                if (!isTvMode && activeTab === 'now') {
+                if (!isTvMode) {
                   setActiveTab('timeline');
                 }
               }}
@@ -479,6 +481,16 @@ export default function App() {
                 onSelectProgram={(channel, program) => setSelectedDetail({ channel, program })}
               />
             )}
+
+            {activeTab === 'androidtv' && (
+              <AndroidTvView
+                channels={guide.channels}
+                onLaunchTvSimulator={() => {
+                  setIsTvMode(true);
+                  setActiveTab('timeline');
+                }}
+              />
+            )}
           </>
         ) : null}
       </main>
@@ -488,13 +500,14 @@ export default function App() {
         aria-label="Mobiele navigatie"
         className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#0B0E14]/95 backdrop-blur-md border-t border-white/10 pb-safe"
       >
-        <div className="grid grid-cols-4 h-16 items-center">
+        <div className="grid grid-cols-5 h-16 items-center">
           {(
             [
-              { id: 'now', label: 'Nu & Straks', Icon: Tv },
               { id: 'timeline', label: 'TV-Gids', Icon: Calendar },
+              { id: 'now', label: 'Nu', Icon: Tv },
               { id: 'channels', label: 'Zenders', Icon: Grid },
               { id: 'watchlist', label: 'Kijklijst', Icon: Bookmark },
+              { id: 'androidtv', label: 'TV-App', Icon: Smartphone },
             ] as const
           ).map(({ id, label, Icon }) => {
             const active = activeTab === id;

@@ -1,7 +1,19 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Bookmark, BookmarkCheck, Clock, ExternalLink, Info, Tv } from 'lucide-react';
+import {
+  ArrowDown,
+  ArrowLeft,
+  ArrowRight,
+  ArrowUp,
+  Bookmark,
+  BookmarkCheck,
+  Clock,
+  ExternalLink,
+  Info,
+  Tv,
+} from 'lucide-react';
 import type { Channel, Program } from '../types/epg.ts';
 import { ChannelMark } from './ChannelMark.tsx';
+import { buildAndroidIntentUri } from './AndroidTvView.tsx';
 
 interface TimelineGuideProps {
   channels: Channel[];
@@ -125,25 +137,22 @@ export function TimelineGuide({
     }
   }, [focusedCoord, isTvMode, channels]);
 
-  const handleTimelineKeyDown = (e: React.KeyboardEvent) => {
+  const moveFocus = (direction: 'up' | 'down' | 'left' | 'right') => {
     if (!channels.length) return;
-    if (!['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) return;
-    e.preventDefault();
-
     const current = focusedCoord ?? findInitialSelection(channels, nowTs) ?? { chIdx: 0, progIdx: 0 };
     const curCh = channels[current.chIdx];
     const curProg = curCh?.programs[current.progIdx];
 
-    if (e.key === 'ArrowRight') {
+    if (direction === 'right') {
       if (curCh && current.progIdx + 1 < curCh.programs.length) {
         setFocusedCoord({ chIdx: current.chIdx, progIdx: current.progIdx + 1 });
       }
-    } else if (e.key === 'ArrowLeft') {
+    } else if (direction === 'left') {
       if (current.progIdx > 0) {
         setFocusedCoord({ chIdx: current.chIdx, progIdx: current.progIdx - 1 });
       }
-    } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-      const step = e.key === 'ArrowDown' ? 1 : -1;
+    } else {
+      const step = direction === 'down' ? 1 : -1;
       let nextChIdx = current.chIdx + step;
       while (nextChIdx >= 0 && nextChIdx < channels.length && channels[nextChIdx].programs.length === 0) {
         nextChIdx += step;
@@ -163,6 +172,22 @@ export function TimelineGuide({
         }
       });
       setFocusedCoord({ chIdx: nextChIdx, progIdx: bestIdx });
+    }
+  };
+
+  const handleTimelineKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      moveFocus('right');
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      moveFocus('left');
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      moveFocus('down');
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      moveFocus('up');
     }
   };
 
@@ -226,10 +251,10 @@ export function TimelineGuide({
                   <span className="tabular-nums">{program.actualDurationMins} min</span>
                   <span aria-hidden="true">·</span>
                   <span>{program.genre}</span>
-                  {program.episode && (
+                  {isTvMode && (
                     <>
                       <span aria-hidden="true">·</span>
-                      <span className="font-mono text-xs text-slate-400">{program.episode}</span>
+                      <span className="font-mono text-xs text-slate-400">{channel.androidPackage}</span>
                     </>
                   )}
                 </div>
@@ -263,13 +288,13 @@ export function TimelineGuide({
 
               <div className="flex flex-col sm:flex-row lg:flex-col items-stretch sm:items-center lg:items-end gap-2.5 shrink-0">
                 <a
-                  href={channel.deepLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={isTvMode ? buildAndroidIntentUri(channel) : channel.deepLink}
+                  target={isTvMode ? undefined : '_blank'}
+                  rel={isTvMode ? undefined : 'noopener noreferrer'}
                   className="min-h-[48px] inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-amber-500 text-slate-950 font-semibold text-sm hover:bg-amber-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white transition-colors whitespace-nowrap"
                 >
                   <Tv className="w-4 h-4 shrink-0" />
-                  <span>Kijk via {channel.app}</span>
+                  <span>{isTvMode ? `Open ${channel.app} op TV` : `Kijk via ${channel.app}`}</span>
                   <ExternalLink className="w-4 h-4 shrink-0 opacity-75" />
                 </a>
 
@@ -302,23 +327,71 @@ export function TimelineGuide({
         );
       })()}
 
-      {/* Timeline helper bar */}
+      {/* Timeline helper bar + Optional On-Screen Android TV D-Pad */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-xs text-slate-400">
           {isTvMode
-            ? 'Gebruik de pijltoetsen (↑ ↓ ← →) om een tijdsbalk in de hero te bekijken, Enter voor volledig scherm.'
-            : 'Tik op een tijdsbalk om het programma bovenaan te bekijken; tik nogmaals voor alle details.'}
+            ? 'Gebruik de pijltoetsen (↑ ↓ ← →) of de virtuele afstandsbediening om door tijdsbalken te navigeren.'
+            : 'Tik op een tijdsbalk om het programma in de hero te bekijken; tik nogmaals voor alle details.'}
         </p>
-        {nowWithinWindow && (
-          <button
-            type="button"
-            onClick={scrollToNow}
-            className="min-h-[40px] inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-amber-500/30 bg-amber-500/10 text-xs font-medium text-amber-300 hover:bg-amber-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 transition-colors whitespace-nowrap"
-          >
-            <Clock className="w-3.5 h-3.5" />
-            <span>Spring naar nu</span>
-          </button>
-        )}
+        <div className="flex flex-wrap items-center gap-2">
+          {isTvMode && (
+            <div className="inline-flex items-center gap-1 p-1 rounded-xl border border-white/10 bg-[#131822]">
+              <button
+                type="button"
+                onClick={() => moveFocus('left')}
+                aria-label="Vorige uitzending"
+                className="min-h-[36px] min-w-[36px] flex items-center justify-center rounded-lg hover:bg-white/10 text-slate-200"
+              >
+                <ArrowLeft className="w-4 h-4" />
+              </button>
+              <button
+                type="button"
+                onClick={() => moveFocus('up')}
+                aria-label="Zender omhoog"
+                className="min-h-[36px] min-w-[36px] flex items-center justify-center rounded-lg hover:bg-white/10 text-slate-200"
+              >
+                <ArrowUp className="w-4 h-4" />
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  if (selectedSlot) onSelectProgram(selectedSlot.channel, selectedSlot.program);
+                }}
+                className="min-h-[36px] px-3 rounded-lg bg-amber-500 text-slate-950 font-mono text-xs font-bold hover:bg-amber-400"
+              >
+                OK
+              </button>
+              <button
+                type="button"
+                onClick={() => moveFocus('down')}
+                aria-label="Zender omlaag"
+                className="min-h-[36px] min-w-[36px] flex items-center justify-center rounded-lg hover:bg-white/10 text-slate-200"
+              >
+                <ArrowDown className="w-4 h-4" />
+              </button>
+              <button
+                type="button"
+                onClick={() => moveFocus('right')}
+                aria-label="Volgende uitzending"
+                className="min-h-[36px] min-w-[36px] flex items-center justify-center rounded-lg hover:bg-white/10 text-slate-200"
+              >
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          )}
+
+          {nowWithinWindow && (
+            <button
+              type="button"
+              onClick={scrollToNow}
+              className="min-h-[40px] inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-amber-500/30 bg-amber-500/10 text-xs font-medium text-amber-300 hover:bg-amber-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 transition-colors whitespace-nowrap"
+            >
+              <Clock className="w-3.5 h-3.5" />
+              <span>Spring naar nu</span>
+            </button>
+          )}
+        </div>
       </div>
 
       {/* EPG Matrix */}

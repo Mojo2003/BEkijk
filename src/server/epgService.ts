@@ -22,6 +22,7 @@ interface ChannelConfig {
   shortName: string;
   category: ChannelCategory;
   app: string;
+  androidPackage: string;
   deepLink: string;
   accentColor: string;
   exactIds: string[];
@@ -38,6 +39,7 @@ export const CHANNEL_CONFIGS: ChannelConfig[] = [
     shortName: 'VRT 1',
     category: 'vlaams',
     app: 'VRT MAX',
+    androidPackage: 'be.vrt.vrtnu',
     deepLink: 'https://www.vrt.be/vrtmax/livestream/video/vrt1/',
     accentColor: '#00A8E8',
     exactIds: ['vrt1.be', 'een.be'],
@@ -51,6 +53,7 @@ export const CHANNEL_CONFIGS: ChannelConfig[] = [
     shortName: 'CANVAS',
     category: 'vlaams',
     app: 'VRT MAX',
+    androidPackage: 'be.vrt.vrtnu',
     deepLink: 'https://www.vrt.be/vrtmax/livestream/video/canvas/',
     accentColor: '#38BDF8',
     exactIds: ['canvas.be'],
@@ -64,6 +67,7 @@ export const CHANNEL_CONFIGS: ChannelConfig[] = [
     shortName: 'VTM',
     category: 'vlaams',
     app: 'VTM GO',
+    androidPackage: 'be.vmma.vtm.zenderapp',
     deepLink: 'https://www.vtmgo.be/vtmgo/live-kijken/vtm',
     accentColor: '#F59E0B',
     exactIds: ['vtm.be'],
@@ -78,6 +82,7 @@ export const CHANNEL_CONFIGS: ChannelConfig[] = [
     shortName: 'PLAY',
     category: 'vlaams',
     app: 'GoPlay',
+    androidPackage: 'be.goplay.app',
     deepLink: 'https://www.goplay.be/tv-gids',
     accentColor: '#10B981',
     exactIds: ['play.be', 'play4.be'],
@@ -92,6 +97,7 @@ export const CHANNEL_CONFIGS: ChannelConfig[] = [
     shortName: 'VTM 2',
     category: 'vlaams',
     app: 'VTM GO',
+    androidPackage: 'be.vmma.vtm.zenderapp',
     deepLink: 'https://www.vtmgo.be/vtmgo/live-kijken/vtm2',
     accentColor: '#FB923C',
     exactIds: ['vtm2.be'],
@@ -105,6 +111,7 @@ export const CHANNEL_CONFIGS: ChannelConfig[] = [
     shortName: 'PLAY FICTIE',
     category: 'vlaams',
     app: 'GoPlay',
+    androidPackage: 'be.goplay.app',
     deepLink: 'https://www.goplay.be/tv-gids',
     accentColor: '#34D399',
     exactIds: ['playfictie.be', 'play5.be'],
@@ -118,6 +125,7 @@ export const CHANNEL_CONFIGS: ChannelConfig[] = [
     shortName: 'PLAY ACTIE',
     category: 'vlaams',
     app: 'GoPlay',
+    androidPackage: 'be.goplay.app',
     deepLink: 'https://www.goplay.be/tv-gids',
     accentColor: '#2DD4BF',
     exactIds: ['playactie.be', 'play6.be'],
@@ -130,6 +138,7 @@ export const CHANNEL_CONFIGS: ChannelConfig[] = [
     shortName: 'VTM 3',
     category: 'vlaams',
     app: 'VTM GO',
+    androidPackage: 'be.vmma.vtm.zenderapp',
     deepLink: 'https://www.vtmgo.be/vtmgo/live-kijken/vtm3',
     accentColor: '#FBBF24',
     exactIds: ['vtm3.be'],
@@ -142,6 +151,7 @@ export const CHANNEL_CONFIGS: ChannelConfig[] = [
     shortName: 'VTM 4',
     category: 'vlaams',
     app: 'VTM GO',
+    androidPackage: 'be.vmma.vtm.zenderapp',
     deepLink: 'https://www.vtmgo.be/vtmgo/live-kijken/vtm4',
     accentColor: '#D97706',
     exactIds: ['vtm4.be'],
@@ -154,6 +164,7 @@ export const CHANNEL_CONFIGS: ChannelConfig[] = [
     shortName: 'KETNET',
     category: 'vlaams',
     app: 'VRT MAX',
+    androidPackage: 'be.vrt.vrtnu',
     deepLink: 'https://www.vrt.be/vrtmax/livestream/video/ketnet/',
     accentColor: '#F43F5E',
     exactIds: ['ketnet.be'],
@@ -166,6 +177,7 @@ export const CHANNEL_CONFIGS: ChannelConfig[] = [
     shortName: 'LA UNE',
     category: 'waals',
     app: 'RTBF Auvio',
+    androidPackage: 'be.rtbf.auvio',
     deepLink: 'https://auvio.rtbf.be/direct',
     accentColor: '#EF4444',
     exactIds: ['laune.be'],
@@ -179,6 +191,7 @@ export const CHANNEL_CONFIGS: ChannelConfig[] = [
     shortName: 'TIPIK',
     category: 'waals',
     app: 'RTBF Auvio',
+    androidPackage: 'be.rtbf.auvio',
     deepLink: 'https://auvio.rtbf.be/direct',
     accentColor: '#EC4899',
     exactIds: ['tipik.be'],
@@ -192,6 +205,7 @@ export const CHANNEL_CONFIGS: ChannelConfig[] = [
     shortName: 'RTL TVI',
     category: 'waals',
     app: 'RTL play',
+    androidPackage: 'com.tapptic.rtl.tvi',
     deepLink: 'https://www.rtlplay.be/direct',
     accentColor: '#3B82F6',
     exactIds: ['rtltvi.be'],
@@ -205,6 +219,7 @@ export const CHANNEL_CONFIGS: ChannelConfig[] = [
     shortName: 'RTL CLUB',
     category: 'waals',
     app: 'RTL play',
+    androidPackage: 'com.tapptic.rtl.tvi',
     deepLink: 'https://www.rtlplay.be/direct',
     accentColor: '#60A5FA',
     exactIds: ['rtlclub.be'],
@@ -217,6 +232,7 @@ export const CHANNEL_CONFIGS: ChannelConfig[] = [
     shortName: 'ARTE',
     category: 'waals',
     app: 'ARTE',
+    androidPackage: 'tv.arte.plus7',
     deepLink: 'https://www.arte.tv/fr/direct/',
     accentColor: '#F97316',
     exactIds: ['artebelgique.be', 'arte.be'],
@@ -230,6 +246,7 @@ export const CHANNEL_CONFIGS: ChannelConfig[] = [
     shortName: 'NPO 1',
     category: 'nl',
     app: 'NPO Start',
+    androidPackage: 'nl.uitzendinggemist',
     deepLink: 'https://npo.nl/start/live?channel=NPO1',
     accentColor: '#FB7185',
     exactIds: ['npo1.be'],
@@ -449,7 +466,7 @@ async function fetchLiveXmltv(): Promise<EpgCache> {
 
   try {
     const response = await fetch(EPG_URL, {
-      headers: { 'User-Agent': 'KijkBE-EPG/1.0' },
+      headers: { 'User-Agent': 'BEkijk-EPG/1.0' },
       signal: controller.signal,
     });
     if (!response.ok) {
@@ -547,7 +564,7 @@ export async function getEpgCache(forceRefresh = false): Promise<EpgCache> {
       memoryCache = live;
       return live;
     } catch (err) {
-      console.warn('[KijkBE] Live XMLTV fetch failed, using fallback:', err instanceof Error ? err.message : err);
+      console.warn('[BEkijk] Live XMLTV fetch failed, using fallback:', err instanceof Error ? err.message : err);
       if (memoryCache) return memoryCache;
       const seed = loadSeedFallback();
       memoryCache = seed;
@@ -621,6 +638,7 @@ export async function buildGuideResponse(options: {
       shortName: cfg.shortName,
       category: cfg.category,
       app: cfg.app,
+      androidPackage: cfg.androidPackage,
       deepLink: cfg.deepLink,
       accentColor: cfg.accentColor,
       programs,
@@ -653,6 +671,7 @@ export async function buildLegacyGuideExport(): Promise<LegacyGuideExport> {
       name: c.name,
       category: c.category,
       app: c.app,
+      androidPackage: c.androidPackage,
       deepLink: c.deepLink,
       programs: c.programs.map((p) => ({
         title: p.title,

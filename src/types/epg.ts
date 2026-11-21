@@ -24,6 +24,7 @@ export interface Channel {
   shortName: string;
   category: ChannelCategory;
   app: string;
+  androidPackage: string;
   deepLink: string;
   accentColor: string;
   programs: Program[];
@@ -51,6 +52,7 @@ export interface LegacyGuideExport {
     name: string;
     category: string;
     app: string;
+    androidPackage?: string;
     deepLink: string;
     programs: Array<{
       title: string;
