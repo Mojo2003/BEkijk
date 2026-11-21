@@ -1,0 +1,985 @@
+{
+  "updatedAt": "2026-11-21 21:32",
+  "windowStartHour": 17,
+  "channels": [
+    {
+      "id": "vrt1",
+      "name": "VRT 1",
+      "category": "vlaams",
+      "app": "VRT MAX",
+      "deepLink": "https://www.vrt.be/vrtmax/livestream/video/vrt1/",
+      "programs": [
+        {
+          "title": "De Playlist",
+          "start": "16:30",
+          "end": "17:05",
+          "startMins": 0,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Mathias Vergels, Mathias Vergels"
+        },
+        {
+          "title": "Dagelijkse kost",
+          "start": "17:05",
+          "end": "17:55",
+          "startMins": 5,
+          "durationMins": 50,
+          "genre": "TV",
+          "desc": "Dagelijkse kost weekend, Jeroens weekmenu: bekijk de 5 recepten van de afgelopen week"
+        },
+        {
+          "title": "Kijk uit",
+          "start": "17:55",
+          "end": "18:00",
+          "startMins": 55,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Helm op, fluo top, Met de actie Helm op, Fluo Top zetten scholen, ouders en kinderen samen in op zichtbaarheid en veiligheid in het verkeer. Met deze campagne moedigen ze jonge fietsers en voetgangers aan om een helm te dragen en goed zicht..."
+        },
+        {
+          "title": "VRT NWS Update",
+          "start": "18:00",
+          "end": "18:10",
+          "startMins": 60,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": ", Nieuws en sport."
+        },
+        {
+          "title": "First Dates",
+          "start": "18:10",
+          "end": "19:00",
+          "startMins": 70,
+          "durationMins": 50,
+          "genre": "TV",
+          "desc": "Episode 13, Joep houdt van bordspelletjes. Vindt zijn date Manon dat ook leuk? Barbara steekt veel tijd in haar dochter, ze wil graag een nieuwe vriend om ook eens dingen zonder kind te kunnen doen. Brigitte wil graag nog eens verliefd zijn..."
+        },
+        {
+          "title": "VRT NWS journaal",
+          "start": "19:00",
+          "end": "19:38",
+          "startMins": 120,
+          "durationMins": 38,
+          "genre": "TV",
+          "desc": "Nieuws en sport."
+        },
+        {
+          "title": "Het weer",
+          "start": "19:38",
+          "end": "19:40",
+          "startMins": 158,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Het weerbericht voor vandaag en de komende dagen."
+        },
+        {
+          "title": "Joker+ en Lotto",
+          "start": "19:40",
+          "end": "19:45",
+          "startMins": 160,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Trekking van de Joker+ en Lotto."
+        },
+        {
+          "title": "F.C. De Kampioenen",
+          "start": "19:45",
+          "end": "20:25",
+          "startMins": 165,
+          "durationMins": 40,
+          "genre": "TV",
+          "desc": "Ho ho ho, De middenstandsbond is op zoek naar een nieuwe kerstman, nu Jean-Luc Grootjans zijn been heeft gebroken tijdens een skiongeluk. De vereniging die de kerstman levert mag dan rekenen op een fikse subsidie van de gemeente. De Kampioe..."
+        },
+        {
+          "title": "De goldies",
+          "start": "20:25",
+          "end": "20:55",
+          "startMins": 205,
+          "durationMins": 30,
+          "genre": "TV",
+          "desc": "Amsterdam kleurt goldie, Na een culinair hoogtepunt aan een vleesmuur in Amsterdam trekken de goldies verder de stad in om er zich onder te dompelen in het bredere culturele aanbod: van speelgoed voor volwassenen tot geestverruimend gebak. ..."
+        },
+        {
+          "title": "De goldies",
+          "start": "20:55",
+          "end": "21:30",
+          "startMins": 235,
+          "durationMins": 35,
+          "genre": "TV",
+          "desc": "Vapeurs en wilde plannen, Home, zweet, home! De goldies zijn terug in Antwerpen, waar de temperaturen hoog oplopen. Niet bepaald een cadeau voor de vapeurs van Flory.In hun stamcafé vertelt Flory openhartig over de borstkanker die ze jaren ..."
+        },
+        {
+          "title": "Michael Van Peel: ' Welcome to the Rebellion'",
+          "start": "21:30",
+          "end": "23:10",
+          "startMins": 270,
+          "durationMins": 100,
+          "genre": "TV",
+          "desc": "Zaalshow van stand-up comedian Michaël van Peel (2022)"
+        },
+        {
+          "title": "VRT NWS journaal",
+          "start": "23:10",
+          "end": "23:29",
+          "startMins": 370,
+          "durationMins": 19,
+          "genre": "TV",
+          "desc": "Nieuws en sport."
+        },
+        {
+          "title": "Winst Joker+/Lotto",
+          "start": "23:29",
+          "end": "23:30",
+          "startMins": 389,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Winstverdeling van de joker- en lottotrekking."
+        },
+        {
+          "title": "Keno",
+          "start": "23:30",
+          "end": "23:31",
+          "startMins": 390,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Uitslagen van de Keno."
+        },
+        {
+          "title": "Euromillions Winstverdeling",
+          "start": "23:31",
+          "end": "23:35",
+          "startMins": 391,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Verdeling van de winst van Euromillions."
+        },
+        {
+          "title": "Het weer",
+          "start": "23:35",
+          "end": "23:40",
+          "startMins": 395,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Het weerbericht voor vandaag en de komende dagen."
+        },
+        {
+          "title": "Start to race",
+          "start": "23:40",
+          "end": "00:35",
+          "startMins": 400,
+          "durationMins": 55,
+          "genre": "TV",
+          "desc": ", WRT, het raceteam, en Sam Dejonghe, de coach, leggen de lat hoog. Ook fysiek worden ze uitgedaagd. Een racepiloot moet in topconditie zijn! De piloten in spe komen voor het eerst op een echt race circuit. De ideale lijn rijden is dan toch..."
+        },
+        {
+          "title": "Journaallus",
+          "start": "00:35",
+          "end": "06:00",
+          "startMins": 455,
+          "durationMins": 85,
+          "genre": "TV",
+          "desc": "Doorlopende herhalingen in lusvorm tot de volgende ochtend."
+        }
+      ]
+    },
+    {
+      "id": "canvas",
+      "name": "VRT Canvas",
+      "category": "vlaams",
+      "app": "VRT MAX",
+      "deepLink": "https://www.vrt.be/vrtmax/livestream/video/canvas/",
+      "programs": [
+        {
+          "title": "The Americas",
+          "start": "16:50",
+          "end": "17:35",
+          "startMins": 0,
+          "durationMins": 35,
+          "genre": "TV",
+          "desc": "De westkust, waar wolven langs de kustlijn jagen, zeeotters door de branding duiken en meer."
+        },
+        {
+          "title": "Jan Ullrich, de opgejaagde",
+          "start": "17:35",
+          "end": "18:25",
+          "startMins": 35,
+          "durationMins": 50,
+          "genre": "TV",
+          "desc": "Jan Ullrich is altijd een buitenbeentje geweest. Dat wist ook zijn jeugdvriend en latere ploeggenoot André Korff. Ze zaten samen op een elitesportschool in Berlijn en kwamen zo in het Oost-Duitse topsportcircuit terecht."
+        },
+        {
+          "title": "Karen Pirie",
+          "start": "18:25",
+          "end": "19:55",
+          "startMins": 85,
+          "durationMins": 90,
+          "genre": "TV",
+          "desc": "Karen duikt dieper in het verleden van de Grants en ontdekt dat er mogelijk een verband is met een andere cold case uit dezelfde periode: de verdwijning van mijnwerker Mick Prentice tijdens de mijnstakingen van 1984."
+        },
+        {
+          "title": "Het weer",
+          "start": "19:55",
+          "end": "20:00",
+          "startMins": 175,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Dagelijks programma waarin de weersvoorspelling wordt gepresenteerd."
+        },
+        {
+          "title": "Wisting",
+          "start": "20:00",
+          "end": "20:45",
+          "startMins": 180,
+          "durationMins": 45,
+          "genre": "TV",
+          "desc": "Wisting wordt op non-actief gesteld terwijl Interne Zaken onderzoek doet naar zijn werkwijze bij een eerdere moordzaak. Vanwege Wistings afwezigheid krijgt Torunn nu de leiding van het politieonderzoek naar de verdwijning van een jonge vrou..."
+        },
+        {
+          "title": "Wisting",
+          "start": "20:45",
+          "end": "21:30",
+          "startMins": 225,
+          "durationMins": 45,
+          "genre": "TV",
+          "desc": "Wisting gaat op eigen houtje op onderzoek in de zaak van Cecilia, met zijn reputatie en carrière op het spel. Ondertussen vordert het onderzoek naar de verdwijning van Linnea gestaag onder leiding van Torunn. Haar ouders vrezen voor haar le..."
+        },
+        {
+          "title": "Shutterspeed",
+          "start": "21:30",
+          "end": "21:55",
+          "startMins": 270,
+          "durationMins": 25,
+          "genre": "TV",
+          "desc": "Cas is vijftien en poseert voor Jard, de jonge leraar in opleiding die in zijn vrije tijd foto's maakt. Maar achter de lens voelt Cas stilaan hoe scheef hun verhouding echt zit."
+        },
+        {
+          "title": "Drijf",
+          "start": "21:55",
+          "end": "22:10",
+          "startMins": 295,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Jeremy en Aurora zijn verdwaald op zee. In de uitgestrektheid van de oceaan zitten ze samen opgesloten op een kleine boomstam. Terwijl ze elkaars verlangens en grenzen niet begrijpen, belanden ze in een bloedige strijd om hun bestaan en hun..."
+        },
+        {
+          "title": "Koffie in Lourdes",
+          "start": "22:10",
+          "end": "22:30",
+          "startMins": 310,
+          "durationMins": 20,
+          "genre": "TV",
+          "desc": "Veertig jaar lang hoorde Sol niets van zijn oude vriend Dicky. Tot nu. In Café Lourdes zoeken twee grijze mannen naar woorden om een oud conflict uit de wereld te helpen. Veel tijd is er niet, want Dicky's dood staat gepland voor morgen."
+        },
+        {
+          "title": "De Gouden Ezel",
+          "start": "22:30",
+          "end": "22:45",
+          "startMins": 330,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "De koninklijke familie in een middeleeuws dorp kampt met een identiteitscrisis. De koning denkt dat hij van glas is, de prinses droomt ervan om koning te worden en de prins zit gevangen in het lichaam van een ezel."
+        },
+        {
+          "title": "Rachid",
+          "start": "22:45",
+          "end": "23:05",
+          "startMins": 345,
+          "durationMins": 20,
+          "genre": "TV",
+          "desc": "Rachid, een 21-jarige enthousiaste jonge man van Marokkaanse afkomst, heeft één doel: een job vinden. Vol vertrouwen stelt hij zich kandidaat als afwasser in een restaurant, dat lijkt hem toch een job die iedereen kan doen. Maar al snel bli..."
+        },
+        {
+          "title": "Ma mère et l'étrangère",
+          "start": "23:05",
+          "end": "23:30",
+          "startMins": 365,
+          "durationMins": 25,
+          "genre": "TV",
+          "desc": "Terwijl Marcel worstelt met het leegmaken van zijn ouderlijk huis, vult een melodie de verlaten kamers. In de woonkamer treft hij een onbekende dame die de cello van zijn overleden moeder bespeelt."
+        },
+        {
+          "title": "Fargo",
+          "start": "23:30",
+          "end": "00:25",
+          "startMins": 390,
+          "durationMins": 55,
+          "genre": "TV",
+          "desc": "Na een misverstand op de school van haar dochter komt huisvrouw Dot in de problemen. Ze is opeens weer terug in het leven waarvan ze dacht dat ze dat achter zich had gelaten."
+        },
+        {
+          "title": "Het weer",
+          "start": "00:25",
+          "end": "00:30",
+          "startMins": 445,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Dagelijks programma waarin de weersvoorspelling wordt gepresenteerd."
+        },
+        {
+          "title": "Nachtlus",
+          "start": "00:30",
+          "end": "08:00",
+          "startMins": 450,
+          "durationMins": 90,
+          "genre": "TV",
+          "desc": "Doorlopende herhaling tot de start van de ochtenduitzendingen."
+        }
+      ]
+    },
+    {
+      "id": "vtm",
+      "name": "VTM",
+      "category": "vlaams",
+      "app": "VTM GO",
+      "deepLink": "https://www.vtmgo.be/vtmgo/live-kijken/vtm",
+      "programs": [
+        {
+          "title": "Sing Again",
+          "start": "16:15",
+          "end": "18:15",
+          "startMins": 0,
+          "durationMins": 75,
+          "genre": "TV",
+          "desc": ", In De Casino in Sint-Niklaas wacht de jury opnieuw een muzikale verrassing. Herkennen ze een 'Idool'-finalist uit 2003 of een zingende actrice uit 'Wittekerke'? Deze week wordt duidelijk wie er een plek in de halve finale verovert."
+        },
+        {
+          "title": "Lili en Marleen",
+          "start": "18:15",
+          "end": "19:00",
+          "startMins": 75,
+          "durationMins": 45,
+          "genre": "TV",
+          "desc": "Arriba España, Rik wil de huishuur opslaan, Jef en Ida willen dat niet betalen en willen in een sociale woning gaan wonen. Rik vindt dat een goed idee. Nieke en Sylvain komen terug uit Spanje en hebben cadeau's bij. Rikki krijgt een lederen..."
+        },
+        {
+          "title": "VTM NIEUWS 19u",
+          "start": "19:00",
+          "end": "19:45",
+          "startMins": 120,
+          "durationMins": 45,
+          "genre": "TV",
+          "desc": "Nieuws van de dag met achtergrondinformatie, gevolgd door uitgebreide sportverslaggeving."
+        },
+        {
+          "title": "Het weer",
+          "start": "19:45",
+          "end": "19:55",
+          "startMins": 165,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Blik op het weer in Vlaanderen en daarbuiten. Met Frank Duboccage, David Dehenauw of Jill Peeters."
+        },
+        {
+          "title": "De Wereld van Plopsa",
+          "start": "19:55",
+          "end": "20:35",
+          "startMins": 175,
+          "durationMins": 40,
+          "genre": "TV",
+          "desc": ", Axana maakt haar langverwachte comeback in Plopsaland. Terwijl de spanning stijgt achter de schermen, moet het securityteam in actie komen nadat een onbekende met een personeelsbadge opduikt. Intussen hebben K3-fans de tijd van hun leven ..."
+        },
+        {
+          "title": "Expeditie Robinson",
+          "start": "20:35",
+          "end": "22:00",
+          "startMins": 215,
+          "durationMins": 85,
+          "genre": "TV",
+          "desc": ", Honger en uitputting drijven de spanning op. Wout krijgt op Wraakeiland een laatste kans, terwijl een loodzware immuniteitsproef en de tweede eilandraad de kampen stevig door elkaar schudden."
+        },
+        {
+          "title": "Geldwolven",
+          "start": "22:00",
+          "end": "23:00",
+          "startMins": 300,
+          "durationMins": 60,
+          "genre": "TV",
+          "desc": "Eline, Frank en Chris proberen hun dramatische avond te vergeten. Ondanks hun schuldgevoel beslist Chris hun slachtoffer op te zoeken. Net wanneer ze alles onder controle lijken te hebben, stort Franks wereld als een kaartenhuis in elkaar."
+        },
+        {
+          "title": "Gevangenisdirecteurs",
+          "start": "23:00",
+          "end": "00:10",
+          "startMins": 360,
+          "durationMins": 70,
+          "genre": "TV",
+          "desc": ", In de Antwerpse Begijnenstraat wordt de ernst van de overbevolkingsproblematiek duidelijk wanneer minister Verlinden op bezoek komt. Directeur Jo houdt in Sint-Gillis tuchtgesprekken met twee gedetineerden die met elkaar op de vuist ginge..."
+        },
+        {
+          "title": "Happy Hour",
+          "start": "00:10",
+          "end": "01:10",
+          "startMins": 430,
+          "durationMins": 60,
+          "genre": "TV",
+          "desc": ", Ruben ontvangt deze keer Tom Boonen, Herman Brusselmans en Marc Coucke."
+        },
+        {
+          "title": "Geen uitzending.",
+          "start": "01:10",
+          "end": "04:10",
+          "startMins": 490,
+          "durationMins": 50,
+          "genre": "TV",
+          "desc": "Geen uitzending."
+        }
+      ]
+    },
+    {
+      "id": "vtm2",
+      "name": "VTM 2",
+      "category": "vlaams",
+      "app": "VTM GO",
+      "deepLink": "https://www.vtmgo.be/vtmgo/live-kijken/vtm2",
+      "programs": [
+        {
+          "title": "Als de Brandweer",
+          "start": "16:45",
+          "end": "17:40",
+          "startMins": 0,
+          "durationMins": 40,
+          "genre": "TV",
+          "desc": "Aflevering 9, Realityserie waarin we brandweerlieden volgen van zeventien kazernes, verspreid over de veiligheidsregio's Rotterdam-Rijnmond, Flevoland, Haaglanden, Hollands Midden en Utrecht. Door het gebruik van bodycams kom je dichter bij..."
+        },
+        {
+          "title": "Kees Van Der Spek: Oplichters Aangepakt",
+          "start": "17:40",
+          "end": "19:00",
+          "startMins": 40,
+          "durationMins": 80,
+          "genre": "TV",
+          "desc": ", Kees reist naar Suriname om een oplichtingszaak te onderzoeken. Een Belgische buschauffeur stuurde tienduizenden euro's naar Mariska in de veronderstelling van een fictieve erfenis. De familie schakelt Kees in om de waarheid te achterhale..."
+        },
+        {
+          "title": "Mr. Frank Visser doet uitspraak",
+          "start": "19:00",
+          "end": "20:00",
+          "startMins": 120,
+          "durationMins": 60,
+          "genre": "TV",
+          "desc": "Waar rook is, is vuur, Cees en Corina kochten in 2007 een halfvrijstaand huis met garage. Het enige minpuntje is dat ze de oprit naast hun huis moeten delen met de buren; en daar gaat het natuurlijk mis. Cees en Corina beschuldigen hun buur..."
+        },
+        {
+          "title": "Darts - Grand Slam",
+          "start": "20:00",
+          "end": "23:05",
+          "startMins": 180,
+          "durationMins": 185,
+          "genre": "TV",
+          "desc": "Vanavond staan in Engeland de twee resterende kwartfinales (best of 31 legs) op het programma."
+        },
+        {
+          "title": "Terminator Genisys",
+          "start": "23:05",
+          "end": "01:20",
+          "startMins": 365,
+          "durationMins": 135,
+          "genre": "TV",
+          "desc": "Het is 2029, en de 'Future War' woedt in alle hevigheid tussen een groep van menselijke rebellen en het slechte A.I.-netwerk Skynet. John Connor is de leider van de opstand en Kyle Reese is zijn trouwe soldaat, opgegroeid in de ruïnes van h..."
+        },
+        {
+          "title": "Border Security Australia",
+          "start": "01:20",
+          "end": "01:45",
+          "startMins": 500,
+          "durationMins": 25,
+          "genre": "TV",
+          "desc": "Border Security Australia, Twee zakenmannen uit Thailand veranderen voortdurend hun verhaal. Een zending uit Afrika worden aan een grondige veiligheidscheck onderworpen."
+        },
+        {
+          "title": "Geen uitzending.",
+          "start": "01:45",
+          "end": "04:45",
+          "startMins": 525,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Geen uitzending."
+        }
+      ]
+    },
+    {
+      "id": "play4",
+      "name": "Play4",
+      "category": "vlaams",
+      "app": "GoPlay",
+      "deepLink": "https://www.goplay.be/tv-gids",
+      "programs": []
+    },
+    {
+      "id": "play5",
+      "name": "Play5",
+      "category": "vlaams",
+      "app": "GoPlay",
+      "deepLink": "https://www.goplay.be/tv-gids",
+      "programs": []
+    },
+    {
+      "id": "laune",
+      "name": "La Une",
+      "category": "waals",
+      "app": "RTBF Auvio",
+      "deepLink": "https://auvio.rtbf.be/direct",
+      "programs": [
+        {
+          "title": "Léo Mattéï, brigade des mineurs",
+          "start": "16:27",
+          "end": "17:31",
+          "startMins": 0,
+          "durationMins": 31,
+          "genre": "TV",
+          "desc": "La fin de l'innocence, Un bébé est retrouvé vivant, mais abandonné dans les toilettes d'un lycée à côté d'une abondante flaque de sang. L'enfant appartient à Sophie, une adolescente au parcours scolaire exemplaire qui prétend même n'avoir j..."
+        },
+        {
+          "title": "Léo Mattéï, brigade des mineurs",
+          "start": "17:31",
+          "end": "18:34",
+          "startMins": 31,
+          "durationMins": 63,
+          "genre": "TV",
+          "desc": "Livrés à eux-mêmes, Nicolas, 14 ans, se fait agresser par un motard dans la rue. Mattéï enquête et suspecte un cas de maltraitance. Pourtant Nicolas, sa sœur et son frère vivent en parfaite complicité avec leur mère... Qui en veut à cette f..."
+        },
+        {
+          "title": "Chiens et chats sans collier",
+          "start": "18:34",
+          "end": "19:21",
+          "startMins": 94,
+          "durationMins": 47,
+          "genre": "TV",
+          "desc": "Quatre pattes vers une famille, Les refuges sont parfois le théâtre de véritables courses contre la montre. Des vies animales promises à un destin tragique, mais pour lesquelles l'espoir n'est jamais abandonné. À AVA, le chat Naki a été sau..."
+        },
+        {
+          "title": "Ciel Partagé 19h25",
+          "start": "19:21",
+          "end": "19:30",
+          "startMins": 141,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Ciel Partagé 19h25"
+        },
+        {
+          "title": "Le 19h30",
+          "start": "19:30",
+          "end": "20:06",
+          "startMins": 150,
+          "durationMins": 36,
+          "genre": "TV",
+          "desc": "Tous les jours, le JT de 19h30 vous informe de l'actualité et des faits de société, politiques, économiques, culturels et sportifs."
+        },
+        {
+          "title": "Tirage Lotto - Samedi",
+          "start": "20:06",
+          "end": "20:12",
+          "startMins": 186,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Retrouvez les tirages du Joker et du Lotto."
+        },
+        {
+          "title": "Météo And Climat 20h20",
+          "start": "20:12",
+          "end": "20:18",
+          "startMins": 192,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Météo And Climat 20h20"
+        },
+        {
+          "title": "Une brique dans le ventre",
+          "start": "20:18",
+          "end": "20:52",
+          "startMins": 198,
+          "durationMins": 34,
+          "genre": "TV",
+          "desc": "Plateau : Magnifique restauration patrimoniale d'une maison mitoyenne datant de 1890 à Bruxelles Cette semaine, Cédric et Virginie sont à Bruxelles pour découvrir la magnifique restauration et transformation d'une maison de maître datant de..."
+        },
+        {
+          "title": "Alexandra Ehle",
+          "start": "20:52",
+          "end": "22:32",
+          "startMins": 232,
+          "durationMins": 100,
+          "genre": "TV",
+          "desc": "Réunion de famille, Alexandra et Diane rendent visite à Ludivine, partie en congé sabbatique à la Réunion, bien décidées à convaincre leur meilleure amie de rentrer. Profitant de leur séjour sur l'Île, elles partent en randonnée pour attein..."
+        },
+        {
+          "title": "Rapports Lotto / Joker",
+          "start": "22:32",
+          "end": "22:36",
+          "startMins": 332,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Retrouvez les tirages du Joker et du Lotto."
+        },
+        {
+          "title": "Astrid et Raphaëlle",
+          "start": "22:36",
+          "end": "23:35",
+          "startMins": 336,
+          "durationMins": 59,
+          "genre": "TV",
+          "desc": "Kitsuné, Apu Tanaka, l'oncle de Tetsuo et proche d'Astrid, est retrouvé mort empoisonné au coeur de la documentation criminelle. Pour élucider ce meurtre terrible."
+        },
+        {
+          "title": "Astrid et Raphaëlle",
+          "start": "23:35",
+          "end": "00:35",
+          "startMins": 395,
+          "durationMins": 60,
+          "genre": "TV",
+          "desc": "La forêt, Entre Paris et Tokyo, Astrid, Raphaëlle et l'inspectrice japonaise Reiko Kondo unissent leurs forces pour faire éclater la vérité sur la mort d'Apu Tanaka. Fausses identités, légendes nipponnes et mystérieuse forêt maudite, nos en..."
+        },
+        {
+          "title": "Météo internationale",
+          "start": "00:35",
+          "end": "00:40",
+          "startMins": 455,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Les prévisions météorologiques."
+        },
+        {
+          "title": "Le 19h30",
+          "start": "00:40",
+          "end": "01:13",
+          "startMins": 460,
+          "durationMins": 33,
+          "genre": "TV",
+          "desc": "Tous les jours, le JT de 19h30 vous informe de l'actualité et des faits de société, politiques, économiques, culturels et sportifs."
+        },
+        {
+          "title": "Contacts",
+          "start": "01:13",
+          "end": "01:18",
+          "startMins": 493,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Panel de la route : conducteurs pressés !, Notre panel d'usagers et nos experts ont été confrontés à deux vidéos mettant en scène des conducteurs pressés, et l'impatience les a conduits à commettre des infractions très nettes !"
+        },
+        {
+          "title": "Météo internationale",
+          "start": "01:18",
+          "end": "01:20",
+          "startMins": 498,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Les prévisions météorologiques."
+        },
+        {
+          "title": "Le 19h30",
+          "start": "01:20",
+          "end": "01:52",
+          "startMins": 500,
+          "durationMins": 32,
+          "genre": "TV",
+          "desc": "Tous les jours, le JT de 19h30 vous informe de l'actualité et des faits de société, politiques, économiques, culturels et sportifs."
+        },
+        {
+          "title": "Contacts",
+          "start": "01:52",
+          "end": "01:56",
+          "startMins": 532,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Panel de la route : conducteurs pressés !, Notre panel d'usagers et nos experts ont été confrontés à deux vidéos mettant en scène des conducteurs pressés, et l'impatience les a conduits à commettre des infractions très nettes !"
+        },
+        {
+          "title": "Météo internationale",
+          "start": "01:56",
+          "end": "01:58",
+          "startMins": 536,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Les prévisions météorologiques."
+        },
+        {
+          "title": "Le 19h30",
+          "start": "01:58",
+          "end": "02:30",
+          "startMins": 538,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Tous les jours, le JT de 19h30 vous informe de l'actualité et des faits de société, politiques, économiques, culturels et sportifs."
+        }
+      ]
+    },
+    {
+      "id": "rtltvi",
+      "name": "RTL TVI",
+      "category": "waals",
+      "app": "RTL play",
+      "deepLink": "https://www.rtlplay.be/direct",
+      "programs": [
+        {
+          "title": "Le club de Noël",
+          "start": "15:58",
+          "end": "17:43",
+          "startMins": 0,
+          "durationMins": 43,
+          "genre": "TV",
+          "desc": "Veronica n'a plus le choix : cette année, à Noël, elle doit repenser sa vie. Sa rencontre avec le club de Noël, un groupe de personnes célibataires passionnées, comme elle, de cuisine, va lui ouvrir de nouvelles perspectives. Mais il n'est ..."
+        },
+        {
+          "title": "Dans votre canap'",
+          "start": "17:43",
+          "end": "17:45",
+          "startMins": 43,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Sophie Pendeville présente quotidiennement « Dans votre canap' » afin d'informer les téléspectateurs des moments forts de la journée. « Dans votre canap' » est un nouveau rendez-vous 360 pour tout savoir sur ce qui va vous faire vibrer dans..."
+        },
+        {
+          "title": "Dans votre canap' VIP",
+          "start": "17:45",
+          "end": "17:46",
+          "startMins": 45,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Vianney, Sophie Pendeville présente quotidiennement « Dans votre canap' » afin d'informer les téléspectateurs des moments forts de la journée. « Dans votre canap' » est un nouveau rendez-vous 360 pour tout savoir sur ce qui va vous faire vi..."
+        },
+        {
+          "title": "Loïc, fou de cuisine",
+          "start": "17:46",
+          "end": "18:04",
+          "startMins": 46,
+          "durationMins": 18,
+          "genre": "TV",
+          "desc": "Episode 76, Loïc n'est pas un chef, c'est un fou de cuisine ! Sa famille est à la base de son éducation culinaire et c'est grâce aux livres, à la télévision, Facebook, YouTube et Instagram que Loïc a poursuivi son apprentissage. Sa cuisine ..."
+        },
+        {
+          "title": "Les petites histoires des grandes chansons",
+          "start": "18:04",
+          "end": "18:05",
+          "startMins": 64,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Deux Hugues, deux anecdotes sur une chanson : l'une vraie, l'autre inventée. Deux décors s'affrontent, rouge et blanc. Un seul survit, révélant la véritable histoire de la chanson."
+        },
+        {
+          "title": "Septante et un duo",
+          "start": "18:05",
+          "end": "18:35",
+          "startMins": 65,
+          "durationMins": 30,
+          "genre": "TV",
+          "desc": "Tous les samedis, Jean-Michel Zecca reçoit un duo face à un public de 70 ex-candidats uniques ayant éliminé l'entièreté du gradin lors de leur passage dans l'émission.10 questions de culture générale et toujours le même objectif : éliminer ..."
+        },
+        {
+          "title": "Eureka",
+          "start": "18:35",
+          "end": "19:00",
+          "startMins": 95,
+          "durationMins": 25,
+          "genre": "TV",
+          "desc": "Programme court."
+        },
+        {
+          "title": "RTL Info 19 heures",
+          "start": "19:00",
+          "end": "19:40",
+          "startMins": 120,
+          "durationMins": 40,
+          "genre": "TV",
+          "desc": "Les dernières actualités nationales et internationales. L'information est au cœur de RTL TVI. Cette année plus que jamais, l'ensemble des équipes de la rédaction se mobilise afin de faire preuve de réactivité dans n'importe quelles circonst..."
+        },
+        {
+          "title": "Météo",
+          "start": "19:40",
+          "end": "19:45",
+          "startMins": 160,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Quel temps fera-t-il demain ? Nos bulletins météo vous tiennent au courant des prévisions. La pluie et le beau temps, annoncés par nos spécialistes. La pluie et le beau temps, annoncés par nos spécialistes."
+        },
+        {
+          "title": "Place Royale",
+          "start": "19:45",
+          "end": "20:20",
+          "startMins": 165,
+          "durationMins": 35,
+          "genre": "TV",
+          "desc": "Emission 32, Place Royale, l'émission d'actualités des têtes couronnées Tous les samedis, Alix Battard vous donne rendez-vous pour décrypter l'actualité, les tendances et l'histoire des monarchies européennes et internationales. Comment les..."
+        },
+        {
+          "title": "La roue de la fortune célébrités",
+          "start": "20:20",
+          "end": "22:41",
+          "startMins": 200,
+          "durationMins": 141,
+          "genre": "TV",
+          "desc": "Emission 5, Eric Antoine va proposer à des célébrités de réaliser un vieux rêve d'enfant : tourner la roue la plus culte de la télévision. Chaque candidat tentera de résoudre les énigmes pour accéder à la finale et récolter un maximum pour ..."
+        },
+        {
+          "title": "Dans votre canap' VIP",
+          "start": "22:41",
+          "end": "22:42",
+          "startMins": 341,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Vianney, Sophie Pendeville présente quotidiennement « Dans votre canap' » afin d'informer les téléspectateurs des moments forts de la journée. « Dans votre canap' » est un nouveau rendez-vous 360 pour tout savoir sur ce qui va vous faire vi..."
+        },
+        {
+          "title": "Les traîtres",
+          "start": "22:42",
+          "end": "23:50",
+          "startMins": 342,
+          "durationMins": 68,
+          "genre": "TV",
+          "desc": "Episode 2 Partie 1, Dans ce jeu rythmé par les mensonges, les manipulations et les trahisons, 18 personnalités vont vivre une expérience qu'elles ne sont pas près d'oublier. Pendant plusieurs jours, les joueurs vont participer à un jeu psyc..."
+        },
+        {
+          "title": "Les traîtres",
+          "start": "23:50",
+          "end": "00:53",
+          "startMins": 410,
+          "durationMins": 63,
+          "genre": "TV",
+          "desc": "Episode 2 Partie 2, Dans ce jeu rythmé par les mensonges, les manipulations et les trahisons, 18 personnalités vont vivre une expérience qu'elles ne sont pas près d'oublier. Pendant plusieurs jours, les joueurs vont participer à un jeu psyc..."
+        },
+        {
+          "title": "Les petites histoires des grandes chansons",
+          "start": "00:53",
+          "end": "00:55",
+          "startMins": 473,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Deux Hugues, deux anecdotes sur une chanson : l'une vraie, l'autre inventée. Deux décors s'affrontent, rouge et blanc. Un seul survit, révélant la véritable histoire de la chanson."
+        },
+        {
+          "title": "Waldorado",
+          "start": "00:55",
+          "end": "01:25",
+          "startMins": 475,
+          "durationMins": 30,
+          "genre": "TV",
+          "desc": "Ressourcerie namuroise, Namur, Chaque semaine, Laura Beyne et Shalimar Debru mettent en valeur les pépites wallonnes, les entreprises et sociétés, bien de chez nous, qui rencontrent le succès. Alors, comment fonctionne cette entreprise pas ..."
+        },
+        {
+          "title": "Loïc, fou de cuisine",
+          "start": "01:25",
+          "end": "01:44",
+          "startMins": 505,
+          "durationMins": 19,
+          "genre": "TV",
+          "desc": "Episode 76, Loïc n'est pas un chef, c'est un fou de cuisine ! Sa famille est à la base de son éducation culinaire et c'est grâce aux livres, à la télévision, Facebook, YouTube et Instagram que Loïc a poursuivi son apprentissage. Sa cuisine ..."
+        },
+        {
+          "title": "Météo",
+          "start": "01:44",
+          "end": "01:45",
+          "startMins": 524,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Quel temps fera-t-il demain ? Nos bulletins météo vous tiennent au courant des prévisions. La pluie et le beau temps, annoncés par nos spécialistes. La pluie et le beau temps, annoncés par nos spécialistes."
+        },
+        {
+          "title": "RTL Info 19 heures",
+          "start": "01:45",
+          "end": "02:30",
+          "startMins": 525,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Les dernières actualités nationales et internationales. L'information est au cœur de RTL TVI. Cette année plus que jamais, l'ensemble des équipes de la rédaction se mobilise afin de faire preuve de réactivité dans n'importe quelles circonst..."
+        }
+      ]
+    },
+    {
+      "id": "arte",
+      "name": "ARTE",
+      "category": "waals",
+      "app": "ARTE",
+      "deepLink": "https://www.arte.tv/fr/direct/",
+      "programs": [
+        {
+          "title": "Amérique : la nouvelle histoire des premiers hommes",
+          "start": "15:40",
+          "end": "17:15",
+          "startMins": 0,
+          "durationMins": 15,
+          "genre": "TV",
+          "desc": "Du Grand Nord canadien à la pointe sud du Chili, des découvertes archéologiques concordantes, mais controversées, ont fait émerger un nouveau paradigme : l'apparition des premiers humains sur le continent américain remonterait à près de 30 ..."
+        },
+        {
+          "title": "Invitation au voyage",
+          "start": "17:15",
+          "end": "18:00",
+          "startMins": 15,
+          "durationMins": 45,
+          "genre": "TV",
+          "desc": "Trois reportages pour découvrir le Costa Rica : le film Eldorado de Carlos Saura ;la culture du café sur les pentes volcaniques ;le Château bleu, tour à tour palais présidentiel, ambassade et Assemblée législative."
+        },
+        {
+          "title": "Invitation au voyage",
+          "start": "18:00",
+          "end": "18:50",
+          "startMins": 60,
+          "durationMins": 50,
+          "genre": "TV",
+          "desc": "Découverte de la Géorgie à travers trois reportages : Alexandre Dumas, un mousquetaire en Géorgie / Que serait la Géorgie sans ses chants ? / À Tbilissi, braquage à la géorgienne."
+        },
+        {
+          "title": "ARTE Reportage",
+          "start": "18:50",
+          "end": "19:45",
+          "startMins": 110,
+          "durationMins": 55,
+          "genre": "TV",
+          "desc": "Des grands reportages consacrés à l'actualité internationale."
+        },
+        {
+          "title": "Arte journal",
+          "start": "19:45",
+          "end": "20:05",
+          "startMins": 165,
+          "durationMins": 20,
+          "genre": "TV",
+          "desc": "Chaque jour à 19.45, la rédaction franco-allemande d'ARTE Journal propose une approche européenne et culturelle de l'actualité. Un regard original sur le monde."
+        },
+        {
+          "title": "28 minutes",
+          "start": "20:05",
+          "end": "20:55",
+          "startMins": 185,
+          "durationMins": 50,
+          "genre": "TV",
+          "desc": "Présenté par Élisabeth Quin, le rendez-vous quotidien consacré à l'actualité et au débat."
+        },
+        {
+          "title": "L'Irlande, entre terre et mer",
+          "start": "20:55",
+          "end": "22:30",
+          "startMins": 235,
+          "durationMins": 95,
+          "genre": "TV",
+          "desc": "L'Irlande regorge de paysages époustouflants, entre pâturages verdoyants, tourbières mystérieuses et eaux cristallines. Voyage historique et épopée visuelle au coeur d'une contrée à la beauté austère. Surnommée l'île d'émeraude, l'Irlande a..."
+        },
+        {
+          "title": "Les îles irlandaises, avant-postes de l'océan",
+          "start": "22:30",
+          "end": "23:15",
+          "startMins": 330,
+          "durationMins": 45,
+          "genre": "TV",
+          "desc": "Des tempêtes hivernales à la brume estivale : sur les îles sauvages du nord-ouest de l'Irlande, les animaux doivent survivre au rythme intense des saisons. Lorsque l'hiver arrive, l'île d'Inishvickillane est balayée par de violentes tempête..."
+        },
+        {
+          "title": "Les îles irlandaises, avant-postes de l'océan",
+          "start": "23:15",
+          "end": "00:00",
+          "startMins": 375,
+          "durationMins": 45,
+          "genre": "TV",
+          "desc": "Des tempêtes hivernales à la brume estivale : sur les îles sauvages du nord-ouest de l'Irlande, les animaux doivent se soumettre au rythme des saisons pour survivre. Quand l'été s'installe, près de 250 000 oiseaux marins migrent vers l'île ..."
+        },
+        {
+          "title": "Werther à l'Opéra-Comique",
+          "start": "00:00",
+          "end": "02:20",
+          "startMins": 420,
+          "durationMins": 120,
+          "genre": "TV",
+          "desc": "Artiste exalté, le jeune Werther s'éprend de Charlotte, promise à un autre que lui... Avec Raphaël Pichon à la baguette, et Adèle Charvet et Pene Pati dans le rôle des amants impossibles, le chef-d'œuvre de Goethe, mis en musique par Jules ..."
+        }
+      ]
+    }
+  ]
+}

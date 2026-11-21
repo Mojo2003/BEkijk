@@ -1,0 +1,6 @@
+{
+  "name": "KijkBE",
+  "description": "Belgische TV-gids voor Android TV en mobiel met live EPG, tijdlijn en directe stream-links naar VRT MAX, VTM GO, GoPlay, RTBF Auvio en RTL play.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
