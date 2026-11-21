@@ -1,0 +1,27 @@
+name: Update Belgische TV Gids
+
+on:
+  schedule:
+    - cron: '15 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-guide:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Haal TV-gids op
+        run: python fetch_epg.py
+      - name: Sla nieuwe guide.json op
+        run: |
+          git config user.name "TV Gids Bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add guide.json
+          git commit -m "Update tv-gids" || exit 0
+          git push
