@@ -82,7 +82,7 @@ object EpgRepository {
 
     // Verwijs naar je GitHub guide.json of je eigen BEkijk backend-URL
     private const val DEFAULT_GUIDE_URL =
-        "https://raw.githubusercontent.com/Mojo2003/KijkBE/main/guide.json"
+        "https://raw.githubusercontent.com/Mojo2003/BEkijk/main/guide.json"
 
     suspend fun fetchGuide(url: String = DEFAULT_GUIDE_URL): GuidePayload =
         withContext(Dispatchers.IO) {
