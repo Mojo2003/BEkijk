@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createServer as createViteServer } from 'vite';
 import { buildGuideResponse, buildLegacyGuideExport } from './src/server/epgService.ts';
+import { buildZipFromDirectory } from './src/server/zipBuilder.ts';
 import type { WindowMode } from './src/types/epg.ts';
 
 const PORT = 3000;
@@ -65,29 +66,48 @@ async function startServer() {
     }
   });
 
-  const ALLOWED_TV_FILES = new Set([
-    'AndroidManifest.xml',
-    'EpgModels.kt',
-    'TvAppLauncher.kt',
-    'TvGuideScreen.kt',
-  ]);
+  const TV_FILE_MAP: Record<string, string> = {
+    'MainActivity.kt': 'app/src/main/java/be/bekijk/tv/MainActivity.kt',
+    'TvGuideScreen.kt': 'app/src/main/java/be/bekijk/tv/ui/TvGuideScreen.kt',
+    'TvAppLauncher.kt': 'app/src/main/java/be/bekijk/tv/launcher/TvAppLauncher.kt',
+    'EpgModels.kt': 'app/src/main/java/be/bekijk/tv/data/EpgModels.kt',
+    'AndroidManifest.xml': 'app/src/main/AndroidManifest.xml',
+    'app-build.gradle.kts': 'app/build.gradle.kts',
+    'build.gradle.kts': 'build.gradle.kts',
+    'settings.gradle.kts': 'settings.gradle.kts',
+  };
 
   app.get('/api/android-tv/:filename', (req, res) => {
     const filename = req.params.filename;
-    if (!ALLOWED_TV_FILES.has(filename)) {
+    const relPath = TV_FILE_MAP[filename];
+    if (!relPath) {
       return res.status(404).json({ error: 'Bestand niet gevonden.' });
     }
     try {
-      const filePath = path.resolve(process.cwd(), 'android-tv', filename);
+      const filePath = path.resolve(process.cwd(), 'android-tv', relPath);
       const content = fs.readFileSync(filePath, 'utf-8');
       res.setHeader('Content-Type', 'text/plain; charset=utf-8');
       if (req.query.download === '1') {
-        res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+        const downloadName = filename === 'app-build.gradle.kts' ? 'build.gradle.kts' : filename;
+        res.setHeader('Content-Disposition', `attachment; filename="${downloadName}"`);
       }
       return res.send(content);
     } catch (err) {
       console.error('[BEkijk] /api/android-tv error:', err);
       return res.status(500).json({ error: 'Kon Android TV-bestand niet lezen.' });
+    }
+  });
+
+  app.get('/api/android-tv-project.zip', (_req, res) => {
+    try {
+      const tvRoot = path.resolve(process.cwd(), 'android-tv');
+      const zipBuffer = buildZipFromDirectory(tvRoot, 'BEkijk-android-tv');
+      res.setHeader('Content-Type', 'application/zip');
+      res.setHeader('Content-Disposition', 'attachment; filename="BEkijk-android-tv.zip"');
+      res.send(zipBuffer);
+    } catch (err) {
+      console.error('[BEkijk] /api/android-tv-project.zip error:', err);
+      res.status(500).json({ error: 'Kon Android TV-project niet inpakken.' });
     }
   });
 

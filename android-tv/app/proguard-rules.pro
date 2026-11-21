@@ -1,0 +1,3 @@
+-keepattributes *Annotation*,Signature,InnerClasses,EnclosingMethod
+-keep class be.bekijk.tv.data.** { *; }
+-keepclassmembers class be.bekijk.tv.data.** { *; }

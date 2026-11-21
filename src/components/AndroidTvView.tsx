@@ -8,10 +8,12 @@ interface AndroidTvViewProps {
 }
 
 const TV_FILES = [
-  { id: 'TvGuideScreen.kt', label: 'TvGuideScreen.kt', desc: 'Compose for TV scherm met Hero & D-pad rijen' },
+  { id: 'MainActivity.kt', label: 'MainActivity.kt', desc: 'Compose TV startscherm met data-lader & favorietenopslag' },
+  { id: 'TvGuideScreen.kt', label: 'TvGuideScreen.kt', desc: 'Compose for TV scherm met Hero, filters & live tijdlijn' },
   { id: 'TvAppLauncher.kt', label: 'TvAppLauncher.kt', desc: 'Intent launcher met Play Store & web fallback' },
-  { id: 'EpgModels.kt', label: 'EpgModels.kt', desc: 'Kotlin datamodellen & GitHub guide.json loader' },
-  { id: 'AndroidManifest.xml', label: 'AndroidManifest.xml', desc: 'Leanback launcher & Android 11+ <queries>' },
+  { id: 'EpgModels.kt', label: 'EpgModels.kt', desc: 'Kotlin datamodellen, Brussel-tijdhelpers & GitHub guide.json loader' },
+  { id: 'app-build.gradle.kts', label: 'app/build.gradle.kts', desc: 'Gradle APK-buildconfiguratie (Compose for TV 1.0.0 & SDK 35)' },
+  { id: 'AndroidManifest.xml', label: 'AndroidManifest.xml', desc: 'Leanback banner, launcher & Android 11+ <queries>' },
 ] as const;
 
 export function buildAndroidIntentUri(channel: Channel): string {
@@ -86,17 +88,27 @@ export function AndroidTvView({ channels, onLaunchTvSimulator }: AndroidTvViewPr
             Belgische Android TV-integratie
           </h1>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            Koppelt rechtstreeks de Belgische TV-apps via Android Intent deep-links, ondersteunt Android 11+ <code className="font-mono text-xs text-amber-300">&lt;queries&gt;</code> en leest jullie GitHub <code className="font-mono text-xs text-amber-300">guide.json</code> uit met D-pad focus voor het Hero-gedeelte.
+            Compleet Android Studio Gradle-project klaar voor een APK-build: bevat <code className="font-mono text-xs text-amber-300">MainActivity.kt</code>, adaptive TV-banner, Jetpack Compose for TV Hero &amp; tijdlijn en Android 11+ <code className="font-mono text-xs text-amber-300">&lt;queries&gt;</code> voor alle Belgische zenders.
           </p>
         </div>
-        <button
-          type="button"
-          onClick={onLaunchTvSimulator}
-          className="min-h-[48px] inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-amber-500 text-slate-950 font-semibold text-sm hover:bg-amber-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white transition-colors whitespace-nowrap shrink-0"
-        >
-          <Monitor className="w-4 h-4" />
-          <span>Open TV-Modus Simulator</span>
-        </button>
+        <div className="flex flex-wrap sm:flex-nowrap items-center gap-2.5 shrink-0">
+          <a
+            href="/api/android-tv-project.zip"
+            download="BEkijk-android-tv.zip"
+            className="min-h-[48px] inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-amber-500 text-slate-950 font-semibold text-sm hover:bg-amber-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white transition-colors whitespace-nowrap shrink-0"
+          >
+            <Download className="w-4 h-4" />
+            <span>Download APK-project (.zip)</span>
+          </a>
+          <button
+            type="button"
+            onClick={onLaunchTvSimulator}
+            className="min-h-[48px] inline-flex items-center justify-center gap-2.5 px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-slate-100 font-semibold text-sm hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 transition-colors whitespace-nowrap shrink-0"
+          >
+            <Monitor className="w-4 h-4" />
+            <span>Open TV-Modus</span>
+          </button>
+        </div>
       </section>
 
       {/* Verified Belgian Android TV Package IDs */}
