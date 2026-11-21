@@ -1,296 +1,229 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
-    <title>Cookie check</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-      :root {
-        color-scheme: light dark;
-      }
+#!/usr/bin/env python3
+"""Haalt de Belgische TV-gids (XMLTV van open-epg.com) op en schrijft guide.json.
 
-      body {
-        font-family: 'Inter', Helvetica, Arial, sans-serif;
-        background: light-dark(#F8F8F7, #191919);
-        color: light-dark(#1f1f1f, #e3e3e3);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        box-sizing: border-box;
-        min-height: 100vh;
-        margin: 0;
-        padding: 20px;
-        text-align: center;
-      }
+Het formaat van guide.json komt overeen met buildLegacyGuideExport() in
+src/server/epgService.ts: primetime-venster van 17:00 tot 02:00 (Brusselse tijd).
 
-      .container {
-        background: light-dark(#FFFFFF, #1F1F1F);
-        padding: 32px;
-        border-radius: 16px;
-        border: 1px solid light-dark(#E2E3E4, #3E3E3E);
-        max-width: min(80%, 500px);
-        width: 100%;
-        color: light-dark(#2B2D31, #D4D4D4);
-      }
+Gebruik:
+    python fetch_epg.py                 # live ophalen, schrijft guide.json
+    python fetch_epg.py bron.xml[.gz]   # lokaal XMLTV-bestand gebruiken (test)
+"""
+import gzip
+import json
+import re
+import sys
+import urllib.request
+import xml.etree.ElementTree as ET
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+from zoneinfo import ZoneInfo
 
-      h1 {
-        font-size: 20px;
-        font-weight: 500;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        color: light-dark(#2B2D31, #D4D4D4);
-      }
+EPG_URL = "https://www.open-epg.com/files/belgium.xml.gz"
+TZ = ZoneInfo("Europe/Brussels")
+OUTPUT = Path("guide.json")
+WINDOW_START_HOUR = 17
+WINDOW_HOURS = 9  # 17:00 -> 02:00
 
-      p {
-        font-size: 14px;
-        color: light-dark(#2B2D31, #D4D4D4);
-        line-height: 21px;
-        margin: 0 0 1.5rem 0;
-      }
+# (id, name, category, app, androidPackage, deepLink, exactIds, keywords, excludeKeywords)
+CHANNELS = [
+    ("vrt1", "VRT 1", "vlaams", "VRT MAX", "be.vrt.vrtnu",
+     "https://www.vrt.be/vrtmax/livestream/video/vrt1/",
+     ["vrt1.be", "een.be"], ["vrt 1", "vrt1", "een.be"], []),
+    ("canvas", "VRT Canvas", "vlaams", "VRT MAX", "be.vrt.vrtnu",
+     "https://www.vrt.be/vrtmax/livestream/video/canvas/",
+     ["canvas.be"], ["canvas", "vrt canvas"], []),
+    ("vtm", "VTM", "vlaams", "VTM GO", "be.vmma.vtm.zenderapp",
+     "https://www.vtmgo.be/vtmgo/live-kijken/vtm",
+     ["vtm.be"], ["vtm.be", "vtm hd", "vtm"],
+     ["vtm 2", "vtm2", "vtm 3", "vtm3", "vtm 4", "vtm4", "gold", "series", "xmas"]),
+    ("play4", "Play", "vlaams", "GoPlay", "be.goplay.app",
+     "https://www.goplay.be/tv-gids",
+     ["play.be", "play4.be"], ["play.be", "play4", "play 4", "vier"],
+     ["fictie", "actie", "reality", "crime", "more", "sports", "playboy"]),
+    ("vtm2", "VTM 2", "vlaams", "VTM GO", "be.vmma.vtm.zenderapp",
+     "https://www.vtmgo.be/vtmgo/live-kijken/vtm2",
+     ["vtm2.be"], ["vtm 2", "vtm2"], []),
+    ("play5", "Play Fictie", "vlaams", "GoPlay", "be.goplay.app",
+     "https://www.goplay.be/tv-gids",
+     ["playfictie.be", "play5.be"],
+     ["play fictie", "playfictie", "play5", "play 5", "vijf"], []),
+    ("play6", "Play Actie", "vlaams", "GoPlay", "be.goplay.app",
+     "https://www.goplay.be/tv-gids",
+     ["playactie.be", "play6.be"],
+     ["play actie", "playactie", "play6", "play 6", "zes"], []),
+    ("vtm3", "VTM 3", "vlaams", "VTM GO", "be.vmma.vtm.zenderapp",
+     "https://www.vtmgo.be/vtmgo/live-kijken/vtm3",
+     ["vtm3.be"], ["vtm 3", "vtm3"], []),
+    ("vtm4", "VTM 4", "vlaams", "VTM GO", "be.vmma.vtm.zenderapp",
+     "https://www.vtmgo.be/vtmgo/live-kijken/vtm4",
+     ["vtm4.be"], ["vtm 4", "vtm4"], []),
+    ("ketnet", "Ketnet", "vlaams", "VRT MAX", "be.vrt.vrtnu",
+     "https://www.vrt.be/vrtmax/livestream/video/ketnet/",
+     ["ketnet.be"], ["ketnet"], []),
+    ("laune", "La Une", "waals", "RTBF Auvio", "be.rtbf.auvio",
+     "https://auvio.rtbf.be/direct",
+     ["laune.be"], ["la une", "laune"], []),
+    ("tipik", "Tipik", "waals", "RTBF Auvio", "be.rtbf.auvio",
+     "https://auvio.rtbf.be/direct",
+     ["tipik.be"], ["tipik"], ["vision", "radio"]),
+    ("rtltvi", "RTL TVI", "waals", "RTL play", "com.tapptic.rtl.tvi",
+     "https://www.rtlplay.be/direct",
+     ["rtltvi.be"], ["rtl tvi", "rtltvi", "rtl-tvi"], []),
+    ("rtlclub", "RTL club", "waals", "RTL play", "com.tapptic.rtl.tvi",
+     "https://www.rtlplay.be/direct",
+     ["rtlclub.be"], ["rtl club", "rtlclub"], []),
+    ("arte", "ARTE", "waals", "ARTE", "tv.arte.plus7",
+     "https://www.arte.tv/fr/direct/",
+     ["artebelgique.be", "arte.be"], ["arte"], []),
+    ("npo1", "NPO 1", "nl", "NPO Start", "nl.uitzendinggemist",
+     "https://npo.nl/start/live?channel=NPO1",
+     ["npo1.be"], ["npo 1", "npo1"], []),
+]
 
-      .icon {
-        margin-bottom: 1rem;
-        line-height: 0;
-      }
+# Volgorde en selectie van guide.json (zoals buildLegacyGuideExport)
+EXPORT_IDS = ["vrt1", "canvas", "vtm", "vtm2", "play4", "play5", "laune", "rtltvi", "arte"]
 
-      .button-container {
-        display: flex;
-        justify-content: flex-end;
-        gap: 10px;
-        margin-top: 2rem;
-      }
+GENRE_RULES = [
+    ("Jeugd", r"\b(ketnet|karrewiet|kabouter|samson|maya|smurfen|kinderen)\b"),
+    ("Nieuws & Actua", r"\b(journaal|nws|nieuws|weerbericht|het weer|terzake|de afspraak|météo|journal|jt |info|aktuell|actua)\b"),
+    ("Sport", r"\b(sport|voetbal|wielrennen|koers|sporza|champions league|formule 1|grand prix|tennis|veldrijden|jupiler|pro league)\b"),
+    ("Film", r"\b(film|movie|bioscoop|thriller|komedie|action|actiefilm|sciencefiction|romantische komedie|regie:|met o\.a\.)\b"),
+    ("Documentaire", r"\b(documentaire|docu|panorama|pano|vranckx|reizen|natuur|geschiedenis|erfgoed|wetenschap|arte reportage)\b"),
+    ("Serie & Fictie", r"\b(thuis|familie|serie|aflevering|seizoen|season|episode|politieserie|misdaadserie|drama)\b"),
+    ("Entertainment", r"\b(blokken|slimste mens|komen eten|the voice|blind getrouwd|quiz|spelprogramma|show|muziek|concert|talkshow)\b"),
+]
 
-      button {
-        background-color: light-dark(#fff, #323232);
-        color: light-dark(#2B2D31, #FCFCFC);
-        border: 1px solid light-dark(#E2E3E4, #3E3E3E);
-        border-radius: 12px;
-        padding: 8px 12px;
-        font-size: 14px;
-        line-height: 21px;
-        cursor: pointer;
-        transition: background-color 0.2s;
-        font-weight: 400;
-        font-family: 'Inter', Helvetica, Arial, sans-serif;
-        width: 100%;
-      }
 
-      button:hover {
-        background-color: light-dark(#EAEAEB, #424242);
-      }
+def infer_genre(raw_category, title, desc, channel_id):
+    if raw_category and raw_category.lower() not in ("tv", "unknown"):
+        return raw_category
+    text = f"{title} {desc}".lower()
+    if channel_id == "ketnet":
+        return "Jeugd"
+    for genre, pattern in GENRE_RULES:
+        if re.search(pattern, text):
+            return genre
+    return "Programma"
 
-      .hidden {
-        display: none;
-      }
 
-      /* Loading Spinner Animation */
-      .spinner {
-        margin: 0 auto 1.5rem auto;
-        width: 40px;
-        height: 40px;
-        border: 4px solid light-dark(#f0f0f0, #262626);
-        border-top: 4px solid light-dark(#076eff, #87a9ff); /* Blue color */
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-      }
+def match_channel(xml_id, display_name):
+    id_lower = xml_id.strip().lower()
+    combined = f"{xml_id} {display_name}".lower()
+    for ch in CHANNELS:
+        if id_lower in ch[6]:
+            return ch[0]
+    for ch in CHANNELS:
+        if any(ex in combined for ex in ch[8]):
+            continue
+        if any(kw in combined for kw in ch[7]):
+            return ch[0]
+    return None
 
-      .logo {
-        border-radius: 10px;
-        display: block;
-        margin: 0 auto 2rem auto;
-      }
 
-      .logo.hidden {
-        display: none;
-      }
+def parse_ts(raw):
+    """XMLTV-tijdstip ('20261121173000 +0100') -> aware datetime (UTC)."""
+    m = re.match(r"^(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})(?:\s*([+-])(\d{2})(\d{2}))?", (raw or "").strip())
+    if not m:
+        return None
+    y, mo, d, h, mi, s = (int(x) for x in m.groups()[:6])
+    dt = datetime(y, mo, d, h, mi, s, tzinfo=timezone.utc)
+    if m.group(7):
+        offset = (int(m.group(8)) * 60 + int(m.group(9))) * (1 if m.group(7) == "+" else -1)
+        dt -= timedelta(minutes=offset)
+    return dt
 
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <img
-        class="logo"
-        src="https://www.gstatic.com/images/branding/productlogos/ai_studio/v1/web-512dp/logo_ai_studio_color_1x_web_512dp.png"
-        alt="AI Studio Logo"
-        width="256"
-        height="256"
-      />
-      <div class="spinner"></div>
-      <div id="error-ui" class="hidden">
-        <div class="icon">
-          <svg
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            width="48px"
-            height="48px"
-            fill="#D73A49"
-          >
-            <path
-              d="M12,2C6.486,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.514,2,12,2z M13,17h-2v-2h2V17z M13,13h-2V7h2V13z"
-            />
-          </svg>
-        </div>
-        <div id="stepOne" class="text-container">
-          <h1>Action required to load your app</h1>
-          <p>
-            It looks like your browser is blocking a required security cookie, which is common on
-            older versions of iOS and Safari.
-          </p>
-          <div class="button-container">
-            <button id="authInSeparateWindowButton" onclick="redirectToReturnUrl(true)">Authenticate in new window</button>
-          </div>
-        </div>
-        <div id="stepTwo" class="text-container hidden">
-          <h1>Action required to load your app</h1>
-          <p>
-            It looks like your browser is blocking a required security cookie, which is common on
-            older versions of iOS and Safari.
-          </p>
-          <div class="button-container">
-            <button id="interactButton" onclick="redirectToReturnUrl(false)">Close and continue</button>
-          </div>
-        </div>
-        <div id="stepThree" class="text-container hidden">
-          <h1>Almost there!</h1>
-          <p>
-            Grant permission for the required security cookie below.
-          </p>
-          <div class="button-container">
-            <button id="grantPermissionButton" onclick="grantStorageAccess()">Grant permission</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script>
-      const AUTH_FLOW_TEST_COOKIE_NAME = '__SECURE-aistudio_auth_flow_may_set_cookies';
-      const COOKIE_VALUE = 'true';
 
-      function getCookie(name) {
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-          let cookie = cookies[i].trim();
-          if (cookie.startsWith(name + '=')) {
-            return cookie.substring(name.length + 1);
-          }
-        }
-        return null;
-      }
+def first_text(elem, tag):
+    child = elem.find(tag)
+    return (child.text or "").strip() if child is not None else ""
 
-      function setAuthFlowTestCookie() {
-        // Set the cookie's TTL to 1 minute. This is a short lived cookie because it is only used
-        // when the user does not have an auth token or their auth token needs to be reset.
-        // Making this cookie too long-lived allows the user to get into a state where they can't
-        // mint a new auth token.
-        document.cookie = `${AUTH_FLOW_TEST_COOKIE_NAME}=${COOKIE_VALUE}; Path=/; Secure; SameSite=None; Domain=${window.location.hostname}; Partitioned; Max-Age=60;`;
-      }
 
-      /**
-       * Returns true if the test cookie is set, false otherwise.
-       */
-      function authFlowTestCookieIsSet() {
-        return getCookie(AUTH_FLOW_TEST_COOKIE_NAME) === COOKIE_VALUE;
-      }
+def load_xml(source):
+    if source:
+        raw = Path(source).read_bytes()
+    else:
+        req = urllib.request.Request(EPG_URL, headers={"User-Agent": "BEkijk-EPG/1.0"})
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            raw = resp.read()
+    if raw[:2] == b"\x1f\x8b":
+        raw = gzip.decompress(raw)
+    return ET.fromstring(raw)
 
-      /**
-       * Redirects to the return url. If autoClose is true, then the return url will be opened in a
-       * new window, and it will be closed automatically when the page loads.
-       * Options:
-       *   storageAccessGranted: if true, appends __storage_access_granted=1 to
-       *   the return url so the Lua auth script can set the test cookie
-       *   server-side (needed for Safari/iOS where document.cookie is blocked).
-       */
-      async function redirectToReturnUrl(autoClose, storageAccessGranted = false) {
-        const initialReturnUrlStr = new URLSearchParams(window.location.search).get('return_url');
-        const returnUrl = initialReturnUrlStr ? new URL(initialReturnUrlStr) : null;
 
-        // Prevent potentially malicious URLs from being used
-        if (returnUrl.protocol.toLowerCase() === 'javascript:') {
-          console.error('Potentially malicious return URL blocked');
-          return;
-        }
+def main():
+    source = sys.argv[1] if len(sys.argv) > 1 else None
+    root = load_xml(source)
+    if root.tag != "tv":
+        raise SystemExit(f"Ongeldig XMLTV-bestand: root is <{root.tag}>, verwacht <tv>")
 
-        if (storageAccessGranted) {
-          returnUrl.searchParams.set('__storage_access_granted', '1');
-        }
+    xml_to_key, claimed = {}, set()
+    for ch in root.findall("channel"):
+        xml_id = ch.get("id", "")
+        key = match_channel(xml_id, first_text(ch, "display-name"))
+        if key and key not in claimed:
+            xml_to_key[xml_id] = key
+            claimed.add(key)
 
-        if (autoClose) {
-          returnUrl.searchParams.set('__auto_close', '1');
-          const url = new URL(window.location.href);
-          url.searchParams.set('return_url', returnUrl.toString());
-          // Land on the cookie check page first, so the user can interact with it before proceeding
-          // to the return url where cookies can be set.
-          window.open(url.toString(), '_blank');
-          const hasAccess = await document.hasStorageAccess();
-          document.querySelector('#stepOne').classList.add('hidden');
-          if (!hasAccess) {
-            document.querySelector('#stepThree').classList.remove('hidden');
-          } else {
-            window.location.reload();
-          }
-        } else {
-          window.location.href = returnUrl.toString();
-        }
-      }
+    now = datetime.now(TZ)
+    window_start = now.replace(hour=WINDOW_START_HOUR, minute=0, second=0, microsecond=0)
+    window_end = window_start + timedelta(hours=WINDOW_HOURS)
 
-      /**
-       * Grants the browser permission to set cookies. If successful, then it redirects to the
-       * return url.
-       */
-      async function grantStorageAccess() {
-        try {
-          await document.requestStorageAccess();
-          // Recent Safari/iOS versions block document.cookie entirely in
-          // cross-site iframes, even after requestStorageAccess(). Only
-          // server-side Set-Cookie headers work. Signal to the Lua auth script
-          // via query param so it can set the test cookie server-side.
-          redirectToReturnUrl(false, /* storageAccessGranted= */ true);
-        } catch (err) {
-          console.log('error after button click: ', err);
-        }
-      }
+    programs = {ch[0]: [] for ch in CHANNELS}
+    for prog in root.findall("programme"):
+        key = xml_to_key.get(prog.get("channel", ""))
+        if not key:
+            continue
+        start, end = parse_ts(prog.get("start")), parse_ts(prog.get("stop"))
+        if not start or not end or end <= start:
+            continue
+        start, end = start.astimezone(TZ), end.astimezone(TZ)
+        if end <= window_start or start >= window_end:
+            continue
 
-      /**
-       * Verifies that the browser can set cookies. If it can, then it redirects to the return url.
-       * If it can't, then it shows the error UI.
-       */
-      function verifyCanSetCookies() {
-        setAuthFlowTestCookie();
-        if (authFlowTestCookieIsSet()) {
-          // Check if we are on the auto-close flow, and if so show the interact button.
-          const returnUrl = new URLSearchParams(window.location.search).get('return_url');
-          const autoClose = new URL(returnUrl).searchParams.has('__auto_close');
-          if (autoClose) {
-            document.querySelector('#stepOne').classList.add('hidden');
-            document.querySelector('#stepTwo').classList.remove('hidden');
-          } else {
-            redirectToReturnUrl(false);
-            return;
-          }
-        }
-        // The cookie could not be set, so initiate the recovery flow.
-        document.querySelector('.logo').classList.add('hidden');
-        document.querySelector('.spinner').classList.add('hidden');
-        document.querySelector('#error-ui').classList.remove('hidden');
-      }
+        title = first_text(prog, "title") or "Geen titel"
+        desc = first_text(prog, "desc") or "Geen beschrijving beschikbaar."
+        if len(desc) > 320:
+            desc = desc[:317] + "..."
+        clamped_start, clamped_end = max(start, window_start), min(end, window_end)
+        duration = round((clamped_end - clamped_start).total_seconds() / 60)
+        programs[key].append({
+            "title": title,
+            "start": start.strftime("%H:%M"),
+            "end": end.strftime("%H:%M"),
+            "startMins": max(0, int((clamped_start - window_start).total_seconds() // 60)),
+            "durationMins": max(15, duration),
+            "genre": infer_genre(first_text(prog, "category"), title, desc, key),
+            "desc": desc,
+            "_sort": start,
+        })
 
-      // Start the cookie verification process.
-      verifyCanSetCookies();
-    </script>
-  </body>
-</html>
+    by_id = {ch[0]: ch for ch in CHANNELS}
+    channels = []
+    for cid in EXPORT_IDS:
+        _, name, category, app, package, deep_link, *_ = by_id[cid]
+        items = sorted(programs[cid], key=lambda p: p["_sort"])
+        for p in items:
+            p.pop("_sort")
+        channels.append({
+            "id": cid, "name": name, "category": category, "app": app,
+            "androidPackage": package, "deepLink": deep_link, "programs": items,
+        })
+
+    total = sum(len(c["programs"]) for c in channels)
+    empty = [c["id"] for c in channels if not c["programs"]]
+    if total == 0:
+        # Liever een mislukte run dan een lege guide.json die de goede overschrijft.
+        raise SystemExit("Geen enkel programma gevonden in het venster; guide.json niet overschreven.")
+    if empty:
+        print(f"Waarschuwing: geen programma's voor {', '.join(empty)}", file=sys.stderr)
+
+    OUTPUT.write_text(json.dumps({
+        "updatedAt": now.strftime("%Y-%m-%d %H:%M"),
+        "windowStartHour": WINDOW_START_HOUR,
+        "channels": channels,
+    }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"guide.json geschreven: {len(channels)} zenders, {total} programma's")
+
+
+if __name__ == "__main__":
+    main()
