@@ -6,3 +6,10 @@ coverage/
 *.log
 .env*
 !.env.example
+# Android Studio
+android-tv/.gradle/
+android-tv/.idea/
+android-tv/local.properties
+
+# Build outputs
+android-tv/**/build/
