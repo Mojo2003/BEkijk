@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="BEkijk app icon">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#16447A"/><stop offset=".55" stop-color="#102747"/><stop offset="1" stop-color="#081321"/></linearGradient>
+ <linearGradient id="arc" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#FFD21F"/><stop offset=".55" stop-color="#FF8A16"/><stop offset="1" stop-color="#E52B36"/></linearGradient>
+ <linearGradient id="play" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#B9D8FF"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="512" height="512" rx="112" fill="url(#bg)"/>
+<path d="M-40 420 Q190 180 570 60" fill="none" stroke="#2676D2" stroke-opacity=".16" stroke-width="68"/>
+<g transform="translate(0 4)" filter="url(#glow)">
+ <path d="M256 140 L190 76 M256 140 L322 76" fill="none" stroke="#F4F6FA" stroke-width="19" stroke-linecap="round"/>
+ <rect x="105" y="140" width="302" height="220" rx="38" fill="none" stroke="#F4F6FA" stroke-width="19"/>
+ <path d="M226 198 Q211 190 211 209 V291 Q211 310 228 300 L302 259 Q319 249 302 239 Z" fill="url(#play)"/>
+ <path d="M65 386 Q256 245 447 386" fill="none" stroke="url(#arc)" stroke-width="25" stroke-linecap="round"/>
+</g>
+</svg>
