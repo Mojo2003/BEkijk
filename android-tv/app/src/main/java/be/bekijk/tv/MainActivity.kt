@@ -29,11 +29,18 @@ class MainActivity : ComponentActivity() {
         val initialFavs = prefs.getStringSet("favorite_channels", setOf("vrt1", "canvas", "vtm", "play4"))
             ?: setOf("vrt1", "canvas", "vtm", "play4")
 
+        val initialProgramFavs = prefs.getStringSet("favorite_programs", emptySet<String>())
+            ?: emptySet()
+
         setContent {
             BEkijkTvApp(
                 initialFavorites = initialFavs,
                 onPersistFavorites = { updated ->
                     prefs.edit().putStringSet("favorite_channels", updated).apply()
+                },
+                initialFavoritePrograms = initialProgramFavs,
+                onPersistFavoritePrograms = { updated ->
+                    prefs.edit().putStringSet("favorite_programs", updated).apply()
                 }
             )
         }
@@ -44,13 +51,16 @@ class MainActivity : ComponentActivity() {
 @Composable
 private fun BEkijkTvApp(
     initialFavorites: Set<String>,
-    onPersistFavorites: (Set<String>) -> Unit
+    onPersistFavorites: (Set<String>) -> Unit,
+    initialFavoritePrograms: Set<String>,
+    onPersistFavoritePrograms: (Set<String>) -> Unit
 ) {
     val scope = rememberCoroutineScope()
     var guide by remember { mutableStateOf<GuidePayload?>(null) }
     var loading by remember { mutableStateOf(true) }
     var errorMsg by remember { mutableStateOf<String?>(null) }
     var favorites by remember { mutableStateOf(initialFavorites) }
+    var favoritePrograms by remember { mutableStateOf(initialFavoritePrograms) }
 
     fun loadGuide() {
         scope.launch {
@@ -139,6 +149,16 @@ private fun BEkijkTvApp(
                         }
                         favorites = next
                         onPersistFavorites(next)
+                    },
+                    favoritePrograms = favoritePrograms,
+                    onToggleFavoriteProgram = { key ->
+                        val next = if (favoritePrograms.contains(key)) {
+                            favoritePrograms - key
+                        } else {
+                            favoritePrograms + key
+                        }
+                        favoritePrograms = next
+                        onPersistFavoritePrograms(next)
                     },
                     onRefresh = { loadGuide() }
                 )
