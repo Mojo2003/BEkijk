@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+<title id="title">BEkijk logo</title><desc id="desc">A white television outline with a play symbol and a yellow-to-red arc above the BEkijk wordmark.</desc>
+<defs>
+  <linearGradient id="arc" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#FFD21F"/><stop offset=".55" stop-color="#FF8A16"/><stop offset="1" stop-color="#E52B36"/>
+  </linearGradient>
+  <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#F4F6FA"/><stop offset="1" stop-color="#B9D8FF"/>
+  </linearGradient>
+</defs>
+<g transform="translate(65 35)">
+  <path d="M190 72 L132 12 M190 72 L248 12" fill="none" stroke="#F4F6FA" stroke-width="18" stroke-linecap="round"/>
+  <rect x="72" y="72" width="236" height="170" rx="27" fill="none" stroke="#F4F6FA" stroke-width="18"/>
+  <path d="M170 112 Q160 106 160 120 V194 Q160 208 173 200 L238 164 Q250 157 238 149 Z" fill="url(#screen)"/>
+  <path d="M36 268 Q190 157 344 268" fill="none" stroke="url(#arc)" stroke-width="22" stroke-linecap="round"/>
+</g>
+<text x="455" y="285" font-family="Outfit,Arial,sans-serif" font-size="190" font-weight="700" letter-spacing="-8">
+<tspan fill="#FFD21F">BE</tspan><tspan fill="#F4F6FA">kijk</tspan></text>
+</svg>

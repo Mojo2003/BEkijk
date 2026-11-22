@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#102747"/><stop offset=".55" stop-color="#081321"/><stop offset="1" stop-color="#06101E"/></linearGradient>
+ <radialGradient id="halo"><stop stop-color="#1D5BA0" stop-opacity=".48"/><stop offset="1" stop-color="#102747" stop-opacity="0"/></radialGradient>
+ <linearGradient id="arc"><stop stop-color="#FFD21F"/><stop offset=".55" stop-color="#FF8A16"/><stop offset="1" stop-color="#E52B36"/></linearGradient>
+</defs>
+<rect width="1920" height="1080" fill="url(#bg)"/>
+<ellipse cx="960" cy="470" rx="700" ry="510" fill="url(#halo)"/>
+<path d="M0 960 Q420 740 860 940 T1920 820" fill="none" stroke="#1B5797" stroke-opacity=".12" stroke-width="100"/>
+<g transform="translate(560 285) scale(1.1)">
+ <path d="M360 92 L275 5 M360 92 L445 5" fill="none" stroke="#F4F6FA" stroke-width="24" stroke-linecap="round"/>
+ <rect x="185" y="92" width="350" height="250" rx="42" fill="none" stroke="#F4F6FA" stroke-width="24"/>
+ <path d="M325 155 Q307 145 307 168 V265 Q307 288 327 276 L418 226 Q438 214 418 202 Z" fill="#F4F6FA"/>
+ <path d="M110 382 Q360 205 610 382" fill="none" stroke="url(#arc)" stroke-width="30" stroke-linecap="round"/>
+</g>
+<text x="960" y="830" text-anchor="middle" font-family="Outfit,Arial,sans-serif" font-size="150" font-weight="700" letter-spacing="-5"><tspan fill="#FFD21F">BE</tspan><tspan fill="#F4F6FA">kijk</tspan></text>
+<path d="M860 900 H1060" stroke="#FFD21F" stroke-width="5" stroke-linecap="round" opacity=".9"/>
+<path d="M1060 900 H1120" stroke="#E52B36" stroke-width="5" stroke-linecap="round" opacity=".9"/>
+</svg>
