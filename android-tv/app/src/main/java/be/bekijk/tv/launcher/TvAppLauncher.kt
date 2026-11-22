@@ -18,11 +18,15 @@ object TvAppLauncher {
         "NPO Start" to "nl.uitzendinggemist"
     )
 
+    // Apps waarvan de TV-versie bij een web-deeplink alleen een QR-code toont.
+    // Voor deze apps openen we direct de app zelf (scheelt een keer Terug).
+    private val PACKAGES_WITHOUT_TV_DEEPLINK = setOf("be.vrt.vrtnu")
+
     fun openChannel(context: Context, channel: ChannelDto) {
         val pkg = channel.androidPackage.ifBlank { FALLBACK_PACKAGES[channel.app].orEmpty() }
 
         // 1. Probeer rechtstreeks de livestream deep-link te openen in de Android TV-app
-        if (pkg.isNotBlank() && channel.deepLink.isNotBlank()) {
+        if (pkg.isNotBlank() && channel.deepLink.isNotBlank() && pkg !in PACKAGES_WITHOUT_TV_DEEPLINK) {
             val deepIntent = Intent(Intent.ACTION_VIEW, Uri.parse(channel.deepLink)).apply {
                 setPackage(pkg)
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)

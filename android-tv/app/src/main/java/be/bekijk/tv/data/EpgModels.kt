@@ -13,6 +13,8 @@ import java.util.TimeZone
 data class GuidePayload(
     val updatedAt: String,
     val windowStartHour: Int = 6,
+    // Begin van het venster in ms sinds epoch (UTC). 0 = onbekend (oudere guide.json).
+    val windowStartTs: Long = 0L,
     val channels: List<ChannelDto>
 )
 
@@ -47,7 +49,10 @@ enum class ProgramStatus {
 object EpgTimeHelper {
     private val brusselsTz = TimeZone.getTimeZone("Europe/Brussels")
 
-    fun currentMinutesSinceWindow(windowStartHour: Int): Int {
+    fun currentMinutesSinceWindow(windowStartHour: Int, windowStartTs: Long = 0L): Int {
+        if (windowStartTs > 0L) {
+            return ((System.currentTimeMillis() - windowStartTs) / 60_000L).toInt()
+        }
         val cal = Calendar.getInstance(brusselsTz)
         var hour = cal.get(Calendar.HOUR_OF_DAY)
         val minute = cal.get(Calendar.MINUTE)
