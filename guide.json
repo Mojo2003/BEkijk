@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22 04:48",
+  "updatedAt": "2026-11-22 05:01",
   "windowStartHour": 6,
   "windowStartTs": 1795237200000,
   "channels": [
@@ -10,6 +10,8 @@
       "app": "VRT MAX",
       "androidPackage": "be.vrt.vrtnu",
       "deepLink": "https://www.vrt.be/vrtmax/livestream/video/vrt1/",
+      "shortName": "VRT 1",
+      "accentColor": "#00A8E8",
       "programs": [
         {
           "title": "Mr Magoo",
@@ -740,6 +742,8 @@
       "app": "VRT MAX",
       "androidPackage": "be.vrt.vrtnu",
       "deepLink": "https://www.vrt.be/vrtmax/livestream/video/canvas/",
+      "shortName": "CANVAS",
+      "accentColor": "#38BDF8",
       "programs": [
         {
           "title": "Nachtlus",
@@ -1002,6 +1006,8 @@
       "app": "VTM GO",
       "androidPackage": "be.vmma.vtm.zenderapp",
       "deepLink": "https://www.vtmgo.be/vtmgo/live-kijken/vtm",
+      "shortName": "VTM",
+      "accentColor": "#F59E0B",
       "programs": [
         {
           "title": "Geen uitzending.",
@@ -1534,6 +1540,8 @@
       "app": "VTM GO",
       "androidPackage": "be.vmma.vtm.zenderapp",
       "deepLink": "https://www.vtmgo.be/vtmgo/live-kijken/vtm2",
+      "shortName": "VTM 2",
+      "accentColor": "#FB923C",
       "programs": [
         {
           "title": "Geen uitzending.",
@@ -1799,12 +1807,959 @@
       ]
     },
     {
+      "id": "vtm3",
+      "name": "VTM 3",
+      "category": "vlaams",
+      "app": "VTM GO",
+      "androidPackage": "be.vmma.vtm.zenderapp",
+      "deepLink": "https://www.vtmgo.be/vtmgo/live-kijken/vtm3",
+      "shortName": "VTM 3",
+      "accentColor": "#FBBF24",
+      "programs": [
+        {
+          "title": "Volgend programma om 14:05",
+          "start": "04:45",
+          "end": "07:45",
+          "startMins": 0,
+          "durationMins": 105,
+          "genre": "Programma",
+          "desc": "Volgend programma om 14:05"
+        },
+        {
+          "title": "Volgend programma om 14:05",
+          "start": "07:45",
+          "end": "10:45",
+          "startMins": 105,
+          "durationMins": 180,
+          "genre": "Programma",
+          "desc": "Volgend programma om 14:05"
+        },
+        {
+          "title": "Volgend programma om 14:05",
+          "start": "10:45",
+          "end": "13:45",
+          "startMins": 285,
+          "durationMins": 180,
+          "genre": "Programma",
+          "desc": "Volgend programma om 14:05"
+        },
+        {
+          "title": "Volgend programma om 14:05",
+          "start": "13:45",
+          "end": "14:05",
+          "startMins": 465,
+          "durationMins": 20,
+          "genre": "Programma",
+          "desc": "Volgend programma om 14:05"
+        },
+        {
+          "title": "Chicago Med",
+          "start": "14:05",
+          "end": "15:00",
+          "startMins": 485,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "The Clothes Make the Man... or Do They?, Wanneer er geen operatiekledij meer beschikbaar is, moeten de artsen en verpleegkundigen improviseren. Het leven van Sean, de zoon van Archer, is in gevaar nadat hij in de gevangenis werd neergestoken. Een vrouw die een jaar geleden een transplantatie onderging, belandt opnie..."
+        },
+        {
+          "title": "Suits",
+          "start": "15:00",
+          "end": "15:45",
+          "startMins": 540,
+          "durationMins": 45,
+          "genre": "Programma",
+          "desc": "Pilot, Harvey Specter is een van Manhattans beste advocaten. De advocatuur zit hem in het bloed. Dankzij zijn succes, wordt Harvey gepromoveerd tot senior partner in Pearson Harden, het bedrijf waar hij werkt. Zijn baas, Jessica Pearson, draagt hem echter op een nieuwe partner in dienst te nemen. Zo komt hij in cont..."
+        },
+        {
+          "title": "Suits",
+          "start": "15:45",
+          "end": "16:40",
+          "startMins": 585,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "Pilot - Part 2, Mike Ross heeft zijn studies nooit afgemaakt, maar toch is de succesvolle advocaat Harvey Specter onder de indruk van de scherpheid van Mike, zijn encyclopedische kennis van de wet en zijn oprechte wil om advocaat te worden: hierdoor besluit Harvey Mike aan te nemen en doen ze alsof hij afgestudeerd ..."
+        },
+        {
+          "title": "Suits",
+          "start": "16:40",
+          "end": "17:35",
+          "startMins": 640,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "Errors and omissions, Mike en Harvey vertegenwoordigen Wyatt, een kapitalist die een satelliettelefoon heeft uitgevonden die in een binnenzak past. Harvey vraagt Mike het patent te updaten en in orde te brengen. Harvey ontdekt dat de rechter die deze zaak behartigt, in een persoonlijke vendetta met hem verwikkeld is..."
+        },
+        {
+          "title": "Suits",
+          "start": "17:35",
+          "end": "18:30",
+          "startMins": 695,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "Inside track, Jessica hoopt dat Harvey's promotie hem bij de firma kan houden. Maar wanneer er een crisis ontstaat met de eerste klant die hij binnenhaalde voor de firma gaat Harvey heel ver om het probleem op te lossen. Mike vraagt Rachel om hulp bij organiseren van een diner ( Een belangrijke traditie binnen het b..."
+        },
+        {
+          "title": "Lyle, Lyle, Crocodile",
+          "start": "18:30",
+          "end": "20:30",
+          "startMins": 750,
+          "durationMins": 120,
+          "genre": "Serie & Fictie",
+          "desc": "Wanneer de familie Primm in New York gaat wonen, heeft het jongste kind Josh het moeilijk met de nieuwe situatie. Maar dat verandert volledig als hij op de zolderverdieping van het huis nog een bewoner ontdekt: Lyle, een zingende krokodil die verzot is op kaviaar en muziek, en graag een bad neemt. De twee worden al ..."
+        },
+        {
+          "title": "Jack Reacher: Never Go Back",
+          "start": "20:30",
+          "end": "22:40",
+          "startMins": 870,
+          "durationMins": 130,
+          "genre": "Programma",
+          "desc": "Bij zijn terugkeer naar de militaire basis waar hij vroeger werkte, wacht Jack Reacher een onaangename verrassing. Zijn opvolgster, majoor Susan Turner, staat onder verdenking van verraad en zit achter de tralies. Bovendien krijgt Jack van een ex-prostituee te horen dat hij een dochter heeft. Jack zet alles op alles..."
+        },
+        {
+          "title": "American Pie: The Wedding",
+          "start": "22:40",
+          "end": "00:35",
+          "startMins": 1000,
+          "durationMins": 115,
+          "genre": "Programma",
+          "desc": "Jim heeft Michelle eindelijk ten huwelijk gevraagd en dus komen beide families samen om de bruiloft te organiseren. Geen gemakkelijke taak, want Jim moet ook nog eens een goede indruk maken op zijn schoonouders. De onaangekondigde komst van de onstuimige Stifler maakt dat extra moeilijk. Natuurlijk wordt er ook een ..."
+        },
+        {
+          "title": "Bel-Air",
+          "start": "00:35",
+          "end": "01:30",
+          "startMins": 1115,
+          "durationMins": 55,
+          "genre": "Serie & Fictie",
+          "desc": "The Strength to Smile, Om Lisa te steunen organiseert de familie Banks een evenement ter nagedachtenis aan haar moeder. Will schuift zijn gevoelens van wantrouwen aan de kant en neemt zijn verantwoordelijkheid."
+        },
+        {
+          "title": "Volgend programma om 13:20",
+          "start": "01:30",
+          "end": "04:30",
+          "startMins": 1170,
+          "durationMins": 180,
+          "genre": "Programma",
+          "desc": "Volgend programma om 13:20"
+        },
+        {
+          "title": "Volgend programma om 13:20",
+          "start": "04:30",
+          "end": "07:30",
+          "startMins": 1350,
+          "durationMins": 180,
+          "genre": "Programma",
+          "desc": "Volgend programma om 13:20"
+        },
+        {
+          "title": "Volgend programma om 13:20",
+          "start": "07:30",
+          "end": "10:30",
+          "startMins": 1530,
+          "durationMins": 180,
+          "genre": "Programma",
+          "desc": "Volgend programma om 13:20"
+        },
+        {
+          "title": "Volgend programma om 13:20",
+          "start": "10:30",
+          "end": "13:20",
+          "startMins": 1710,
+          "durationMins": 170,
+          "genre": "Programma",
+          "desc": "Volgend programma om 13:20"
+        },
+        {
+          "title": "Chicago Med",
+          "start": "13:20",
+          "end": "14:10",
+          "startMins": 1880,
+          "durationMins": 50,
+          "genre": "Documentaire",
+          "desc": "Everyone's Fighting a Battle You Know Nothing About, Choi en Charles duiken in de medische geschiedenis van een patiënt en komen zo een fraudezaak in een ander ziekenhuis op het spoor. Een ritje in zijn gerestaureerde auto neemt een dramatische wending voor Grant en Maggie wanneer ze worden aangereden door een vrach..."
+        },
+        {
+          "title": "Lyle, Lyle, Krokodil",
+          "start": "14:10",
+          "end": "16:10",
+          "startMins": 1930,
+          "durationMins": 120,
+          "genre": "Serie & Fictie",
+          "desc": "Wanneer de familie Primm in New York gaat wonen, heeft het jongste kind Josh het moeilijk met de nieuwe situatie. Maar dat verandert volledig als hij op de zolderverdieping van het huis nog een bewoner ontdekt: Lyle, een zingende krokodil die verzot is op kaviaar en muziek, en graag een bad neemt. De twee worden al ..."
+        },
+        {
+          "title": "The Big Bang Theory",
+          "start": "16:10",
+          "end": "16:35",
+          "startMins": 2050,
+          "durationMins": 25,
+          "genre": "Programma",
+          "desc": "The Reclusive Potential, Sheldon neemt de jongens mee naar een hut in het hol van pluto om een wetenschapper te ontmoeten. Penny en Bernadette organiseren een geïmproviseerd vrijgezellenfeestje voor Amy."
+        },
+        {
+          "title": "The Big Bang Theory",
+          "start": "16:35",
+          "end": "17:05",
+          "startMins": 2075,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "The Comet Polarization, De ervaring van Sheldon in de stipboekenwinkel verandert wanneer schrijver Neil Gaiman reclame maakt voor de winkel van Stuart. Vriendschappen komen in het gedrang wanneer Koothrappali met de eer gaat lopen voor Penny's astronomische ontdekking."
+        },
+        {
+          "title": "The Big Bang Theory",
+          "start": "17:05",
+          "end": "17:30",
+          "startMins": 2105,
+          "durationMins": 25,
+          "genre": "Documentaire",
+          "desc": "The Monetary Insufficiency, Sheldon gaat naar Vegas om geld te winnen voor de wetenschap. Penny en Bernadette helpen Amy bij het kiezen van haar trouwkleed, maar haar vreselijke smaak gooit roet in het eten."
+        },
+        {
+          "title": "The Big Bang Theory",
+          "start": "17:30",
+          "end": "17:55",
+          "startMins": 2130,
+          "durationMins": 25,
+          "genre": "Programma",
+          "desc": "The Sibling Realignment, Sheldon en Leonard maken ruzie tijdens een roadtrip met een speciale huwelijksgast."
+        },
+        {
+          "title": "The Big Bang Theory",
+          "start": "17:55",
+          "end": "18:25",
+          "startMins": 2155,
+          "durationMins": 30,
+          "genre": "Serie & Fictie",
+          "desc": "The Bow Tie Asymmetry, Wanneer Amy's ouders en Sheldons familie aankomen, doet iedereen er alles aan om ervoor te zorgen dat alle trouwplannen vlekkeloos verlopen. Alleen de bruid en bruidegom lijken niet mee te willen werken."
+        },
+        {
+          "title": "The Big Bang Theory",
+          "start": "18:25",
+          "end": "18:50",
+          "startMins": 2185,
+          "durationMins": 25,
+          "genre": "Programma",
+          "desc": "The Conjugal Configuration, Na de bruiloft vertrekken Amy en Sheldon op hun huwelijksreis."
+        },
+        {
+          "title": "The Big Bang Theory",
+          "start": "18:50",
+          "end": "19:15",
+          "startMins": 2210,
+          "durationMins": 25,
+          "genre": "Programma",
+          "desc": "The Wedding Gift Wormhole, Leonard en Penny geven Amy en Sheldon een eigenaardig maar verbluffend huwelijkscadeau."
+        },
+        {
+          "title": "The Big Bang Theory",
+          "start": "19:15",
+          "end": "19:40",
+          "startMins": 2235,
+          "durationMins": 25,
+          "genre": "Programma",
+          "desc": "The Procreation Calculation, Howard en Bernadettes leven wordt heel wat ingewikkelder wanneer Stuart zijn nieuwe vriendin meebrengt. Penny en Leonard overwegen een gezin te starten."
+        },
+        {
+          "title": "The Big Bang Theory",
+          "start": "19:40",
+          "end": "20:05",
+          "startMins": 2260,
+          "durationMins": 25,
+          "genre": "Programma",
+          "desc": "The Tam Turbulence, Sheldon weigert te vertellen waarom hij zijn beste jeugdvriend Tam nooit heeft vermeld, waarna Leonard het heft in eigen handen neemt."
+        },
+        {
+          "title": "The Big Bang Theory",
+          "start": "20:05",
+          "end": "20:35",
+          "startMins": 2285,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "The Planetarium Collision, Amy heeft geen tijd om met Sheldon samen aan zijn theorie over superasymetrie te werken, dus doet hij er alles aan om te zorgen dat ze toch vrij is. Raj wil niet dat Howard samen met hem een voorstelling in het planetarium presenteert."
+        },
+        {
+          "title": "Torpedo",
+          "start": "20:35",
+          "end": "22:35",
+          "startMins": 2315,
+          "durationMins": 120,
+          "genre": "Programma",
+          "desc": "1943. Een bende keiharde Vlaamse rebellen krijgt een geheime missie: met een gekaapte Duitse U-Boot van Congo naar de Verenigde Staten varen, met aan boord een cargo die de uitkomst van de oorlog kan bepalen."
+        },
+        {
+          "title": "The Painter",
+          "start": "22:35",
+          "end": "00:30",
+          "startMins": 2435,
+          "durationMins": 85,
+          "genre": "Programma",
+          "desc": "Voormalig CIA-agent Peter leidt een teruggetrokken leven en schildert als hobby. Maar wanneer op een dag een mysterieuze vrouw uit zijn verleden opduikt, wordt hij onverwacht weer meegesleurd in de gevaarlijke wereld die hij achter zich wilde laten."
+        }
+      ]
+    },
+    {
+      "id": "vtm4",
+      "name": "VTM 4",
+      "category": "vlaams",
+      "app": "VTM GO",
+      "androidPackage": "be.vmma.vtm.zenderapp",
+      "deepLink": "https://www.vtmgo.be/vtmgo/live-kijken/vtm4",
+      "shortName": "VTM 4",
+      "accentColor": "#D97706",
+      "programs": [
+        {
+          "title": "Volgend programma om 07:00",
+          "start": "03:55",
+          "end": "06:55",
+          "startMins": 0,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "Volgend programma om 07:00"
+        },
+        {
+          "title": "Volgend programma om 07:00",
+          "start": "06:55",
+          "end": "07:00",
+          "startMins": 55,
+          "durationMins": 15,
+          "genre": "Programma",
+          "desc": "Volgend programma om 07:00"
+        },
+        {
+          "title": "Willy",
+          "start": "07:00",
+          "end": "10:00",
+          "startMins": 60,
+          "durationMins": 180,
+          "genre": "Programma",
+          "desc": "Radioprogramma. De Willy-dj's zorgen voor de beste platen met de nodige rock 'n roll."
+        },
+        {
+          "title": "Volgend programma om 14:35",
+          "start": "10:00",
+          "end": "13:00",
+          "startMins": 240,
+          "durationMins": 180,
+          "genre": "Programma",
+          "desc": "Volgend programma om 14:35"
+        },
+        {
+          "title": "Volgend programma om 14:35",
+          "start": "13:00",
+          "end": "14:35",
+          "startMins": 420,
+          "durationMins": 95,
+          "genre": "Programma",
+          "desc": "Volgend programma om 14:35"
+        },
+        {
+          "title": "Matlock",
+          "start": "14:35",
+          "end": "15:30",
+          "startMins": 515,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "The Husband, Diane Benson wordt verdacht van de moord op haar echtgenoot, nadat ze ontdekt had dat hij een dubbelleven leidde. Cassie vraagt Matlock om Diane te verdedigen. Tijdens zijn onderzoek ontdekt Matlock dat de man er nog een derde gezin op nahield."
+        },
+        {
+          "title": "Matlock",
+          "start": "15:30",
+          "end": "16:35",
+          "startMins": 570,
+          "durationMins": 65,
+          "genre": "Programma",
+          "desc": "The Power Brokers - part 1, Matlock neemt de zaak aan van een columniste die beschuldigd wordt van de moord op haar informant."
+        },
+        {
+          "title": "Zware jongens: Police Interceptors",
+          "start": "16:35",
+          "end": "17:30",
+          "startMins": 635,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": ", Het is Halloween en de agenten zitten een spookachtige 4x4 achterna waarvan de bestuurder verdacht wordt van brandstofdiefstal. Op de A1 zetten agenten de achtervolging in op een vrachtwagen die met een 18 ton zware lading over de weg scheurt."
+        },
+        {
+          "title": "Zware jongens: Police Interceptors",
+          "start": "17:30",
+          "end": "18:30",
+          "startMins": 690,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": ", Bij een inval in het huis van een vermoedelijke drugsdealer treffen de agenten in eerste instantie niets verdachts aan, tot ze drie zakken heroïne in de tuin van de buurman spotten. Een gezochte man wordt in de boeien geslagen."
+        },
+        {
+          "title": "Zware jongens: Police Interceptors",
+          "start": "18:30",
+          "end": "19:30",
+          "startMins": 750,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": ", Agent Spence gaat tot het uiterste om een voortvluchtige man op te pakken, maar komt zelf niet ongeschonden uit de strijd. Een ander team reageert op een oproep over een mogelijke schietpartij in de buitenwijken van Nottinghamshire. En een vermoedelijke drugsdealer wordt voor dag en dauw uit bed gelicht."
+        },
+        {
+          "title": "Zware jongens: Police Interceptors",
+          "start": "19:30",
+          "end": "20:30",
+          "startMins": 810,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": ", Agent Dan komt een gestolen wagen op het spoor. Na een turbulente achtervolging besluiten de vier inzittenden het op een lopen te zetten. Tijdens een surveillanceopdracht spotten Gav en Neil een dronken bestuurder."
+        },
+        {
+          "title": "Zware jongens: Police Interceptors",
+          "start": "20:30",
+          "end": "21:30",
+          "startMins": 870,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": ", Macca achtervolgt een gestolen Ford. De twee inzittenden zetten het uiteindelijk op een lopen, maar Macca is niet van plan om hen te laten ontsnappen. Rich en Ash moeten op zoek naar een man die mogelijks gewapend is."
+        },
+        {
+          "title": "Zware jongens: Police Interceptors",
+          "start": "21:30",
+          "end": "22:30",
+          "startMins": 930,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": ", Twee mannen in een busje laten een spoor van vernieling achter zich wanneer de politie hen op de hielen zit. Twee agenten raken hierbij gewond. Wanneer een gevecht op Mansfield Road uit de hand dreigt te lopen, komt agent Campin tussenbeide."
+        },
+        {
+          "title": "From Dusk Till Dawn",
+          "start": "22:30",
+          "end": "00:30",
+          "startMins": 990,
+          "durationMins": 120,
+          "genre": "Programma",
+          "desc": "De gebroeders Seth en Richard Gecko zijn op de vlucht richting Mexico, na een bloederige bankoverval in Texas. Maar ook onderweg laten ze een spoor van vernietiging en bloedvergieten na; vooral Richard kan zijn slechte kant maar niet beheersen. Om de grens ongemerkt over te kunnen gaan, gijzelen ze de getergde weduw..."
+        },
+        {
+          "title": "Sheriffs: El Dorado County",
+          "start": "00:30",
+          "end": "01:00",
+          "startMins": 1110,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": ", Het Special Enforcement-team maakt zich klaar om een arrestatiebevel voor diefstal en drugsbezit uit te voeren. Agenten betrappen minderjarigen die drugs en alcohol op zak hebben."
+        },
+        {
+          "title": "Volgend programma om 07:00",
+          "start": "01:00",
+          "end": "04:00",
+          "startMins": 1140,
+          "durationMins": 180,
+          "genre": "Programma",
+          "desc": "Volgend programma om 07:00"
+        },
+        {
+          "title": "Volgend programma om 07:00",
+          "start": "04:00",
+          "end": "07:00",
+          "startMins": 1320,
+          "durationMins": 180,
+          "genre": "Programma",
+          "desc": "Volgend programma om 07:00"
+        },
+        {
+          "title": "Willy",
+          "start": "07:00",
+          "end": "10:00",
+          "startMins": 1500,
+          "durationMins": 180,
+          "genre": "Programma",
+          "desc": "Radioprogramma. De Willy-dj's zorgen voor de beste platen met de nodige rock 'n roll."
+        },
+        {
+          "title": "Volgend programma om 14:30",
+          "start": "10:00",
+          "end": "13:00",
+          "startMins": 1680,
+          "durationMins": 180,
+          "genre": "Programma",
+          "desc": "Volgend programma om 14:30"
+        },
+        {
+          "title": "Volgend programma om 14:30",
+          "start": "13:00",
+          "end": "14:30",
+          "startMins": 1860,
+          "durationMins": 90,
+          "genre": "Programma",
+          "desc": "Volgend programma om 14:30"
+        },
+        {
+          "title": "Matlock",
+          "start": "14:30",
+          "end": "15:30",
+          "startMins": 1950,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "The Power Brokers - part 2, Matlock is nog steeds in shock nadat Melinda Stuart de moord waarvan ze beschuldigd wordt, bekend heeft. Intussen komt hij een samenzwering tussen politici en zakenlui op het spoor."
+        },
+        {
+          "title": "Matlock",
+          "start": "15:30",
+          "end": "16:30",
+          "startMins": 2010,
+          "durationMins": 60,
+          "genre": "Documentaire",
+          "desc": "The Network, Matlock en Michelle reizen naar Los Angeles om er tv-producer Paul Barthel te verdedigen. Hij wordt ervan beschuldigd zijn baas, Greg Titleman, te hebben vermoord."
+        },
+        {
+          "title": "Zware jongens: Police Interceptors",
+          "start": "16:30",
+          "end": "17:30",
+          "startMins": 2070,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": ", Agenten zitten twee verdachten in een wagen met valse nummerplaten achterna. Ze krijgen versterking van de politiehelikopter wanneer een spijkermat niet voldoende blijkt om het duo een halt toe te roepen en de twee het op een lopen zetten in een maïsveld. In Arnold houden Jon en Jules een bestuurder tegen die de t..."
+        },
+        {
+          "title": "Zware jongens: Police Interceptors",
+          "start": "17:30",
+          "end": "18:30",
+          "startMins": 2130,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": ", Agenten zitten twee verdachten in een wagen met valse nummerplaten achterna. Ze krijgen versterking van de politiehelikopter wanneer een spijkermat niet voldoende blijkt om het duo een halt toe te roepen en de twee het op een lopen zetten in een maïsveld. In Arnold houden Jon en Jules een bestuurder tegen die de t..."
+        },
+        {
+          "title": "Zware jongens: Police Interceptors",
+          "start": "18:30",
+          "end": "19:30",
+          "startMins": 2190,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": ", De bestuurder van een bestelwagen rijdt zichzelf vast in een doodlopende straat en zet het vervolgens op een lopen. Politiehond Yogi komt de man echter al gauw op het spoor. Een dronken bestuurder blijft volhouden dat hij niet gedronken heeft. In Newark houden agenten Phil en Pearce de bestuurder van een bestelwag..."
+        },
+        {
+          "title": "Zware jongens: Police Interceptors",
+          "start": "19:30",
+          "end": "20:30",
+          "startMins": 2250,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": ", Agenten houden een man in het oog die doodsbedreigingen heeft geuit en mogelijks in het bezit is van een mes. Hun dekmantel wordt echter onthuld door een onoplettende bestuurder die hun wagen aanrijdt, waarna de verdachte ervandoor gaat."
+        },
+        {
+          "title": "Police Interceptors",
+          "start": "20:30",
+          "end": "21:30",
+          "startMins": 2310,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": ", Dan en Jules van het Roads Crime Team achtervolgen een auto met verborgen nummerplaten. De bestuurder gaat er met een snelheid van 160 km/u vandoor, maar remt dan plots af, keert om en rijdt in tegengestelde richting verder over de A46. Na meldingen over een gewelddadige carjacking gaan agenten Nathan en Dom op zo..."
+        },
+        {
+          "title": "Police Interceptors",
+          "start": "21:30",
+          "end": "22:30",
+          "startMins": 2370,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": ", Interceptor Bertie zet de achtervolging in op een bestuurder die weigert te stoppen en die aan meer dan 100 km/u over de plattelandswegen scheurt. In Kettering spot agent Harrison tijdens een patrouille een gezochte verdachte. Wanneer hij de man wil aanspreken, kiest die het hazenpad. In Rushden bereidt een team z..."
+        },
+        {
+          "title": "L'aile ou la cuisse",
+          "start": "22:30",
+          "end": "00:35",
+          "startMins": 2430,
+          "durationMins": 90,
+          "genre": "Programma",
+          "desc": "Charles Duchemin is een fijnproever en uitgever van een Franse restaurantgids. Hij voert een privé-oorlog tegen de Tricatel fastfoodketen om de teloorgang van de Franse keuken te bestrijden. Nadat hij instemt om deel te nemen aan een televisieshow om zijn kennis van eten en wijn te etaleren, doen er zich twee rampen..."
+        }
+      ]
+    },
+    {
+      "id": "vtmgold",
+      "name": "VTM GOLD",
+      "category": "vlaams",
+      "app": "VTM GO",
+      "androidPackage": "be.vmma.vtm.zenderapp",
+      "deepLink": "https://www.vtmgo.be/vtmgo/live-kijken",
+      "shortName": "GOLD",
+      "accentColor": "#EAB308",
+      "programs": [
+        {
+          "title": "Joe",
+          "start": "06:00",
+          "end": "09:30",
+          "startMins": 0,
+          "durationMins": 210,
+          "genre": "Programma",
+          "desc": "Muziekprogramma."
+        },
+        {
+          "title": "Volgend programma om 10:00",
+          "start": "09:30",
+          "end": "10:00",
+          "startMins": 210,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Volgend programma om 10:00"
+        },
+        {
+          "title": "Joe",
+          "start": "10:00",
+          "end": "15:00",
+          "startMins": 240,
+          "durationMins": 300,
+          "genre": "Programma",
+          "desc": "Muziekprogramma."
+        },
+        {
+          "title": "Volgend programma om 15:30",
+          "start": "15:00",
+          "end": "15:30",
+          "startMins": 540,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Volgend programma om 15:30"
+        },
+        {
+          "title": "Joe",
+          "start": "15:30",
+          "end": "16:00",
+          "startMins": 570,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Muziekprogramma."
+        },
+        {
+          "title": "Volgend programma om 16:30",
+          "start": "16:00",
+          "end": "16:30",
+          "startMins": 600,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Volgend programma om 16:30"
+        },
+        {
+          "title": "Binnenstebuiten",
+          "start": "16:30",
+          "end": "17:00",
+          "startMins": 630,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Heet onder de voeten, Els probeert haar goede vriend en occasionele bedpartner Sander duidelijk te maken dat ze niet openstaat voor een relatie. Sander wil echter meer en denkt dat Els voor haar gevoelens op de vlucht is. De 30-jarige Alexander De Boeck heeft last van bindingsangst. Hij ziet zijn vriendin erg graag,..."
+        },
+        {
+          "title": "'Allo 'Allo!",
+          "start": "17:00",
+          "end": "17:35",
+          "startMins": 660,
+          "durationMins": 35,
+          "genre": "Programma",
+          "desc": "Leg it to Spain !, Het verzet heeft de piloten in wijnvaten verstopt. Generaal Von Klinkerhoffen wil die vaten uit Renés kelder naar het kasteel laten brengen. Een priester wil het goud schenken aan de weerstand. Michelle is van plan een versperringsballon te gebruiken om de piloten te laten ontsnappen?"
+        },
+        {
+          "title": "'Allo 'Allo!",
+          "start": "17:35",
+          "end": "18:10",
+          "startMins": 695,
+          "durationMins": 35,
+          "genre": "Programma",
+          "desc": "Prior Engagements, Generaal Von Klinkerhoffen denkt dat een gemengd huwelijk tussen een Française en iemand van de bezettingstroepen een mooi propagandastukje zou opleveren voor de krant. Hij beslist dat Bertorelli met Edith moet trouwen. Ondertussen proberen Herr Flick en von Smallhausen de bommen onder Nouvion ons..."
+        },
+        {
+          "title": "'Allo 'Allo!",
+          "start": "18:10",
+          "end": "18:45",
+          "startMins": 730,
+          "durationMins": 35,
+          "genre": "Programma",
+          "desc": "Soup and Sausage, De Britse piloten zitten geblokkeerd in het riool. René bedenkt een manier om hen ongemerkt van voedsel te voorzien. Michele wil hen laten ontsnappen met behulp van Renés oude ijskarretje."
+        },
+        {
+          "title": "'Allo 'Allo!",
+          "start": "18:45",
+          "end": "19:20",
+          "startMins": 765,
+          "durationMins": 35,
+          "genre": "Programma",
+          "desc": "René of the Gypsies, De Britse piloten zitten nog steeds gevangen in de riolering onder het dorpsplein. Michelle wil ze bevrijden tijdens een zigeunerfeest. Generaal Von Klinkerhoffen ontdekt dat zijn schilderij vals is en laat de kolonel, Gruber en Bertorelli in de cel gooien."
+        },
+        {
+          "title": "'Allo 'Allo!",
+          "start": "19:20",
+          "end": "20:00",
+          "startMins": 800,
+          "durationMins": 40,
+          "genre": "Programma",
+          "desc": "Arousing Suspicions, Een Brits vliegtuig dropt een mobiel radiostation boven Nouvion, precies in de schouw van het kasteel. René en de zijnen vermommen zich als Spaanse dansers om de radioapparatuur uit het kasteel te smokkelen. Maar zal Edith in de juiste toonaard 'Olé' kunnen zingen?"
+        },
+        {
+          "title": "Slisse And Cesar",
+          "start": "20:00",
+          "end": "20:30",
+          "startMins": 840,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Zilveren Bruiloft, Melanie en Slisse zijn vijfentwintig jaar getrouwd. Dat moet uiteraard gevierd worden tijdens een jubileumfeest. Joe, Jan en Rik overhandigen het koppel een uitzonderlijk en verrassend geschenk."
+        },
+        {
+          "title": "Slisse And Cesar",
+          "start": "20:30",
+          "end": "21:05",
+          "startMins": 870,
+          "durationMins": 35,
+          "genre": "Programma",
+          "desc": "De Pijp Uit, Cesar is aangereden door een wagen. Er wordt meteen een dokter bijgehaald. De patiënt wil zijn boezemvriend voor de gek houden en overtuigt de arts om Slisse een dramatisch verhaal op de mouw te spelden."
+        },
+        {
+          "title": "Nonkel Jef",
+          "start": "21:05",
+          "end": "21:35",
+          "startMins": 905,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Eindelijk!, Keuterboer Jef Melkenbeek woont in Ginderbos, een dorpje in de Kempen. Hij is enkel en alleen met Leona getrouwd omdat zijn vader altijd zei dat een boerderij zonder boerin hetzelfde is als een koe zonder melk. Wanneer Leona plots overlijdt, kan Jef zijn geluk niet op. Hij is dan ook vastbesloten van de ..."
+        },
+        {
+          "title": "Nonkel Jef",
+          "start": "21:35",
+          "end": "22:10",
+          "startMins": 935,
+          "durationMins": 35,
+          "genre": "Programma",
+          "desc": "Odette wil blijven, Keuterboer Jef Melkenbeek is helemaal niet rouwig om de dood van zijn vrouw. Zijn schoonzus Magda maakt plannen om de boerderij in te pikken wanneer ook Jef overlijdt. Odette is het stadsleven beu en ze wil zich nuttig maken op de boerderij van haar oom."
+        },
+        {
+          "title": "Nonkel Jef",
+          "start": "22:10",
+          "end": "22:45",
+          "startMins": 970,
+          "durationMins": 35,
+          "genre": "Programma",
+          "desc": "De erfenis, Odette probeert de boerenstiel te leren. Alles gebeurt in het grootste geheim. Nonkel Jef denkt immers dat ze teruggekeerd is naar de stad. In het dorp wordt er geroddeld over boer Jef en zijn jonge nichtje. Magda beweert dat Odette uit is op de erfenis van Jef."
+        },
+        {
+          "title": "Tegen de Sterren Op",
+          "start": "22:45",
+          "end": "23:25",
+          "startMins": 1005,
+          "durationMins": 40,
+          "genre": "Programma",
+          "desc": ", In 'Via Annemie' trekt Annemie Struyf naar Tibet om een portret te schetsen van het leven van monnik Giel (Chris Van Espen). In 'De Keuken van Sofie' krijgt kok Sofie Dumont (Tine Embrechts) Regi (Jonas Van Geel) over de vloer om samen te koken. Naar het voorbeeld van het boek van Joy Anna Thielemans 'Gewoon Joy',..."
+        },
+        {
+          "title": "Tegen de Sterren Op",
+          "start": "23:25",
+          "end": "00:10",
+          "startMins": 1045,
+          "durationMins": 45,
+          "genre": "Programma",
+          "desc": ", Niels Destadsbader (de echte) kruipt in de huid van zijn flamboyante en kleurrijke collega Gerard Joling, met naast hem Jonas Van Geel, die op zijn beurt Niels Destadsbader speelt. Samen met een overemotionele Karen (Nathalie Meskens), een superstrenge Kristel (Tine Embrechts), een ongeïnteresseerde Josje (Ella Le..."
+        },
+        {
+          "title": "Cheers",
+          "start": "00:10",
+          "end": "00:35",
+          "startMins": 1090,
+          "durationMins": 25,
+          "genre": "Programma",
+          "desc": "Second Time Around, Frasier beseft dat hij verder moet met zijn leven en dat hij moet openstaan voor een nieuwe relatie. Na een reeks miskleunen, besluit Sam in te grijpen. Hij stelt Frasier voor aan Candi. Volgens hem hét meisje om Frasier uit zijn depressie te halen."
+        },
+        {
+          "title": "Cheers",
+          "start": "00:35",
+          "end": "01:05",
+          "startMins": 1115,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "The Peterson Principle, Norm voert een strijd met zijn geweten wanneer hij en een collega allebei uit zijn op een belangrijke promotie. Wanneer Norm ontdekt dat zijn tegenstander een affaire heeft met de vrouw van hun baas, twijfelt hij of hij deze informatie voor eigen gewin zal gebruiken. Frasier probeert intussen..."
+        },
+        {
+          "title": "Cheers",
+          "start": "01:05",
+          "end": "01:35",
+          "startMins": 1145,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Dark Imaginings, Sam heeft een romance met een jongere vrouw, maar beseft al snel dat hij niets meer met haar gemeen heeft. Na een partijtje racquetball met Woody is Sam er zeker van: hij wordt oud."
+        },
+        {
+          "title": "Volgend programma om 06:00",
+          "start": "01:35",
+          "end": "04:35",
+          "startMins": 1175,
+          "durationMins": 180,
+          "genre": "Programma",
+          "desc": "Volgend programma om 06:00"
+        },
+        {
+          "title": "Volgend programma om 06:00",
+          "start": "04:35",
+          "end": "06:00",
+          "startMins": 1355,
+          "durationMins": 85,
+          "genre": "Programma",
+          "desc": "Volgend programma om 06:00"
+        },
+        {
+          "title": "Joe",
+          "start": "06:00",
+          "end": "09:30",
+          "startMins": 1440,
+          "durationMins": 210,
+          "genre": "Programma",
+          "desc": "Muziekprogramma."
+        },
+        {
+          "title": "Volgend programma om 10:00",
+          "start": "09:30",
+          "end": "10:00",
+          "startMins": 1650,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Volgend programma om 10:00"
+        },
+        {
+          "title": "Joe",
+          "start": "10:00",
+          "end": "15:20",
+          "startMins": 1680,
+          "durationMins": 320,
+          "genre": "Programma",
+          "desc": "Muziekprogramma."
+        },
+        {
+          "title": "Volgend programma om 15:45",
+          "start": "15:20",
+          "end": "15:45",
+          "startMins": 2000,
+          "durationMins": 25,
+          "genre": "Programma",
+          "desc": "Volgend programma om 15:45"
+        },
+        {
+          "title": "Joe",
+          "start": "15:45",
+          "end": "16:15",
+          "startMins": 2025,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Muziekprogramma."
+        },
+        {
+          "title": "Volgend programma om 16:45",
+          "start": "16:15",
+          "end": "16:45",
+          "startMins": 2055,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Volgend programma om 16:45"
+        },
+        {
+          "title": "SOS Piet",
+          "start": "16:45",
+          "end": "17:15",
+          "startMins": 2085,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": ", Kookprogramma waarin Piet Huysentruyt mensen probeert te helpen die een bepaald gerecht verknoeien. De sympathieke dame is er het levende bewijs van dat mensen het in de keuken soms veel moeilijker maken dan nodig. - Patricks pogingen om een suikercreatie te maken om zijn desserts mee te decoreren, gaan keer op ke..."
+        },
+        {
+          "title": "SOS Piet",
+          "start": "17:15",
+          "end": "17:45",
+          "startMins": 2115,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": ", Kookprogramma waarin Piet Huysentruyt mensen probeert te helpen die een bepaald gerecht verknoeien. - Jasper is dol op eendenborst met champagnesaus maar wanneer hij het gerecht zelf klaarmaakt is zijn saus te donker, te zuur en schift ze. Er is dus meer slecht aan dan goed. - Ook Magda heeft Piet een mailtje gest..."
+        },
+        {
+          "title": "SOS Piet",
+          "start": "17:45",
+          "end": "18:15",
+          "startMins": 2145,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": ", Kookprogramma waarin Piet Huysentruyt mensen probeert te helpen die een bepaald gerecht verknoeien. - Ricky's kalfszwezerikkroketten vormen een lichte brei die bij het frituren uiteen beginnen spatten. Piet wil mooie vierkante kroketten waar de saus lekker uitloopt eens ze doormidden worden gesneden. De chef begin..."
+        },
+        {
+          "title": "SOS Piet",
+          "start": "18:15",
+          "end": "18:45",
+          "startMins": 2175,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": ", Kookprogramma waarin Piet Huysentruyt mensen probeert te helpen die een bepaald gerecht verknoeien. Michel toont Piet hoe hij eraan begint, en de kok grijpt in waar nodig. - Ook Kevin heeft Piet een mail gestuurd. De structuur van zijn aardbeiencrumble zit niet goed, want het dessertje lijkt meer op yoghurt. Ook d..."
+        },
+        {
+          "title": "SOS Piet",
+          "start": "18:45",
+          "end": "19:20",
+          "startMins": 2205,
+          "durationMins": 35,
+          "genre": "Programma",
+          "desc": ", Kookprogramma waarin Piet Huysentruyt mensen probeert te helpen die een bepaald gerecht verknoeien. De leergierige Yasmine onderwerpt hem aan een spervuur van vragen. - Kruidendipsaus: Yorin probeert een kruidendipsausje te maken maar het ziet er niet uit, smaakt niet lekker en is veel te lopend. Piet vindt dat zi..."
+        },
+        {
+          "title": "Drie Mannen Onder Een Dak",
+          "start": "19:20",
+          "end": "19:55",
+          "startMins": 2240,
+          "durationMins": 35,
+          "genre": "Programma",
+          "desc": "Jimmy Delcroix, Sofie is haar latrelatie met Max bue, ze wil zekerheid. Ze trekt eruit om bij een zekere Jimmy Delcroix te gaan wonen. Max ziet het zonder Sofie helemaal niet zitten en is ontroostbaar."
+        },
+        {
+          "title": "Drie Mannen Onder Een Dak",
+          "start": "19:55",
+          "end": "20:30",
+          "startMins": 2275,
+          "durationMins": 35,
+          "genre": "Programma",
+          "desc": "Het einde, Max is in de zevende hemel want Sofie is terug. Hij beslist met haar te trouwen. Lucien en Danny hebben ook verhuisplannen. De loft komt leeg te staan en Schramme is de enige die het niet ziet zitten."
+        },
+        {
+          "title": "Super 50",
+          "start": "20:30",
+          "end": "21:40",
+          "startMins": 2310,
+          "durationMins": 70,
+          "genre": "Programma",
+          "desc": "Internationale sterren en Vlaamse artiesten volgen elkaar op in De Super 50. Met hits van Enrique Iglesias, Günther Neefs, Bryan Adams, Bart Kaëll, Simply Red, Spice Girls en meer, afgewisseld met absurde humor en verrassende parodieën."
+        },
+        {
+          "title": "Tien om te zien",
+          "start": "21:40",
+          "end": "22:45",
+          "startMins": 2380,
+          "durationMins": 65,
+          "genre": "Entertainment",
+          "desc": "Studio Manhattan viert Sinterklaas met muziek, sfeer en verrassingen. Clouseau, Jo Vally, Lisa del Bo en Lionel Richie zorgen voor optredens, terwijl de Vlaamse hitlijst volop in beweging blijft."
+        },
+        {
+          "title": "Zomerrust",
+          "start": "22:45",
+          "end": "23:45",
+          "startMins": 2445,
+          "durationMins": 60,
+          "genre": "Serie & Fictie",
+          "desc": ", Komische serie."
+        },
+        {
+          "title": "Zomerrust",
+          "start": "23:45",
+          "end": "00:50",
+          "startMins": 2505,
+          "durationMins": 15,
+          "genre": "Serie & Fictie",
+          "desc": ", Komische serie."
+        }
+      ]
+    },
+    {
       "id": "play4",
       "name": "Play",
       "category": "vlaams",
       "app": "GoPlay",
       "androidPackage": "be.goplay.app",
       "deepLink": "https://www.goplay.be/tv-gids",
+      "shortName": "PLAY",
+      "accentColor": "#10B981",
       "programs": [
         {
           "title": "Formule 1",
@@ -2346,6 +3301,8 @@
       "app": "GoPlay",
       "androidPackage": "be.goplay.app",
       "deepLink": "https://www.goplay.be/tv-gids",
+      "shortName": "FICTIE",
+      "accentColor": "#34D399",
       "programs": [
         {
           "title": "Geen uitzending - Play",
@@ -2782,12 +3739,1391 @@
       ]
     },
     {
+      "id": "play6",
+      "name": "Play Actie",
+      "category": "vlaams",
+      "app": "GoPlay",
+      "androidPackage": "be.goplay.app",
+      "deepLink": "https://www.goplay.be/tv-gids",
+      "shortName": "ACTIE",
+      "accentColor": "#2DD4BF",
+      "programs": [
+        {
+          "title": "Formule 1",
+          "start": "04:40",
+          "end": "06:25",
+          "startMins": 0,
+          "durationMins": 25,
+          "genre": "Sport",
+          "desc": "F1: GP van Las Vegas - kwalificaties"
+        },
+        {
+          "title": "Geen uitzending - Play",
+          "start": "06:25",
+          "end": "07:15",
+          "startMins": 25,
+          "durationMins": 50,
+          "genre": "Programma",
+          "desc": "Geen uitzending."
+        },
+        {
+          "title": "Bar Rescue",
+          "start": "07:15",
+          "end": "07:55",
+          "startMins": 75,
+          "durationMins": 40,
+          "genre": "Serie & Fictie",
+          "desc": "Aflevering 7, Jon Taffer begint aan een rondreis langs de slechtste horecazaken van Amerika. Slechte drankjes, wild personeel en dronken eigenaren bemoeilijken Jon en zijn experts terwijl ze falende bedrijven een laatste kans willen geven op succes."
+        },
+        {
+          "title": "Bar Rescue",
+          "start": "07:55",
+          "end": "08:40",
+          "startMins": 115,
+          "durationMins": 45,
+          "genre": "Serie & Fictie",
+          "desc": "Aflevering 8, Jon Taffer begint aan een rondreis langs de slechtste horecazaken van Amerika. Slechte drankjes, wild personeel en dronken eigenaren bemoeilijken Jon en zijn experts terwijl ze falende bedrijven een laatste kans willen geven op succes."
+        },
+        {
+          "title": "Bar Rescue",
+          "start": "08:40",
+          "end": "09:30",
+          "startMins": 160,
+          "durationMins": 50,
+          "genre": "Serie & Fictie",
+          "desc": "Aflevering 9, Jon Taffer begint aan een rondreis langs de slechtste horecazaken van Amerika. Slechte drankjes, wild personeel en dronken eigenaren bemoeilijken Jon en zijn experts terwijl ze falende bedrijven een laatste kans willen geven op succes."
+        },
+        {
+          "title": "Storage Wars",
+          "start": "09:30",
+          "end": "10:00",
+          "startMins": 210,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "An Auction Too Far, In Storage Wars zie je professionele kopers en hun teams jagen op de beste koopjes tijdens veilingen. Veel mensen huren opslagruimte voor hun spullen. Wanneer de huur drie maanden niet is betaald, komen koopjesjagers de ruimte bekijken en bieden vervolgens op de inhoud van de opslagruimte."
+        },
+        {
+          "title": "Storage Wars",
+          "start": "10:00",
+          "end": "10:35",
+          "startMins": 240,
+          "durationMins": 35,
+          "genre": "Programma",
+          "desc": "Mo Money Mo Valley, In Storage Wars zie je professionele kopers en hun teams jagen op de beste koopjes tijdens veilingen. Veel mensen huren opslagruimte voor hun spullen. Wanneer de huur drie maanden niet is betaald, komen koopjesjagers de ruimte bekijken en bieden vervolgens op de inhoud van de opslagruimte."
+        },
+        {
+          "title": "Geen uitzending - Play",
+          "start": "10:35",
+          "end": "11:35",
+          "startMins": 275,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "Geen uitzending."
+        },
+        {
+          "title": "Storage Wars",
+          "start": "11:35",
+          "end": "12:00",
+          "startMins": 335,
+          "durationMins": 25,
+          "genre": "Programma",
+          "desc": "Lock Stock and One Smoking Darrell, Er wordt opnieuw een belangrijke veiling gehouden en deze keer vindt die plaats in Lancaster, California. Jarrod wordt verrast door Brandi wanneer die heel wat geld over lijkt te hebben voor misschien wel de beste unit van de dag."
+        },
+        {
+          "title": "Storage Wars",
+          "start": "12:00",
+          "end": "12:35",
+          "startMins": 360,
+          "durationMins": 35,
+          "genre": "Programma",
+          "desc": "Rene Abides, In Storage Wars zie je professionele kopers en hun teams jagen op de beste koopjes tijdens veilingen. Veel mensen huren opslagruimte voor hun spullen. Wanneer de huur drie maanden niet is betaald, komen koopjesjagers de ruimte bekijken en bieden vervolgens op de inhoud van de opslagruimte."
+        },
+        {
+          "title": "Storage Wars",
+          "start": "12:35",
+          "end": "13:00",
+          "startMins": 395,
+          "durationMins": 25,
+          "genre": "Programma",
+          "desc": "Palm Springs Throwdown, In Storage Wars zie je professionele kopers en hun teams jagen op de beste koopjes tijdens veilingen. Veel mensen huren opslagruimte voor hun spullen. Wanneer de huur drie maanden niet is betaald, komen koopjesjagers de ruimte bekijken en bieden vervolgens op de inhoud van de opslagruimte."
+        },
+        {
+          "title": "Storage Wars",
+          "start": "13:00",
+          "end": "13:30",
+          "startMins": 420,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Young Gun, Old Tricks, In Storage Wars zie je professionele kopers en hun teams jagen op de beste koopjes tijdens veilingen. Veel mensen huren opslagruimte voor hun spullen. Wanneer de huur drie maanden niet is betaald, komen koopjesjagers de ruimte bekijken en bieden vervolgens op de inhoud van de opslagruimte."
+        },
+        {
+          "title": "Storage Wars",
+          "start": "13:30",
+          "end": "13:55",
+          "startMins": 450,
+          "durationMins": 25,
+          "genre": "Programma",
+          "desc": "Last Mattress Standing, In Storage Wars zie je professionele kopers en hun teams jagen op de beste koopjes tijdens veilingen. Veel mensen huren opslagruimte voor hun spullen. Wanneer de huur drie maanden niet is betaald, komen koopjesjagers de ruimte bekijken en bieden vervolgens op de inhoud van de opslagruimte."
+        },
+        {
+          "title": "Storage Wars",
+          "start": "13:55",
+          "end": "14:25",
+          "startMins": 475,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Buys and Dolls, In Storage Wars zie je professionele kopers en hun teams jagen op de beste koopjes tijdens veilingen. Veel mensen huren opslagruimte voor hun spullen. Wanneer de huur drie maanden niet is betaald, komen koopjesjagers de ruimte bekijken en bieden vervolgens op de inhoud van de opslagruimte."
+        },
+        {
+          "title": "Storage Wars",
+          "start": "14:25",
+          "end": "14:55",
+          "startMins": 505,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Mayor of Margarita-Ville, In Storage Wars zie je professionele kopers en hun teams jagen op de beste koopjes tijdens veilingen. Veel mensen huren opslagruimte voor hun spullen. Wanneer de huur drie maanden niet is betaald, komen koopjesjagers de ruimte bekijken en bieden vervolgens op de inhoud van de opslagruimte."
+        },
+        {
+          "title": "Storage Wars",
+          "start": "14:55",
+          "end": "15:20",
+          "startMins": 535,
+          "durationMins": 25,
+          "genre": "Programma",
+          "desc": "Mexican Grand Off, In Storage Wars zie je professionele kopers en hun teams jagen op de beste koopjes tijdens veilingen. Veel mensen huren opslagruimte voor hun spullen. Wanneer de huur drie maanden niet is betaald, komen koopjesjagers de ruimte bekijken en bieden vervolgens op de inhoud van de opslagruimte."
+        },
+        {
+          "title": "That '70s Show",
+          "start": "15:20",
+          "end": "15:50",
+          "startMins": 560,
+          "durationMins": 30,
+          "genre": "Entertainment",
+          "desc": "Burning Down the House, Jackie wil een klein, stijlvol feest geven, maar Kelso verpest het door iedereen uit te nodigen. Het wordt nog erger als hij per ongeluk haar huis in brand steekt. Red ontdekt Bobs geheim dat hij een toupetje draagt."
+        },
+        {
+          "title": "That '70s Show",
+          "start": "15:50",
+          "end": "16:20",
+          "startMins": 590,
+          "durationMins": 30,
+          "genre": "Entertainment",
+          "desc": "The First Time, Bob en Midge maken zich klaar om hun geloften te hernieuwen. Kitty is overstuur omdat ze niet is gevraagd als bruidsmeisje, terwijl Red de getuige van Bob is. Eric en Donna hebben voor het eerst seks."
+        },
+        {
+          "title": "That '70s Show",
+          "start": "16:20",
+          "end": "16:55",
+          "startMins": 620,
+          "durationMins": 35,
+          "genre": "Entertainment",
+          "desc": "Afterglow, Eric is vernederd als Kelso tegen de jongens zegt dat Donna Jackie heeft verteld dat Eric slecht in bed was. Kitty is verbaasd als Red zijn eerste salaris viert door een motorfiets te kopen."
+        },
+        {
+          "title": "That '70s Show",
+          "start": "16:55",
+          "end": "17:25",
+          "startMins": 655,
+          "durationMins": 30,
+          "genre": "Film",
+          "desc": "Kitty and Eric's Night Out, Eric wordt gedwongen om met zijn moeder naar de film te gaan. Fez krijgt een leuke nieuwe vriendin. Jackie moet toegeven dat ze jaloers is."
+        },
+        {
+          "title": "That '70s Show",
+          "start": "17:25",
+          "end": "17:55",
+          "startMins": 685,
+          "durationMins": 30,
+          "genre": "Entertainment",
+          "desc": "Parents Find Out, Een politieagent betrapt Donna en Eric op heterdaad, en nu moeten ze aan hun ouders uitleggen waarom de politie hen naar huis heeft gebracht. Ondertussen proberen Kelso, Hyde en Fez meisjes op te pikken."
+        },
+        {
+          "title": "That '70s Show",
+          "start": "17:55",
+          "end": "18:30",
+          "startMins": 715,
+          "durationMins": 35,
+          "genre": "Entertainment",
+          "desc": "Kiss of Death, Eric is bang dat hij grote problemen krijgt met Donna nadat hij haar kat, meneer Bonkers, heeft aangereden. En Kelso weet zeker dat hij in grotere problemen zit als Jackie hem betrapt terwijl hij Laurie een kus geeft."
+        },
+        {
+          "title": "That '70s Show",
+          "start": "18:30",
+          "end": "19:00",
+          "startMins": 750,
+          "durationMins": 30,
+          "genre": "Entertainment",
+          "desc": "Kelso's Serenade, Kelso wil Jackie terugwinnen door een liedje voor haar te schrijven. Ondertussen krijgen Eric en Donna communicatieproblemen."
+        },
+        {
+          "title": "That '70s Show",
+          "start": "19:00",
+          "end": "19:30",
+          "startMins": 780,
+          "durationMins": 30,
+          "genre": "Entertainment",
+          "desc": "Jackie Moves On, Fez vraagt ¶¶Jackie mee uit voor een date, maar het gaat niet zoals hij had gepland. Eric en Laurie's rivaliteit tussen broers en zussen laait op als gênante geheimen over elkaar worden onthuld."
+        },
+        {
+          "title": "That '70s Show",
+          "start": "19:30",
+          "end": "20:05",
+          "startMins": 810,
+          "durationMins": 35,
+          "genre": "Serie & Fictie",
+          "desc": "Holy Crap, Eric en Laurie besluiten niet meer naar de kerk te gaan, dus nodigt Kitty pastoor Dave uit voor een spelletjesavond met de familie, terwijl Fez en Kelso proberen baarden te laten groeien."
+        },
+        {
+          "title": "That '70s Show",
+          "start": "20:05",
+          "end": "20:35",
+          "startMins": 845,
+          "durationMins": 30,
+          "genre": "Entertainment",
+          "desc": "Red Fired Up, Red moet een medewerker van Price Mart ontslaan die hij en Eric graag voor de gek houden. Is Eric de volgende? Kelso besluit ondertussen om zijn relatie met Laurie openbaar te maken."
+        },
+        {
+          "title": "Platoon",
+          "start": "20:35",
+          "end": "22:50",
+          "startMins": 875,
+          "durationMins": 135,
+          "genre": "Programma",
+          "desc": "Een jonge, naïeve soldaat in Vietnam belandt in een morele crisis wanneer hij wordt geconfronteerd met de gruwelen van oorlog en de goede en slechte kanten van de mens."
+        },
+        {
+          "title": "The Devil's Advocate",
+          "start": "22:50",
+          "end": "01:40",
+          "startMins": 1010,
+          "durationMins": 170,
+          "genre": "Programma",
+          "desc": "Kevin Lomax, een meedogenloze advocaat uit Florida, heeft nog nooit een zaak verloren. Zijn opmerkelijk talent wordt opgemerkt door één van de meest prestigieuze advocatenfirma's uit New York. Ondanks zijn moeders afkeuren, gaat hij toch in op het aanbod en verhuist met zijn vrouw naar New York. Als de prestigieuze ..."
+        },
+        {
+          "title": "Den of Thieves",
+          "start": "01:40",
+          "end": "03:50",
+          "startMins": 1180,
+          "durationMins": 130,
+          "genre": "Programma",
+          "desc": "Iedere dag wordt er 120 miljoen dollar in contanten uit de omloop genomen en vernietigd door de centrale bank van de Verenigde Staten, de 'Federal Reserve'. Een beruchte dief smeedt het plan om de meest gedurfde bankroof te bewerkstelligen, pal onder de neus van meest gevreesde afdeling van wetshandhaving."
+        },
+        {
+          "title": "Geen uitzending - Play",
+          "start": "03:50",
+          "end": "04:55",
+          "startMins": 1310,
+          "durationMins": 65,
+          "genre": "Programma",
+          "desc": "Geen uitzending."
+        },
+        {
+          "title": "Geen uitzending - Play",
+          "start": "04:55",
+          "end": "05:00",
+          "startMins": 1375,
+          "durationMins": 15,
+          "genre": "Programma",
+          "desc": "Geen uitzending."
+        },
+        {
+          "title": "Geen uitzending - Play",
+          "start": "05:00",
+          "end": "06:05",
+          "startMins": 1380,
+          "durationMins": 65,
+          "genre": "Programma",
+          "desc": "Geen uitzending."
+        },
+        {
+          "title": "Hawaii Five-0",
+          "start": "06:05",
+          "end": "06:45",
+          "startMins": 1445,
+          "durationMins": 40,
+          "genre": "Programma",
+          "desc": "He Puko'a Kani 'aina (a Coral Reef Strengthens Out Into Land), Steve McGarrett keert terug naar Oahu om de moordenaar van zijn vader te vinden; De gouverneur biedt hem de kans om zijn eigen taskforce te leiden - Five-0."
+        },
+        {
+          "title": "Hawaii Five-0",
+          "start": "06:45",
+          "end": "07:30",
+          "startMins": 1485,
+          "durationMins": 45,
+          "genre": "Programma",
+          "desc": "O Na Hoku O Ka Lani Wale No Kai 'ike I Kala O Pae (only The Stars Of Heaven Know Where Pae Is), Steve McGarrett keert terug naar Oahu om de moordenaar van zijn vader te vinden; De gouverneur biedt hem de kans om zijn eigen taskforce te leiden - Five-0."
+        },
+        {
+          "title": "Hawaii Five-0",
+          "start": "07:30",
+          "end": "08:25",
+          "startMins": 1530,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "Holapu Ke Ahi,koe Iho Ka Lehu(the Fire Blazed Up), Steve McGarrett keert terug naar Oahu om de moordenaar van zijn vader te vinden; De gouverneur biedt hem de kans om zijn eigen taskforce te leiden - Five-0."
+        },
+        {
+          "title": "Hawaii Five-0",
+          "start": "08:25",
+          "end": "09:25",
+          "startMins": 1585,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "E Ho'oko Kuleana (to Do One's Duty), Steve McGarrett keert terug naar Oahu om de moordenaar van zijn vader te vinden; De gouverneur biedt hem de kans om zijn eigen taskforce te leiden - Five-0."
+        },
+        {
+          "title": "See No Evil",
+          "start": "09:25",
+          "end": "10:25",
+          "startMins": 1645,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "Last Night Apart, Een avond van feestvieren eindigt in horror wanneer de 29-jarige Adrianne Robert door haar kamergenote dood wordt aangetroffen. De politie volgt de stappen van Adrianne en ontdekt dat de club die ze heeft bezocht is uitgerust met beveiligingscamera's."
+        },
+        {
+          "title": "Geen uitzending - Play",
+          "start": "10:25",
+          "end": "11:25",
+          "startMins": 1705,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "Geen uitzending."
+        },
+        {
+          "title": "See No Evil",
+          "start": "11:25",
+          "end": "12:25",
+          "startMins": 1765,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "Four And A Half Minutes, Larry Howse is een toegewijde vader van twee zonen. Maar in augustus 2013 wordt Larry doodgeschoten aangetroffen in een parkeergarage in Tacoma, Washington. De politie heeft weinig aanwijzingen totdat een beveiligingscamera korrelige beelden van twee mysterieuze aanvallers onthult."
+        },
+        {
+          "title": "See No Evil",
+          "start": "12:25",
+          "end": "13:30",
+          "startMins": 1825,
+          "durationMins": 65,
+          "genre": "Serie & Fictie",
+          "desc": "Aflevering 11, Wat begon als een droomvakantie in Hawaï in 2013, veranderde in een nachtmerrie toen de 28-jarige Ivanice Harris spoorloos verdween. Rechercheurs volgden haar laatste stappen tot een hotel in Waikiki, dat vol hing met bewakingscamera's. Nu proberen ze de videobeelden samen te voegen om de vrouw op te ..."
+        },
+        {
+          "title": "See No Evil",
+          "start": "13:30",
+          "end": "14:30",
+          "startMins": 1890,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "The Cookie Lady, Na een verontrustende melding over haar welzijn vinden agenten de 79-jarige Avanell Cowgill vermoord in haar huis. Zonder andere aanwijzingen dan een reeks vreemde transacties met haar creditcard hopen onderzoekers dat camerabeelden hen de nodige informatie zullen geven om de moordenaar te ontmaskeren."
+        },
+        {
+          "title": "See No Evil",
+          "start": "14:30",
+          "end": "15:30",
+          "startMins": 1950,
+          "durationMins": 60,
+          "genre": "Serie & Fictie",
+          "desc": "Cruel Love, In Kentucky komt de 13-jarige David Oakley thuis en treft zijn stiefmoeder vermoord aan, terwijl zijn 15-jarige zus Jenna vermist is. In angst voor Jenna's veiligheid haast de politie zich om de videobeelden van de dader te verzamelen. Wat ze ontdekken, is een wreed complot."
+        },
+        {
+          "title": "The Simpsons",
+          "start": "15:30",
+          "end": "16:00",
+          "startMins": 2010,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "The Tipping Point, Homer verliest zijn verstand over de uit de hand lopende fooien cultuur."
+        },
+        {
+          "title": "The Simpsons",
+          "start": "16:00",
+          "end": "16:35",
+          "startMins": 2040,
+          "durationMins": 35,
+          "genre": "Programma",
+          "desc": "Bart's Brain, Bart doet een verbazingwekkende ontdekking in een antiekwinkel, maar na verloop van tijd verandert die ontdekking de jongen in een stadsfreak."
+        },
+        {
+          "title": "Anger Management",
+          "start": "16:35",
+          "end": "17:05",
+          "startMins": 2075,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Charlie Goes Back to Therapy, Charlie, een honkbalspeler met een woedeprobleem, besluit om weer in therapie te gaan na een confrontatie met de nieuwe vriend van zijn ex-vrouw."
+        },
+        {
+          "title": "Anger Management",
+          "start": "17:05",
+          "end": "17:35",
+          "startMins": 2105,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Charlie And The Slumpbuster, Een onaantrekkelijke onenightstand uit Charlie's honkbalverleden spoort hem onverwachts op, hij moet haar op de één of andere manier tevreden zien te houden."
+        },
+        {
+          "title": "Anger Management",
+          "start": "17:35",
+          "end": "18:05",
+          "startMins": 2135,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Charlie and Kate Battle Over a Patient, Een slepende rivaliteit over wie de beste therapeut is, loopt uit de hand wanneer Kate Patrick, een patiënt uit Charlies therapiegroep, bij hem wegkaapt."
+        },
+        {
+          "title": "Anger Management",
+          "start": "18:05",
+          "end": "18:35",
+          "startMins": 2165,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Charlie Tries Sleep Deprivation, Charlie voert een slaapexperiment uit met zijn therapiegroep. De resultaten zijn verrassend voor iedereen, ook voor Charlie zelf."
+        },
+        {
+          "title": "Anger Management",
+          "start": "18:35",
+          "end": "19:05",
+          "startMins": 2195,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Charlie's Patient Gets Out of Jail, Charlie maakt zich zorgen wanneer een voormalige patiënt uit zijn therapiegroep in de gevangenis vrijkomt en vervolgens een relatie begint met zijn ex-vrouw Jennifer."
+        },
+        {
+          "title": "Anger Management",
+          "start": "19:05",
+          "end": "19:35",
+          "startMins": 2225,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Charlie Dates Kate's Patient, Charlie ontdekt dat de vrouw met wie hij date een patiënte van Kate is, maar zet de relatie toch voort. Intussen moedigt hij zijn therapiegroep aan om elkaar te bellen wanneer ze dreigen toe te geven aan hun zwaktes."
+        },
+        {
+          "title": "Anger Management",
+          "start": "19:35",
+          "end": "20:05",
+          "startMins": 2255,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Charlie Tries to Prove Therapy is Legit, Charlie wil daten met de aantrekkelijke nieuwe zakenpartner van zijn ex-vrouw. Zij gelooft wel in geesten, maar niet in therapie."
+        },
+        {
+          "title": "Anger Management",
+          "start": "20:05",
+          "end": "20:35",
+          "startMins": 2285,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Charlie Outs a Patient, Charlies bemoeienis met het privéleven van zijn patiënten werkt averechts wanneer hij Nolan probeert te helpen met diens vriendin."
+        },
+        {
+          "title": "Full Metal Jacket",
+          "start": "20:35",
+          "end": "22:45",
+          "startMins": 2315,
+          "durationMins": 130,
+          "genre": "Film",
+          "desc": "Het eerste deel van de film volgt een groep militairen die door Sgt. Hartman op onmenselijke wijze klaargestoomd worden voor de Vietnam oorlog. Het tweede deel van de film laat zien hoe één van deze militairen, Joker, de oorlog verslaat als reporter, tijdens het Tet-offensief."
+        },
+        {
+          "title": "Devotion",
+          "start": "22:45",
+          "end": "01:30",
+          "startMins": 2445,
+          "durationMins": 75,
+          "genre": "Programma",
+          "desc": "Het aangrijpende waargebeurde verhaal van twee elite jachtpiloten van de Amerikaanse marine tijdens de Koreaanse oorlog. Hun heroïsche offers zouden hen uiteindelijk de meest gevierde wingman van de marine maken."
+        }
+      ]
+    },
+    {
+      "id": "playreality",
+      "name": "Play Reality",
+      "category": "vlaams",
+      "app": "GoPlay",
+      "androidPackage": "be.goplay.app",
+      "deepLink": "https://www.goplay.be/tv-gids",
+      "shortName": "REALITY",
+      "accentColor": "#A78BFA",
+      "programs": [
+        {
+          "title": "Geen uitzending - Play",
+          "start": "05:00",
+          "end": "06:35",
+          "startMins": 0,
+          "durationMins": 35,
+          "genre": "Programma",
+          "desc": "Geen uitzending - Play"
+        },
+        {
+          "title": "Property Brothers",
+          "start": "06:35",
+          "end": "07:20",
+          "startMins": 35,
+          "durationMins": 45,
+          "genre": "Programma",
+          "desc": "Ashley And Aben, De Property Brothers helpen stellen een vervallen huis te kopen en om te toveren in hun droomhuis, waarbij ze de nieuwste technologie gebruiken om te visualiseren hoe het huis eruit zal komen te zien. Toch is het kopen van zo'n huis een risico."
+        },
+        {
+          "title": "Property Brothers",
+          "start": "07:20",
+          "end": "08:00",
+          "startMins": 80,
+          "durationMins": 40,
+          "genre": "Programma",
+          "desc": "Janna And Jason, De Property Brothers helpen stellen een vervallen huis te kopen en om te toveren in hun droomhuis, waarbij ze de nieuwste technologie gebruiken om te visualiseren hoe het huis eruit zal komen te zien. Toch is het kopen van zo'n huis een risico."
+        },
+        {
+          "title": "De Gastentafel",
+          "start": "08:00",
+          "end": "08:50",
+          "startMins": 120,
+          "durationMins": 50,
+          "genre": "Programma",
+          "desc": "De Gastentafel met Peter Goossens, In 'De Gastentafel' maakt telkens één van de njam!-chefs een verrassend driegangen-menu klaar dat hij daarna samen met zijn gasten opeet."
+        },
+        {
+          "title": "Ellemieke's KIDchen",
+          "start": "08:50",
+          "end": "09:05",
+          "startMins": 170,
+          "durationMins": 15,
+          "genre": "Programma",
+          "desc": "Rijstschotel, Ellemieke, Noah en Zenna trekken de hele koelkast leeg want we gaan een heerlijke rijstschotel met restjes klaarmaken, met kindvriendelijke zalmspiesjes en een lekker fruitig ijsje als verfrissend tussendoortje."
+        },
+        {
+          "title": "Nuances",
+          "start": "09:05",
+          "end": "09:35",
+          "startMins": 185,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Kalfszwezerik met koffie, In 'Nuances' combineert Thierry Theys vaak minder gekende ingrediënten met producten die voor ons alledaags zijn. Vandaag tracht hij u weer te verrassen, zelfs misschien te verbazen met zijn bereiding van kalfszwezerik met koffie!"
+        },
+        {
+          "title": "Say Yes to the Dress: Atlanta",
+          "start": "09:35",
+          "end": "10:05",
+          "startMins": 215,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Times are A'Changing, Een voormalige miss wil haar extravagante stijl achter zich laten. Een bruid rekent op steun van haar entourage."
+        },
+        {
+          "title": "Say Yes to the Dress",
+          "start": "10:05",
+          "end": "10:50",
+          "startMins": 245,
+          "durationMins": 45,
+          "genre": "Programma",
+          "desc": "New Dress - New Beginning, Pas verloofde vrouwen van over de hele wereld komen naar deze bruidswinkel om de perfecte trouwjurk te vinden."
+        },
+        {
+          "title": "Love It or List It",
+          "start": "10:50",
+          "end": "11:35",
+          "startMins": 290,
+          "durationMins": 45,
+          "genre": "Programma",
+          "desc": "Marcie And Matt, Koppel Matt en Marci zijn op zoek naar een huis dat groot genoeg is, maar ook nog steeds dezelfde charme heeft van hun huidige kleine huisje. David zoekt een nieuw huis voor ze en Hilary komt met een plan om te renoveren."
+        },
+        {
+          "title": "Love It or List It",
+          "start": "11:35",
+          "end": "12:20",
+          "startMins": 335,
+          "durationMins": 45,
+          "genre": "Serie & Fictie",
+          "desc": "Rural Reservations - Shana And Jeremy, Wanneer een huis niet langer als thuis voelt, staan ​​huiseigenaren voor een grote financiële en emotionele vraag: renoveren of verkopen? Love It or List It helpt wanhopige huiseigenaren bij het nemen van een beslissing. In elke aflevering van een uur strijden makelaar David Vi..."
+        },
+        {
+          "title": "Het feestmenu van ...",
+          "start": "12:20",
+          "end": "13:15",
+          "startMins": 380,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "Het feestmenu van Dagny Ros Asmundsdottir, de njam!-chefs stellen stellen hun kerst-menu samen!"
+        },
+        {
+          "title": "Tot op het Bot: Het Rund",
+          "start": "13:15",
+          "end": "13:35",
+          "startMins": 435,
+          "durationMins": 20,
+          "genre": "Programma",
+          "desc": "Tong, Na 'Tot op de Graat' is er nu 'Tot op het Bot'. Een reeks waarin Johan Segers aan de slag gaat met vers vlees in plaats van met verse vis. Hij toont hoe je alle verschillende onderdelen van het rund verwerkt tot heerlijke gerechten."
+        },
+        {
+          "title": "De Dagschotel",
+          "start": "13:35",
+          "end": "13:50",
+          "startMins": 455,
+          "durationMins": 15,
+          "genre": "Programma",
+          "desc": "Dagný Rós Ásmundsdóttir - Gravad vlees (feesteditie), Dagny Ros maakt een variant op het bekende Scandinavische gerecht Gravad Lax, een soort gemarineerde rauwe zalm. In dit recept is het geen vis die gemarineerd wordt, maar wel een entrecôte."
+        },
+        {
+          "title": "Love It or List It",
+          "start": "13:50",
+          "end": "14:40",
+          "startMins": 470,
+          "durationMins": 50,
+          "genre": "Programma",
+          "desc": "Josmell And Carla, Carla vindt dat hun huis te klein is geworden na de geboorte van hun dochter, maar Josmell is gek op hun fijne huisje en denkt dat het nog steeds geschikt is om er met z'n allen te leven."
+        },
+        {
+          "title": "Love It or List It",
+          "start": "14:40",
+          "end": "15:25",
+          "startMins": 520,
+          "durationMins": 45,
+          "genre": "Programma",
+          "desc": "Dwayne And Hong-An, Dwayne en Hong-An kochten hun huis toen ze in de twintig waren. Dwayne is de takenlijst beu en wil een huis vinden om hun dochter op te voeden, maar Hong-An is er nog niet klaar voor om al hun herinneringen achter te laten."
+        },
+        {
+          "title": "Love It or List It - Australia",
+          "start": "15:25",
+          "end": "16:25",
+          "startMins": 565,
+          "durationMins": 60,
+          "genre": "Serie & Fictie",
+          "desc": "Aflevering 1, Huiseigenaren beslissen of ze hun huizen renoveren of te koop aanbieden. Ze krijgen de beste opties voorgeschoteld door Andrew Winter en Neale Whitaker."
+        },
+        {
+          "title": "Het roer om",
+          "start": "16:25",
+          "end": "17:15",
+          "startMins": 625,
+          "durationMins": 50,
+          "genre": "Programma",
+          "desc": "Paul en Hilda, Paul en Hilda vertrekken met 40.000 euro en hun 25-jarige dochter Lisa naar een huis op de campo van Spanje. Ze moeten eerst het pand grondig verbouwen. Al snel is hun hele verbouwbudget erdoorheen, dus worden ze gedwongen een job te zoeken."
+        },
+        {
+          "title": "Het roer om",
+          "start": "17:15",
+          "end": "18:05",
+          "startMins": 675,
+          "durationMins": 50,
+          "genre": "Programma",
+          "desc": "Gerard en Gusta, Gerard en Gusta verruilen met het gezin het zwaar christelijke milieu van Veenendaal voor het Italiaanse dorpje Pergola. Ze kopen een eeuwenoud huis en willen een agriturismo met glamping openen, maar dan blijkt het pand zo lek als een mandje."
+        },
+        {
+          "title": "Het roer om",
+          "start": "18:05",
+          "end": "18:55",
+          "startMins": 725,
+          "durationMins": 50,
+          "genre": "Jeugd",
+          "desc": "Merel en Bas, Merel en Bas zoeken al jaren naar hun droomhuis in Italië en vinden het uiteindelijk in het zuidelijke Puglia. Samen met hun twee jonge kinderen vertrekken ze, maar de start van de verbouwing loopt al snel vast op Italiaanse regels en negatieve verrassingen. Na het eerste bezoek van de architect rest v..."
+        },
+        {
+          "title": "Het roer om",
+          "start": "18:55",
+          "end": "19:45",
+          "startMins": 775,
+          "durationMins": 50,
+          "genre": "Documentaire",
+          "desc": "Mano en Manon, De Amsterdamse tantrafanaten Mano en Manon willen op Ibiza een groot landgoed overnemen om vanuit hier sensuele retraites te organiseren. Maar als blijkt dat het landgoed geen verhuurlicentie meer heeft en de prijzen van alle andere panden op het eiland de pan uit reizen is hun droom opeens verder weg..."
+        },
+        {
+          "title": "Het roer om",
+          "start": "19:45",
+          "end": "20:35",
+          "startMins": 825,
+          "durationMins": 50,
+          "genre": "Programma",
+          "desc": "Sandra en Martin, Sandra en Martin zijn klaar met de ratrace en verruilen Nederland voor La Bella Italia. Daar willen ze, met een krap budget van één ton, hun droomhuis vinden om er een BAndB te beginnen. Dat lukt ze, maar al snel stapelen de verborgen gebreken zich op en is het nog maar de vraag of die BAndB er ooi..."
+        },
+        {
+          "title": "Naked Attraction",
+          "start": "20:35",
+          "end": "21:35",
+          "startMins": 875,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "Nicola And Mark, In deze controversiële datingshow krijgen de kandidaten geleidelijk aan de naakte lichamen van hun potentiële geliefden te zien. Na de onthulling moeten ze een keuze maken."
+        },
+        {
+          "title": "Naked Attraction",
+          "start": "21:35",
+          "end": "22:35",
+          "startMins": 935,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "Lain And Leon, In deze controversiële datingshow krijgen de kandidaten geleidelijk aan de naakte lichamen van hun potentiële geliefden te zien. Na de onthulling moeten ze een keuze maken."
+        },
+        {
+          "title": "Naked Attraction",
+          "start": "22:35",
+          "end": "23:40",
+          "startMins": 995,
+          "durationMins": 65,
+          "genre": "Programma",
+          "desc": "Kelly And Carlo, In deze controversiële datingshow krijgen de kandidaten geleidelijk aan de naakte lichamen van hun potentiële geliefden te zien. Na de onthulling moeten ze een keuze maken."
+        },
+        {
+          "title": "Naked Attraction",
+          "start": "23:40",
+          "end": "00:35",
+          "startMins": 1060,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "Jay And Victoria, In deze controversiële datingshow krijgen de kandidaten geleidelijk aan de naakte lichamen van hun potentiële geliefden te zien. Na de onthulling moeten ze een keuze maken."
+        },
+        {
+          "title": "De Moeite Waard",
+          "start": "00:35",
+          "end": "01:50",
+          "startMins": 1115,
+          "durationMins": 75,
+          "genre": "Serie & Fictie",
+          "desc": "Aflevering 5, De broers Remy en Gerold gaan het flipavontuur aan. Ze worden daarbij gesteund door hun vrouwen en familieleden. Veel lijkt soepel te gaan, maar lange klusdagen zorgen voor frictie en dan komt Bob met zijn ongezouten mening. Gaat de voorspoedige verbouwing nog wel de moeite waard zijn?"
+        },
+        {
+          "title": "De Moeite Waard",
+          "start": "01:50",
+          "end": "02:55",
+          "startMins": 1190,
+          "durationMins": 65,
+          "genre": "Serie & Fictie",
+          "desc": "Aflevering 6, De zussen Winnie en Saskia uit Amstelveen gaan een flipuitdaging aan in Apeldoorn. Verbouwen is een vak en daar komen de zussen al snel achter. Ook moeten ze het al vrij snel zonder hun bevriende klusser Fred doen en gaat de afstand naar de woning toch wel tegenzitten. Verder krijgen ook zij te dealen ..."
+        },
+        {
+          "title": "Geen uitzending - Play",
+          "start": "02:55",
+          "end": "04:50",
+          "startMins": 1255,
+          "durationMins": 115,
+          "genre": "Programma",
+          "desc": "Geen uitzending - Play"
+        },
+        {
+          "title": "Geen uitzending - Play",
+          "start": "04:50",
+          "end": "05:00",
+          "startMins": 1370,
+          "durationMins": 15,
+          "genre": "Programma",
+          "desc": "Geen uitzending - Play"
+        },
+        {
+          "title": "Geen uitzending - Play",
+          "start": "05:00",
+          "end": "06:20",
+          "startMins": 1380,
+          "durationMins": 80,
+          "genre": "Programma",
+          "desc": "Geen uitzending - Play"
+        },
+        {
+          "title": "Property Brothers",
+          "start": "06:20",
+          "end": "07:00",
+          "startMins": 1460,
+          "durationMins": 40,
+          "genre": "Programma",
+          "desc": "Patrick And Julie, De Property Brothers helpen stellen een vervallen huis te kopen en om te toveren in hun droomhuis, waarbij ze de nieuwste technologie gebruiken om te visualiseren hoe het huis eruit zal komen te zien. Toch is het kopen van zo'n huis een risico."
+        },
+        {
+          "title": "Feest Van Eigen Bodem",
+          "start": "07:00",
+          "end": "07:30",
+          "startMins": 1500,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Bal National, Een tapasplankje met charcutterie hoeft niet alleen uit de Italiaanse keuken te komen. Bart Desmidt zet drie Belgische vleeswaren in de kijker als hapje en sluit het culinaire feestje daarna af met een grietbot met aardappelpuree."
+        },
+        {
+          "title": "De Chalet, Hollandse Maatjes",
+          "start": "07:30",
+          "end": "08:20",
+          "startMins": 1530,
+          "durationMins": 50,
+          "genre": "Serie & Fictie",
+          "desc": "Aflevering 1, De Chalet staat dit jaar in Nederland, in Noordwijk aan Zee. Het wordt het lekkerste boysweekend ever, dankzij Peppe Giacomazza, Dominique Persoone en Roger van Damme. De mannen trekken er voor de vijfde keer op uit. Ze zorgen ook nu weer voor zalige feestgerechten en winterse gezelligheid, overgoten m..."
+        },
+        {
+          "title": "Say Yes to the Dress",
+          "start": "08:20",
+          "end": "09:15",
+          "startMins": 1580,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "Till Dress Do Us Part, Pas verloofde vrouwen van over de hele wereld komen naar deze bruidswinkel om de perfecte trouwjurk te vinden."
+        },
+        {
+          "title": "Say Yes to the Dress",
+          "start": "09:15",
+          "end": "10:10",
+          "startMins": 1635,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "Nothing Ordinary Here, Pas verloofde vrouwen van over de hele wereld komen naar deze bruidswinkel om de perfecte trouwjurk te vinden."
+        },
+        {
+          "title": "Say Yes to the Dress",
+          "start": "10:10",
+          "end": "11:00",
+          "startMins": 1690,
+          "durationMins": 50,
+          "genre": "Programma",
+          "desc": "More Money, More Problems, Pas verloofde vrouwen van over de hele wereld komen naar deze bruidswinkel om de perfecte trouwjurk te vinden."
+        },
+        {
+          "title": "A Place in the Sun",
+          "start": "11:00",
+          "end": "12:00",
+          "startMins": 1740,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "Manilva, In Manilva aan de Costa del Sol helpen de presentatoren bij de zoektocht naar een zonnig droomhuis."
+        },
+        {
+          "title": "Desserts",
+          "start": "12:00",
+          "end": "12:15",
+          "startMins": 1800,
+          "durationMins": 15,
+          "genre": "Programma",
+          "desc": "Bloem, Roger van Damme is de peetvader van de moleculaire patisserie. Desserten creëren is zijn passie en deze passie deelt hij graag met u."
+        },
+        {
+          "title": "Ware Delicatessen",
+          "start": "12:15",
+          "end": "12:45",
+          "startMins": 1815,
+          "durationMins": 30,
+          "genre": "Serie & Fictie",
+          "desc": "Truffel, Chef Bart Desmidt maakt in deze aflevering 4 gerechten waarbij truffel de hoofdrol spelt. Een verse truffel wel te verstaan ! De chef houdt niet van de zogenaamde truffelpasta dat hoofdzakelijk bestaat uit champignons, of de gesteriliseerde truffel in een potje die je in de supermarkt vindt. En truffelolie ..."
+        },
+        {
+          "title": "Comfort Food",
+          "start": "12:45",
+          "end": "13:05",
+          "startMins": 1845,
+          "durationMins": 20,
+          "genre": "Programma",
+          "desc": "Boost Je Baaldag, Eten dat je instant gelukkig maakt, je nostalgisch maakt, je troost. Dát is Comfort Food. Vanuit zijn eigen keuken maakt Jeroen De Pauw echte oppeppers die een baaldag meteen doen vergeten. Feel good dus, met Comfort Food!"
+        },
+        {
+          "title": "Vlaanderen kookt",
+          "start": "13:05",
+          "end": "13:25",
+          "startMins": 1865,
+          "durationMins": 20,
+          "genre": "Programma",
+          "desc": "Kip à la Tijl Uilenspiegel, Voor de gelegenheid mag Jan zien hoe postbode Christian het mysterieus klinkende 'Kip à la Tijl Uilenspiegel'."
+        },
+        {
+          "title": "A Place in the Sun",
+          "start": "13:25",
+          "end": "14:20",
+          "startMins": 1885,
+          "durationMins": 55,
+          "genre": "Documentaire",
+          "desc": "Lot Et Garonne, In Lot-et-Garonne zoeken de presentatoren samen met de kopers naar hun ideale Franse huis. Met een duidelijk budget bekijken ze charmante woningen in een rustige streek vol natuur, rivieren en landelijke charme."
+        },
+        {
+          "title": "A Place in the Sun",
+          "start": "14:20",
+          "end": "15:20",
+          "startMins": 1940,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "Malaga, In Malaga gaan de presentatoren op zoek naar een woning onder de Spaanse zon. Met een vastgesteld budget bekijken ze diverse opties, van levendige stadsappartementen tot rustige plekken vlak bij zee."
+        },
+        {
+          "title": "A Place in the Sun",
+          "start": "15:20",
+          "end": "16:15",
+          "startMins": 2000,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "Murcia, In Murcia helpen de presentatoren bij de zoektocht naar een betaalbaar huis in het zonnige zuidoosten van Spanje."
+        },
+        {
+          "title": "A Place in the Sun",
+          "start": "16:15",
+          "end": "17:15",
+          "startMins": 2055,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "Mojacar, In Mojacar zoeken de presentatoren samen met de kopers naar hun ideale woning aan de Costa de Almería. Met een vast budget worden uiteenlopende opties bekeken, van witte dorpjes tot huizen dicht bij zee."
+        },
+        {
+          "title": "Komen eten",
+          "start": "17:15",
+          "end": "18:00",
+          "startMins": 2115,
+          "durationMins": 45,
+          "genre": "Serie & Fictie",
+          "desc": "Dag 1 Ans, Het gloednieuwe seizoen van Komen Eten wordt in gang gezet door de 26-jarige Ans. Ans is dan wel boekhoudster, maar ze is zeker niet ¶saai¶ zoals het cliché voorschrijft. Haar leven is gevuld met bijzondere hobby¶s zoals snelwandelen en kleuren voor volwassenen. Normaal volgt Ans een koolhydraatarm dieet,..."
+        },
+        {
+          "title": "Komen eten",
+          "start": "18:00",
+          "end": "18:55",
+          "startMins": 2160,
+          "durationMins": 55,
+          "genre": "Entertainment",
+          "desc": "Dag 2 Dirk, De 56-jarige Dirk is het prototype van de hardwerkende West-Vlaming. Op professioneel vlak proefde hij al van vele stielen, maar sinds enkele jaren volgt hij zijn grote passie. Dirk is namelijk trotste gids van de mooiste streek van België: onze Vlaamse Kust. Als trotste inwoner van Nieuwpoort gidst hij ..."
+        },
+        {
+          "title": "Komen eten",
+          "start": "18:55",
+          "end": "19:45",
+          "startMins": 2215,
+          "durationMins": 50,
+          "genre": "Sport",
+          "desc": "Peter uit Retie, De 49-jarige Peter werkt als wellness, sport en business coach en heeft een bijzonder levensverhaal. Binnenkort wordt hij 50 en op dat moment zal hij ook 20 jaar seropositief zijn. Toen hij de diagnose te horen kreeg, stond Peter een moeilijke tijd te wachten. Gelukkig liet hij het hoofd niet hangen..."
+        },
+        {
+          "title": "Komen eten",
+          "start": "19:45",
+          "end": "20:35",
+          "startMins": 2265,
+          "durationMins": 50,
+          "genre": "Entertainment",
+          "desc": "Dag 4: Myriam, Myriam werkte 14 jaar lang bij een touroperator in een leidinggevende functie, maar nu neemt ze even pauze. Veertig worden was moeilijk voor haar en sindsdien is Myriam op zoek naar wat extra plezier en avontuur in het leven. Zo liet ze o.a. een tattoo zetten, volgt ze drumles en doet ze aan yoga. Ook..."
+        },
+        {
+          "title": "Blind Gekocht NL",
+          "start": "20:35",
+          "end": "21:50",
+          "startMins": 2315,
+          "durationMins": 75,
+          "genre": "Programma",
+          "desc": "Alithea, Alithea is een bewust alleenstaande moeder van haar jonge dochters Noveé en Leah. Het gezin woont momenteel in een appartement van 65 m². Als enige kostwinner blijkt het altijd moeilijk te concurreren met potentiële kopers die op twee inkomens kunnen vertrouwen. Bovendien heeft ze twee linkerhanden en vindt..."
+        },
+        {
+          "title": "Blind Gekocht NL",
+          "start": "21:50",
+          "end": "23:10",
+          "startMins": 2390,
+          "durationMins": 80,
+          "genre": "Programma",
+          "desc": "Rens And Cristine, Rens And Cristine leerden elkaar 10 jaar geleden kennen tijdens hun studententijd in Groningen. Hun kleine appartement van 54 m² op de 2e verdieping was nooit een probleem, tot er een kind kwam. Dus willen ze zo snel mogelijk verhuizen en schakelen Martijn And zijn team in. Kort daarna wordt bij R..."
+        },
+        {
+          "title": "Blind Gekocht NL",
+          "start": "23:10",
+          "end": "00:30",
+          "startMins": 2470,
+          "durationMins": 50,
+          "genre": "Programma",
+          "desc": "Ferdos And Marlou, Ferdos en Marlou leerden elkaar 12 jaar geleden kennen in een kroeg in Groningen. Ze trouwden twee jaar geleden, met het idee om daarna zwanger te worden. Ze zijn in een intensief IVF-proces beland en moeten soms meerdere keren per week naar het ziekenhuis. En dit beïnvloedt hun zoektocht naar een..."
+        }
+      ]
+    },
+    {
+      "id": "playcrime",
+      "name": "Play Crime",
+      "category": "vlaams",
+      "app": "GoPlay",
+      "androidPackage": "be.goplay.app",
+      "deepLink": "https://www.goplay.be/tv-gids",
+      "shortName": "CRIME",
+      "accentColor": "#F87171",
+      "programs": [
+        {
+          "title": "Geen uitzending - Play",
+          "start": "05:00",
+          "end": "06:10",
+          "startMins": 0,
+          "durationMins": 15,
+          "genre": "Programma",
+          "desc": "Geen uitzending - Play"
+        },
+        {
+          "title": "Without a Trace",
+          "start": "06:10",
+          "end": "06:55",
+          "startMins": 10,
+          "durationMins": 45,
+          "genre": "Programma",
+          "desc": "Closure, Het team jaagt op een man wiens verdwenen dochter nooit is teruggevonden. Jack moet zien te wennen aan zijn nieuwe baas."
+        },
+        {
+          "title": "Without a Trace",
+          "start": "06:55",
+          "end": "07:35",
+          "startMins": 55,
+          "durationMins": 40,
+          "genre": "Programma",
+          "desc": "22 X 42, Een bestuurslid bij een kledingbedrijf wordt ontvoerd na een feest op een dak in Manhattan. Clark Medina laat ondertussen blijken dat hij de nieuwe baas is bij het Missing Persons Squad."
+        },
+        {
+          "title": "Without a Trace",
+          "start": "07:35",
+          "end": "08:30",
+          "startMins": 95,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "Last Call, Jack helpt bij de zoektocht naar een zakencrimineel die uit de gevangenis is ontsnapt. De voortvluchtige wordt mogelijk gelinkt aan een miljoenenroof bij een bank."
+        },
+        {
+          "title": "Was I Really Abducted?",
+          "start": "08:30",
+          "end": "10:05",
+          "startMins": 150,
+          "durationMins": 95,
+          "genre": "Programma",
+          "desc": "Na maandenlang leed en mishandeling door haar ontvoerder wordt Elle plotseling zonder uitleg langs de kant van de weg vrijgelaten."
+        },
+        {
+          "title": "Billionaire Boys Club",
+          "start": "10:05",
+          "end": "11:00",
+          "startMins": 245,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "Don't Con a Conman, Joe Hunt richt in het Los Angeles van de jaren 80 de exclusieve investeringsclub Billionaire Boys Club op. Een deal met een oplichter sleurt de groep mee in een gevaarlijk web van bedrog."
+        },
+        {
+          "title": "Billionaire Boys Club",
+          "start": "11:00",
+          "end": "12:00",
+          "startMins": 300,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "Inflection Point, Financiële problemen, onderlinge conflicten en een riskant plan brengen Joe Hunts imperium aan de rand van de afgrond. Intussen verzamelt de politie belastend bewijsmateriaal."
+        },
+        {
+          "title": "Snapped",
+          "start": "12:00",
+          "end": "12:55",
+          "startMins": 360,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "Maria Hernandez, Een moeder van vier komt in beeld als verdachte na de mysterieuze dood van haar echtgenoot. Wat begint als een tragedie, onthult al snel een duister motief vol leugens, jaloezie en verraad."
+        },
+        {
+          "title": "Snapped",
+          "start": "12:55",
+          "end": "13:50",
+          "startMins": 415,
+          "durationMins": 55,
+          "genre": "Serie & Fictie",
+          "desc": "Thomas Gilbert Jr, Na de dood van een rijke investeerder wijst alles op een overval, maar het onderzoek onthult spanningen binnen de familie. Wat leidde tot deze tragedie in de elite van New York? Een zaak vol geld, macht en familieconflicten."
+        },
+        {
+          "title": "Snapped",
+          "start": "13:50",
+          "end": "14:45",
+          "startMins": 470,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "Cindy Campbell Ray, Wanneer een geliefde echtgenoot dood wordt aangetroffen, wijst het onderzoek naar iemand uit zijn directe omgeving. Wat begint als rouw, ontrafelt een web van geheimen, bedrog en een onverwachte dader."
+        },
+        {
+          "title": "Snapped",
+          "start": "14:45",
+          "end": "15:40",
+          "startMins": 525,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "William Rouse, Een ogenschijnlijk normaal tienerleven neemt een gruwelijke wending na een schokkende ontdekking in het ouderlijk huis. Wat dreef een jongen tot een daad die de hele buurt zou schokken?"
+        },
+        {
+          "title": "Snapped",
+          "start": "15:40",
+          "end": "16:35",
+          "startMins": 580,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "Sante Kimes, Een charmante vrouw met een duister verleden sleurt haar zoon mee in een leven vol oplichting en moord. Samen vormen ze een dodelijk duo dat overal chaos achterlaat. Hoe ver gingen ze voor geld en macht?"
+        },
+        {
+          "title": "World's Most Evil Killers",
+          "start": "16:35",
+          "end": "17:30",
+          "startMins": 635,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "Velma Barfield, Het verhaal van Velma Barfield, de eerste vrouw die werd geëxecuteerd door middel van dodelijke injectie nadat ze zes mensen om het leven bracht."
+        },
+        {
+          "title": "World's Most Evil Killers",
+          "start": "17:30",
+          "end": "18:30",
+          "startMins": 690,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "Chester Turner, Het verhaal van de meedogenloze seriemoordenaar die gedurende een angstaanjagende decenniumlange moordcampagne minstens vijftien levens heeft genomen."
+        },
+        {
+          "title": "World's Most Evil Killers",
+          "start": "18:30",
+          "end": "19:30",
+          "startMins": 750,
+          "durationMins": 60,
+          "genre": "Jeugd",
+          "desc": "Genene Jones, Het huiveringwekkende verhaal van de seriemoordenaar die als verpleegster in Texas werkte, waar ze vele kinderen en baby's doodde door ze drugs toe te dienen."
+        },
+        {
+          "title": "Britain's Most Evil Killers",
+          "start": "19:30",
+          "end": "20:30",
+          "startMins": 810,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "Stephen Unwin And William Mcfall, Na bevriend te raken tijdens hun gevangenschap voor eerdere moorden, hadden de vrijlatingen van Stephen Unwin en William McFall verschrikkelijke gevolgen."
+        },
+        {
+          "title": "Billionaire Boys Club",
+          "start": "20:30",
+          "end": "21:30",
+          "startMins": 870,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "The Price of Greed, Joe Hunts droom spat uiteen wanneer een wraakplan leidt tot zijn arrestatie en de ondergang van zijn imperium."
+        },
+        {
+          "title": "Billionaire Boys Club",
+          "start": "21:30",
+          "end": "22:30",
+          "startMins": 930,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "Tale of Two Trials, Joe Hunt riskeert in Californië de doodstraf voor twee moorden die verband houden met de Billionaire Boys Club. Tijdens twee rechtszaken vecht hij voor zijn vrijheid en zijn leven."
+        },
+        {
+          "title": "Murdaugh Murders",
+          "start": "22:30",
+          "end": "00:05",
+          "startMins": 990,
+          "durationMins": 95,
+          "genre": "Programma",
+          "desc": "De politie haast zich naar het huis van de Murdaughs nadat Alex Murdaugh belde en meldde dat zijn vrouw Maggie en zoon Paul overleden waren. Met de politie en pers die in het leven van Alex en zijn advocatenkantoor duiken voor aanwijzingen, probeert hij hun onderzoek te dwarsbomen door valse alibi's te creëren."
+        },
+        {
+          "title": "Truth Be Told",
+          "start": "00:05",
+          "end": "01:05",
+          "startMins": 1085,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "No Cros, No Crown, Poppy en Markus gaan de stappen van hun verdachte op de nacht van de moord na."
+        },
+        {
+          "title": "Truth Be Told",
+          "start": "01:05",
+          "end": "02:05",
+          "startMins": 1145,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "Graveyard Love, Poppy gaat verder met haar nieuwe zaak. Warren draagt de gevolgen van zijn daden."
+        },
+        {
+          "title": "Truth Be Told",
+          "start": "02:05",
+          "end": "02:50",
+          "startMins": 1205,
+          "durationMins": 45,
+          "genre": "Programma",
+          "desc": "Not Buried, Planted, Een gebroken Poppy probeert de zaak los te laten. Ze is er kapot van, maar de zaak laat haar niet met rust."
+        },
+        {
+          "title": "Geen uitzending - Play",
+          "start": "02:50",
+          "end": "05:00",
+          "startMins": 1250,
+          "durationMins": 130,
+          "genre": "Programma",
+          "desc": "Geen uitzending - Play"
+        },
+        {
+          "title": "Geen uitzending - Play",
+          "start": "05:00",
+          "end": "05:30",
+          "startMins": 1380,
+          "durationMins": 30,
+          "genre": "Programma",
+          "desc": "Geen uitzending - Play"
+        },
+        {
+          "title": "Without a Trace",
+          "start": "05:30",
+          "end": "06:10",
+          "startMins": 1410,
+          "durationMins": 40,
+          "genre": "Programma",
+          "desc": "True / False, De zeventienjarige zoon van een agent van de geheime dienst verdwijnt plotseling na flink te zijn toegetakeld."
+        },
+        {
+          "title": "Without a Trace",
+          "start": "06:10",
+          "end": "06:50",
+          "startMins": 1450,
+          "durationMins": 40,
+          "genre": "Programma",
+          "desc": "Rise and Fall, Het team moet een zaak laten vallen en zich richten op de ontvoering van een kind. Martin moet de oude zaak zelf zien op te lossen."
+        },
+        {
+          "title": "Ms. Murder",
+          "start": "06:50",
+          "end": "07:45",
+          "startMins": 1490,
+          "durationMins": 55,
+          "genre": "Serie & Fictie",
+          "desc": "Aflevering 1, Ontdek drie schokkende verhalen van vrouwen wier ogenschijnlijk gewone leven op zijn kop wordt gezet door mysterieuze sterfgevallen."
+        },
+        {
+          "title": "Ms. Murder",
+          "start": "07:45",
+          "end": "09:00",
+          "startMins": 1545,
+          "durationMins": 75,
+          "genre": "Serie & Fictie",
+          "desc": "Aflevering 2, Ontdek drie schokkende verhalen van vrouwen wier ogenschijnlijk gewone leven op zijn kop wordt gezet door mysterieuze sterfgevallen."
+        },
+        {
+          "title": "Ms. Murder",
+          "start": "09:00",
+          "end": "10:10",
+          "startMins": 1620,
+          "durationMins": 70,
+          "genre": "Serie & Fictie",
+          "desc": "Aflevering 3, Ontdek drie schokkende verhalen van vrouwen wier ogenschijnlijk gewone leven op zijn kop wordt gezet door mysterieuze sterfgevallen."
+        },
+        {
+          "title": "Jesse Stone: Night Passage",
+          "start": "10:10",
+          "end": "11:50",
+          "startMins": 1690,
+          "durationMins": 100,
+          "genre": "Programma",
+          "desc": "Jesse Stone verhuist naar het rustige Paradise in Massachusetts. Hier wordt hij door de gemeenteraad aangesteld om het nieuwe hoofd van de politie te worden. Al snel blijkt dat Paradise lang niet zo rustig is als het lijkt. Op zijn eerste werkdag doet Stone onderzoek naar een zaak waarbij sprake is van huiselijk gew..."
+        },
+        {
+          "title": "The Killer In My Family",
+          "start": "11:50",
+          "end": "12:45",
+          "startMins": 1790,
+          "durationMins": 55,
+          "genre": "Serie & Fictie",
+          "desc": "Drew Peterson, Familieleden van voormalig politieagent uit Illinois en veroordeelde moordenaar Drew Peterson onthullen hoe zijn schokkende misdaden de familie hebben beïnvloed en hun leven voorgoed hebben veranderd."
+        },
+        {
+          "title": "The Killer In My Family",
+          "start": "12:45",
+          "end": "13:40",
+          "startMins": 1845,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "Adrian Prout, De voormalige verloofde van de rijke boer en landeigenaar Adrian Prout onthult hoe het was om samen te leven met een man die loog over het vermoorden van zijn vrouw."
+        },
+        {
+          "title": "The Killer In My Family",
+          "start": "13:40",
+          "end": "14:35",
+          "startMins": 1900,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "Raoul Moat, Familieleden van de moordenaar uit Newcastle, Raoul Moat, onthullen hoe zijn gruwelijke schietpartij hen heeft beïnvloed en hoe hun leven er vandaag uitziet."
+        },
+        {
+          "title": "The Killer In My Family",
+          "start": "14:35",
+          "end": "15:30",
+          "startMins": 1955,
+          "durationMins": 55,
+          "genre": "Programma",
+          "desc": "Russell Causley, Familieleden van moordenaar Russell Causley onthullen hoe de moord op zijn vrouw hen heeft beïnvloed en dat ze zich nooit kunnen herstellen zolang haar lichaam niet wordt gevonden."
+        },
+        {
+          "title": "The Killer In My Family",
+          "start": "15:30",
+          "end": "16:25",
+          "startMins": 2010,
+          "durationMins": 55,
+          "genre": "Documentaire",
+          "desc": "Lisa Montgomery, Familieleden van Lisa Montgomery spreken zich uit over hoe zij geloven dat haar geestelijke gezondheid en geschiedenis van ernstig seksueel misbruik hebben geleid tot het wurgen van een zwangere vrouw."
+        },
+        {
+          "title": "24 Hours In Police Custody",
+          "start": "16:25",
+          "end": "17:25",
+          "startMins": 2065,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "The Writing on the Wall, De politie onderzoekt een ernstige misdaad waarbij aanwijzingen op een muur mogelijk cruciaal bewijs vormen."
+        },
+        {
+          "title": "24 Hours In Police Custody",
+          "start": "17:25",
+          "end": "18:25",
+          "startMins": 2125,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "Living the High Life, In de kleine steden en dorpen van Bedfordshire onderzoekt de politie een toename van drugsgebruik. Daarbij komt een grootschalige fraudezaak aan het licht, waarbij een lokale bende kwetsbare jongeren uitbuit."
+        },
+        {
+          "title": "24 Hours In Police Custody",
+          "start": "18:25",
+          "end": "19:25",
+          "startMins": 2185,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "The Murder of Jane Doe, Om vier uur 's nachts belt een vrouw de politie. Ze is ver van huis en verkeert in grote problemen. Kort daarna raakt ze in coma. Kunnen de rechercheurs achterhalen wat er met haar is gebeurd?"
+        },
+        {
+          "title": "24 Hours In Police Custody",
+          "start": "19:25",
+          "end": "20:30",
+          "startMins": 2245,
+          "durationMins": 65,
+          "genre": "Programma",
+          "desc": "Breakout, Een demonstratie in de fitnessruimte loopt uit de hand in het detentiecentrum Yarl's Wood. Meerdere gedetineerden ontsnappen, waarna de politie een grote klopjacht start. Sommigen zouden banden hebben met de Albanese georganiseerde misdaad."
+        },
+        {
+          "title": "The British Airways Killer",
+          "start": "20:30",
+          "end": "21:35",
+          "startMins": 2310,
+          "durationMins": 65,
+          "genre": "Serie & Fictie",
+          "desc": "Aflevering 1, Een waargebeurde misdaaddocumentaire over de British Airways-medewerker die een dodelijk dubbelleven leidde. Het onderzoek onthult hoe hij zijn slachtoffers misleidde, hoe hij uiteindelijk werd ontmaskerd en welke sporen hij achterliet."
+        },
+        {
+          "title": "The British Airways Killer",
+          "start": "21:35",
+          "end": "22:40",
+          "startMins": 2375,
+          "durationMins": 65,
+          "genre": "Serie & Fictie",
+          "desc": "Aflevering 2, Een waargebeurde misdaaddocumentaire over de British Airways-medewerker die een dodelijk dubbelleven leidde. Het onderzoek onthult hoe hij zijn slachtoffers misleidde, hoe hij uiteindelijk werd ontmaskerd en welke sporen hij achterliet."
+        },
+        {
+          "title": "True Crime Belgium",
+          "start": "22:40",
+          "end": "23:40",
+          "startMins": 2440,
+          "durationMins": 60,
+          "genre": "Programma",
+          "desc": "De Verkeersmoord, Davy Kesteman joeg Sharon Gruwez (22) na een fatale rit met 191 km/u de dood in. Kesteman kreeg 23 jaar cel: een historisch precedent waarbij een crash als moord werd bestraft."
+        },
+        {
+          "title": "Jesse Stone - Stone Cold",
+          "start": "23:40",
+          "end": "01:20",
+          "startMins": 2500,
+          "durationMins": 20,
+          "genre": "Programma",
+          "desc": "Jesse Stone is een voormalig rechercheur moordzaken uit LA, die de grote stad heeft ingeruild voor een baantje als politiecommandant in een rustig vissersdorpje in New England. Stone heeft zijn oude gewoontes niet achtergelaten en doet zich nog steeds te goed aan zijn twee favoriete dingen: Scotch whisky en vrouwen...."
+        }
+      ]
+    },
+    {
       "id": "laune",
       "name": "La Une",
       "category": "waals",
       "app": "RTBF Auvio",
       "androidPackage": "be.rtbf.auvio",
       "deepLink": "https://auvio.rtbf.be/direct",
+      "shortName": "LA UNE",
+      "accentColor": "#EF4444",
       "programs": [
         {
           "title": "Culture en Prime",
@@ -3563,6 +5899,8 @@
       "app": "RTL play",
       "androidPackage": "com.tapptic.rtl.tvi",
       "deepLink": "https://www.rtlplay.be/direct",
+      "shortName": "RTL TVI",
+      "accentColor": "#3B82F6",
       "programs": [
         {
           "title": "Bel RTL vision",
@@ -4050,6 +6388,8 @@
       "app": "ARTE",
       "androidPackage": "tv.arte.plus7",
       "deepLink": "https://www.arte.tv/fr/direct/",
+      "shortName": "ARTE",
+      "accentColor": "#F97316",
       "programs": [
         {
           "title": "Hallelujah : Leonard Cohen - La musique de nos vies",
