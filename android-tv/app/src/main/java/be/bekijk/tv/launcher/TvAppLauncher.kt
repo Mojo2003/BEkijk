@@ -20,7 +20,10 @@ object TvAppLauncher {
 
     // Apps waarvan de TV-versie bij een web-deeplink alleen een QR-code toont.
     // Voor deze apps openen we direct de app zelf (scheelt een keer Terug).
-    private val PACKAGES_WITHOUT_TV_DEEPLINK = setOf("be.vrt.vrtnu")
+    private val PACKAGES_WITHOUT_TV_DEEPLINK = setOf(
+        "be.vrt.vrtnu",   // VRT MAX
+        "be.goplay.app"   // GoPlay (Play, Play Fictie, ...)
+    )
 
     fun openChannel(context: Context, channel: ChannelDto) {
         val pkg = channel.androidPackage.ifBlank { FALLBACK_PACKAGES[channel.app].orEmpty() }

@@ -1,15 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    BEkijk-icoon (tv met play-symbool en geel-rode boog), afgeleid van public/bekijk-icon.svg.
+    Het icoon staat binnen de veilige zone (66 van 108 dp) van een adaptief icoon:
+    de tekening is 512 eenheden breed en wordt met 0,13 geschaald en gecentreerd.
+-->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <path
-        android:fillColor="#161C28"
-        android:strokeColor="#F59E0B"
-        android:strokeWidth="3.5"
-        android:pathData="M30,33 L78,33 A6,6 0 0 1 84,39 L84,69 A6,6 0 0 1 78,75 L30,75 A6,6 0 0 1 24,69 L24,39 A6,6 0 0 1 30,33 Z" />
-    <path
-        android:fillColor="#F59E0B"
-        android:pathData="M47,44 L67,54 L47,64 Z" />
+    <group
+        android:scaleX="0.13"
+        android:scaleY="0.13"
+        android:translateX="20.72"
+        android:translateY="23.97">
+        <!-- Antenne -->
+        <path
+            android:pathData="M256,140 L190,76 M256,140 L322,76"
+            android:strokeColor="#F4F6FA"
+            android:strokeWidth="19"
+            android:strokeLineCap="round" />
+        <!-- Scherm -->
+        <path
+            android:pathData="M143,140 H369 A38,38 0 0 1 407,178 V322 A38,38 0 0 1 369,360 H143 A38,38 0 0 1 105,322 V178 A38,38 0 0 1 143,140 Z"
+            android:strokeColor="#F4F6FA"
+            android:strokeWidth="19"
+            android:strokeLineJoin="round" />
+        <!-- Play-symbool -->
+        <path
+            android:fillColor="#F4F6FA"
+            android:pathData="M226,198 Q211,190 211,209 V291 Q211,310 228,300 L302,259 Q319,249 302,239 Z" />
+        <!-- Boog: geel naar rood -->
+        <path
+            android:pathData="M65,386 Q256,245 447,386"
+            android:strokeWidth="25"
+            android:strokeLineCap="round">
+            <aapt:attr name="android:strokeColor">
+                <gradient
+                    android:startX="65"
+                    android:startY="0"
+                    android:endX="447"
+                    android:endY="0"
+                    android:type="linear">
+                    <item android:offset="0" android:color="#FFD21F" />
+                    <item android:offset="0.55" android:color="#FF8A16" />
+                    <item android:offset="1" android:color="#E52B36" />
+                </gradient>
+            </aapt:attr>
+        </path>
+    </group>
 </vector>

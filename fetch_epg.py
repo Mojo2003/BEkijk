@@ -59,6 +59,15 @@ CHANNELS = [
     ("vtm4", "VTM 4", "vlaams", "VTM GO", "be.vmma.vtm.zenderapp",
      "https://www.vtmgo.be/vtmgo/live-kijken/vtm4",
      ["vtm4.be"], ["vtm 4", "vtm4"], []),
+    ("vtmgold", "VTM GOLD", "vlaams", "VTM GO", "be.vmma.vtm.zenderapp",
+     "https://www.vtmgo.be/vtmgo/live-kijken",
+     ["vtmgold.be", "vtmgold.nl"], ["vtm gold", "vtmgold"], []),
+    ("playreality", "Play Reality", "vlaams", "GoPlay", "be.goplay.app",
+     "https://www.goplay.be/tv-gids",
+     ["playreality.be"], ["play reality", "playreality"], []),
+    ("playcrime", "Play Crime", "vlaams", "GoPlay", "be.goplay.app",
+     "https://www.goplay.be/tv-gids",
+     ["playcrime.be"], ["play crime", "playcrime"], []),
     ("ketnet", "Ketnet", "vlaams", "VRT MAX", "be.vrt.vrtnu",
      "https://www.vrt.be/vrtmax/livestream/video/ketnet/",
      ["ketnet.be"], ["ketnet"], []),
@@ -83,7 +92,22 @@ CHANNELS = [
 ]
 
 # Volgorde en selectie van guide.json (zoals buildLegacyGuideExport)
-EXPORT_IDS = ["vrt1", "canvas", "vtm", "vtm2", "play4", "play5", "laune", "rtltvi", "arte"]
+EXPORT_IDS = [
+    "vrt1", "canvas",
+    "vtm", "vtm2", "vtm3", "vtm4", "vtmgold",
+    "play4", "play5", "play6", "playreality", "playcrime",
+    "laune", "rtltvi", "arte",
+]
+
+# Zenderbadge in de app: (korte tekst, accentkleur). Geen echte logo's, wel herkenbare kleuren.
+BADGES = {
+    "vrt1": ("VRT 1", "#00A8E8"), "canvas": ("CANVAS", "#38BDF8"),
+    "vtm": ("VTM", "#F59E0B"), "vtm2": ("VTM 2", "#FB923C"),
+    "vtm3": ("VTM 3", "#FBBF24"), "vtm4": ("VTM 4", "#D97706"), "vtmgold": ("GOLD", "#EAB308"),
+    "play4": ("PLAY", "#10B981"), "play5": ("FICTIE", "#34D399"), "play6": ("ACTIE", "#2DD4BF"),
+    "playreality": ("REALITY", "#A78BFA"), "playcrime": ("CRIME", "#F87171"),
+    "laune": ("LA UNE", "#EF4444"), "rtltvi": ("RTL TVI", "#3B82F6"), "arte": ("ARTE", "#F97316"),
+}
 
 GENRE_RULES = [
     ("Jeugd", r"\b(ketnet|karrewiet|kabouter|samson|maya|smurfen|kinderen)\b"),
@@ -166,6 +190,18 @@ def main():
             xml_to_key[xml_id] = key
             claimed.add(key)
 
+    matched = ", ".join(f"{xid}->{key}" for xid, key in sorted(xml_to_key.items()))
+    print(f"Gekoppelde zenders: {matched}")
+    hints = ("vtm", "play", "gold", "rtl", "vrt", "canvas", "arte", "une", "tipik", "ketnet")
+    unmatched = sorted(
+        f"{ch.get('id', '')} ({first_text(ch, 'display-name')})"
+        for ch in root.findall("channel")
+        if ch.get("id", "") not in xml_to_key
+        and any(h in (ch.get("id", "") + " " + first_text(ch, "display-name")).lower() for h in hints)
+    )
+    if unmatched:
+        print("Niet gekoppeld maar lijkt erop: " + "; ".join(unmatched[:40]))
+
     now = datetime.now(TZ)
     # Voor 06:00 hoort "nu" nog bij de tv-dag van gisteren.
     day_start = (now - timedelta(hours=WINDOW_START_HOUR)).replace(hour=0, minute=0, second=0, microsecond=0)
@@ -210,18 +246,22 @@ def main():
         items = sorted(programs[cid], key=lambda p: p["_sort"])
         for p in items:
             p.pop("_sort")
+        if not items:
+            continue  # zender zit niet in de feed: liever geen lege rij in de app
+        badge, accent = BADGES[cid]
         channels.append({
             "id": cid, "name": name, "category": category, "app": app,
-            "androidPackage": package, "deepLink": deep_link, "programs": items,
+            "androidPackage": package, "deepLink": deep_link,
+            "shortName": badge, "accentColor": accent, "programs": items,
         })
 
     total = sum(len(c["programs"]) for c in channels)
-    empty = [c["id"] for c in channels if not c["programs"]]
+    empty = [cid for cid in EXPORT_IDS if cid not in {c["id"] for c in channels}]
     if total == 0:
         # Liever een mislukte run dan een lege guide.json die de goede overschrijft.
         raise SystemExit("Geen enkel programma gevonden in het venster; guide.json niet overschreven.")
     if empty:
-        print(f"Waarschuwing: geen programma's voor {', '.join(empty)}", file=sys.stderr)
+        print(f"Waarschuwing: niet in de feed gevonden (weggelaten): {', '.join(empty)}", file=sys.stderr)
 
     OUTPUT.write_text(json.dumps({
         "updatedAt": now.strftime("%Y-%m-%d %H:%M"),

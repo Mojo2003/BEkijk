@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.BEkijk" parent="android:Theme.DeviceDefault.NoActionBar">
-        <item name="android:windowBackground">@color/ic_launcher_background</item>
+        <!-- Splashscherm tijdens het opstarten, daarna neemt de Compose-achtergrond het over -->
+        <item name="android:windowBackground">@drawable/bekijk_splash</item>
     </style>
 </resources>

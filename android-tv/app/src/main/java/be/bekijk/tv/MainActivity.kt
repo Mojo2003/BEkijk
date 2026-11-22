@@ -4,12 +4,14 @@ import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -17,6 +19,7 @@ import androidx.tv.material3.Button
 import androidx.tv.material3.ButtonDefaults
 import androidx.tv.material3.ExperimentalTvMaterial3Api
 import androidx.tv.material3.Text
+import be.bekijk.tv.R
 import be.bekijk.tv.data.EpgRepository
 import be.bekijk.tv.data.GuidePayload
 import be.bekijk.tv.ui.TvGuideScreen
@@ -29,11 +32,18 @@ class MainActivity : ComponentActivity() {
         val initialFavs = prefs.getStringSet("favorite_channels", setOf("vrt1", "canvas", "vtm", "play4"))
             ?: setOf("vrt1", "canvas", "vtm", "play4")
 
+        val initialProgramFavs = prefs.getStringSet("favorite_programs", emptySet<String>())
+            ?: emptySet()
+
         setContent {
             BEkijkTvApp(
                 initialFavorites = initialFavs,
                 onPersistFavorites = { updated ->
                     prefs.edit().putStringSet("favorite_channels", updated).apply()
+                },
+                initialFavoritePrograms = initialProgramFavs,
+                onPersistFavoritePrograms = { updated ->
+                    prefs.edit().putStringSet("favorite_programs", updated).apply()
                 }
             )
         }
@@ -44,13 +54,16 @@ class MainActivity : ComponentActivity() {
 @Composable
 private fun BEkijkTvApp(
     initialFavorites: Set<String>,
-    onPersistFavorites: (Set<String>) -> Unit
+    onPersistFavorites: (Set<String>) -> Unit,
+    initialFavoritePrograms: Set<String>,
+    onPersistFavoritePrograms: (Set<String>) -> Unit
 ) {
     val scope = rememberCoroutineScope()
     var guide by remember { mutableStateOf<GuidePayload?>(null) }
     var loading by remember { mutableStateOf(true) }
     var errorMsg by remember { mutableStateOf<String?>(null) }
     var favorites by remember { mutableStateOf(initialFavorites) }
+    var favoritePrograms by remember { mutableStateOf(initialFavoritePrograms) }
 
     fun loadGuide() {
         scope.launch {
@@ -73,7 +86,7 @@ private fun BEkijkTvApp(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF0B0E14))
+            .background(Color(0xFF081321))
     ) {
         when {
             loading && guide == null -> {
@@ -82,11 +95,10 @@ private fun BEkijkTvApp(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.spacedBy(10.dp)
                 ) {
-                    Text(
-                        text = "BEkijk",
-                        color = Color.White,
-                        fontSize = 30.sp,
-                        fontWeight = FontWeight.Bold
+                    Image(
+                        painter = painterResource(id = R.drawable.bekijk_logo),
+                        contentDescription = "BEkijk",
+                        modifier = Modifier.size(width = 300.dp, height = 105.dp)
                     )
                     Text(
                         text = "Belgische TV-gids laden...",
@@ -118,7 +130,7 @@ private fun BEkijkTvApp(
                     Button(
                         onClick = { loadGuide() },
                         colors = ButtonDefaults.colors(
-                            containerColor = Color(0xFFF59E0B),
+                            containerColor = Color(0xFFFFD21F),
                             contentColor = Color(0xFF0B0E14)
                         )
                     ) {
@@ -139,6 +151,16 @@ private fun BEkijkTvApp(
                         }
                         favorites = next
                         onPersistFavorites(next)
+                    },
+                    favoritePrograms = favoritePrograms,
+                    onToggleFavoriteProgram = { key ->
+                        val next = if (favoritePrograms.contains(key)) {
+                            favoritePrograms - key
+                        } else {
+                            favoritePrograms + key
+                        }
+                        favoritePrograms = next
+                        onPersistFavoritePrograms(next)
                     },
                     onRefresh = { loadGuide() }
                 )
