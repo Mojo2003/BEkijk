@@ -10,6 +10,8 @@ coverage/
 android-tv/.gradle/
 android-tv/.idea/
 android-tv/local.properties
+# Release APK output
+android-tv/app/release/
 
 # Build outputs
 android-tv/**/build/
