@@ -36,6 +36,18 @@ enum class TvFilter(val label: String) {
     FAVORITES("Favorieten")
 }
 
+// Vaste afmetingen: een vaste hero-hoogte voorkomt dat het hele scherm verspringt
+// wanneer je naar een programma met een kortere of langere beschrijving gaat.
+private val HeroHeight = 168.dp
+private val TileHeight = 72.dp
+
+/** Eerste programma dat nog bezig is of nog komt; anders het laatste van de dag. */
+private fun pickCurrentProgram(channel: ChannelDto?, nowMins: Int): ProgramDto? {
+    val programs = channel?.programs ?: return null
+    return programs.firstOrNull { EpgTimeHelper.getStatus(it, nowMins) != ProgramStatus.PAST }
+        ?: programs.lastOrNull()
+}
+
 @OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
 fun TvGuideScreen(
@@ -46,40 +58,42 @@ fun TvGuideScreen(
 ) {
     val context = LocalContext.current
     var activeFilter by remember { mutableStateOf(TvFilter.ALL) }
-    var nowMins by remember(guide) { mutableStateOf(EpgTimeHelper.currentMinutesSinceWindow(guide.windowStartHour)) }
+    var nowMins by remember(guide) {
+        mutableStateOf(EpgTimeHelper.currentMinutesSinceWindow(guide.windowStartHour, guide.windowStartTs))
+    }
 
     LaunchedEffect(guide) {
         while (true) {
             delay(60_000L)
-            nowMins = EpgTimeHelper.currentMinutesSinceWindow(guide.windowStartHour)
+            nowMins = EpgTimeHelper.currentMinutesSinceWindow(guide.windowStartHour, guide.windowStartTs)
         }
     }
 
-    val filteredChannels = remember(guide, activeFilter, favorites) {
+    // Sortering en filter gebruiken een momentopname van de favorieten. Zo springt de
+    // lijst niet door en blijft je focus staan wanneer je een zender (de)selecteert.
+    val favoritesForLayout = remember(guide, activeFilter) { favorites }
+
+    val filteredChannels = remember(guide, activeFilter, favoritesForLayout) {
         val base = when (activeFilter) {
             TvFilter.ALL -> guide.channels
             TvFilter.VLAAMS -> guide.channels.filter { it.category == "vlaams" }
             TvFilter.WAALS -> guide.channels.filter { it.category == "waals" }
-            TvFilter.FAVORITES -> guide.channels.filter { favorites.contains(it.id) }
+            TvFilter.FAVORITES -> guide.channels.filter { favoritesForLayout.contains(it.id) }
         }
-        base.sortedBy { if (favorites.contains(it.id)) 0 else 1 }
+        base.sortedBy { if (favoritesForLayout.contains(it.id)) 0 else 1 }
     }
 
     var selectedChannel by remember(filteredChannels) { mutableStateOf(filteredChannels.firstOrNull()) }
     var selectedProgram by remember(filteredChannels) {
-        val firstCh = filteredChannels.firstOrNull()
-        val liveProg = firstCh?.programs?.firstOrNull {
-            EpgTimeHelper.getStatus(it, nowMins) == ProgramStatus.LIVE
-        }
-        mutableStateOf(liveProg ?: firstCh?.programs?.firstOrNull())
+        mutableStateOf(pickCurrentProgram(filteredChannels.firstOrNull(), nowMins))
     }
 
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(Color(0xFF0B0E14))
-            .padding(horizontal = 36.dp, vertical = 22.dp),
-        verticalArrangement = Arrangement.spacedBy(18.dp)
+            .padding(horizontal = 36.dp, vertical = 16.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         // Bovenbalk: Merknaam + Filterknoppen + Vernieuwen
         Row(
@@ -119,19 +133,20 @@ fun TvGuideScreen(
                     color = Color(0xFF94A3B8),
                     fontSize = 12.sp
                 )
-                OutlinedButton(onClick = onRefresh) {
-                    Text(text = "Vernieuwen", fontSize = 13.sp)
-                }
+                SecondaryButton(label = "Vernieuwen", onClick = onRefresh)
             }
         }
 
-        // Hero-gedeelte voor de geselecteerde tijdsbalk
+        // Hero-gedeelte voor het geselecteerde programma
         val heroCh = selectedChannel
         val heroProg = selectedProgram
         if (heroCh != null && heroProg != null) {
+            val heroIdx = heroCh.programs.indexOf(heroProg)
+            val nextProg = if (heroIdx >= 0) heroCh.programs.getOrNull(heroIdx + 1) else null
             ProgramHeroBanner(
                 channel = heroCh,
                 program = heroProg,
+                nextProgram = nextProg,
                 nowMins = nowMins,
                 isFavorite = favorites.contains(heroCh.id),
                 onToggleFavorite = { onToggleFavorite(heroCh.id) },
@@ -146,14 +161,20 @@ fun TvGuideScreen(
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = "Geen zenders in deze selectie.",
+                    text = if (activeFilter == TvFilter.FAVORITES) {
+                        "Nog geen favorieten. Houd OK ingedrukt op een programma om een zender toe te voegen."
+                    } else {
+                        "Geen zenders in deze selectie."
+                    },
                     color = Color(0xFF94A3B8),
                     fontSize = 16.sp
                 )
             }
         } else {
             LazyColumn(
-                verticalArrangement = Arrangement.spacedBy(16.dp),
+                verticalArrangement = Arrangement.spacedBy(10.dp),
+                // Ruimte voor de gefocuste tegel, anders wordt die afgeknipt
+                contentPadding = PaddingValues(vertical = 6.dp),
                 modifier = Modifier.fillMaxSize()
             ) {
                 items(filteredChannels, key = { it.id }) { channel ->
@@ -167,6 +188,9 @@ fun TvGuideScreen(
                         },
                         onProgramSelected = {
                             TvAppLauncher.openChannel(context, channel)
+                        },
+                        onProgramLongClick = {
+                            onToggleFavorite(channel.id)
                         }
                     )
                 }
@@ -205,11 +229,32 @@ private fun FilterChipButton(
     }
 }
 
+/** Knop met goed leesbare tekst (de standaard OutlinedButton was donker op donker). */
+@OptIn(ExperimentalTvMaterial3Api::class)
+@Composable
+private fun SecondaryButton(
+    label: String,
+    onClick: () -> Unit
+) {
+    Button(
+        onClick = onClick,
+        colors = ButtonDefaults.colors(
+            containerColor = Color(0xFF263044),
+            contentColor = Color(0xFFE2E8F0),
+            focusedContainerColor = Color(0xFF3B4A66),
+            focusedContentColor = Color.White
+        )
+    ) {
+        Text(text = label, fontSize = 12.sp)
+    }
+}
+
 @OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
 private fun ProgramHeroBanner(
     channel: ChannelDto,
     program: ProgramDto,
+    nextProgram: ProgramDto?,
     nowMins: Int,
     isFavorite: Boolean,
     onToggleFavorite: () -> Unit,
@@ -225,74 +270,113 @@ private fun ProgramHeroBanner(
     Box(
         modifier = Modifier
             .fillMaxWidth()
+            .height(HeroHeight)
             .background(
                 brush = Brush.horizontalGradient(
                     colors = listOf(Color(0xFF131822), Color(0xFF1C2435))
                 ),
                 shape = RoundedCornerShape(18.dp)
             )
-            .padding(22.dp)
+            .padding(horizontal = 22.dp, vertical = 14.dp)
     ) {
         Row(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxSize(),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
             Column(
                 modifier = Modifier
                     .weight(1f)
+                    .fillMaxHeight()
                     .padding(end = 24.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
+                verticalArrangement = Arrangement.SpaceBetween
             ) {
-                Text(
-                    text = "$statusLabel · ${channel.name} · ${program.start} – ${program.end} · ${program.genre}",
-                    color = if (status == ProgramStatus.LIVE) Color(0xFFF59E0B) else Color(0xFF94A3B8),
-                    fontSize = 13.sp,
-                    fontWeight = FontWeight.SemiBold
-                )
-                Text(
-                    text = program.title,
-                    color = Color.White,
-                    fontSize = 26.sp,
-                    fontWeight = FontWeight.Bold,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis
-                )
-                Text(
-                    text = program.desc,
-                    color = Color(0xFFCBD5E1),
-                    fontSize = 14.sp,
-                    maxLines = 2,
-                    overflow = TextOverflow.Ellipsis
-                )
+                Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                    Text(
+                        text = "$statusLabel · ${channel.name} · ${program.start} – ${program.end} · ${program.genre}",
+                        color = if (status == ProgramStatus.LIVE) Color(0xFFF59E0B) else Color(0xFF94A3B8),
+                        fontSize = 13.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                    Text(
+                        text = program.title,
+                        color = Color.White,
+                        fontSize = 24.sp,
+                        fontWeight = FontWeight.Bold,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                    Text(
+                        text = program.desc,
+                        color = Color(0xFFCBD5E1),
+                        fontSize = 13.sp,
+                        maxLines = 3,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                }
 
-                if (status == ProgramStatus.LIVE) {
-                    val progress = EpgTimeHelper.getProgress(program, nowMins)
-                    val remaining = EpgTimeHelper.getRemainingMinutes(program, nowMins)
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(12.dp),
-                        modifier = Modifier.padding(top = 4.dp)
-                    ) {
-                        LinearProgressIndicator(
-                            progress = { progress },
-                            color = Color(0xFFF59E0B),
-                            trackColor = Color(0xFF263044),
-                            modifier = Modifier
-                                .width(220.dp)
-                                .height(5.dp)
-                        )
+                // Vaste hoogte, zodat de balk niet verspringt tussen live en niet-live
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(20.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(10.dp)
+                ) {
+                    when (status) {
+                        ProgramStatus.LIVE -> {
+                            val progress = EpgTimeHelper.getProgress(program, nowMins)
+                            val remaining = EpgTimeHelper.getRemainingMinutes(program, nowMins)
+                            LinearProgressIndicator(
+                                progress = { progress },
+                                color = Color(0xFFF59E0B),
+                                trackColor = Color(0xFF263044),
+                                modifier = Modifier
+                                    .width(140.dp)
+                                    .height(5.dp)
+                            )
+                            Text(
+                                text = "Nog $remaining min",
+                                color = Color(0xFF94A3B8),
+                                fontSize = 12.sp,
+                                maxLines = 1
+                            )
+                        }
+                        ProgramStatus.UPCOMING -> {
+                            val until = (program.startMins - nowMins).coerceAtLeast(1)
+                            Text(
+                                text = "Begint over $until min",
+                                color = Color(0xFF94A3B8),
+                                fontSize = 12.sp,
+                                maxLines = 1
+                            )
+                        }
+                        ProgramStatus.PAST -> {
+                            Text(
+                                text = "Afgelopen",
+                                color = Color(0xFF64748B),
+                                fontSize = 12.sp,
+                                maxLines = 1
+                            )
+                        }
+                    }
+                    if (nextProgram != null) {
                         Text(
-                            text = "Nog $remaining min · ${channel.app}",
+                            text = "· Daarna: ${nextProgram.title} (${nextProgram.start})",
                             color = Color(0xFF94A3B8),
-                            fontSize = 12.sp
+                            fontSize = 12.sp,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
+                            modifier = Modifier.weight(1f, fill = false)
                         )
                     }
                 }
             }
 
             Column(
-                verticalArrangement = Arrangement.spacedBy(10.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp),
                 horizontalAlignment = Alignment.End
             ) {
                 Button(
@@ -308,12 +392,17 @@ private fun ProgramHeroBanner(
                     )
                 }
 
-                OutlinedButton(onClick = onToggleFavorite) {
-                    Text(
-                        text = if (isFavorite) "Favoriet ★" else "Zet bij favorieten",
-                        fontSize = 12.sp
-                    )
-                }
+                SecondaryButton(
+                    label = if (isFavorite) "Favoriet ★" else "Maak favoriet",
+                    onClick = onToggleFavorite
+                )
+
+                Text(
+                    text = "Tip: houd OK ingedrukt op een programma",
+                    color = Color(0xFF64748B),
+                    fontSize = 10.sp,
+                    maxLines = 1
+                )
             }
         }
     }
@@ -326,16 +415,20 @@ private fun ChannelTimelineRow(
     nowMins: Int,
     isFavorite: Boolean,
     onProgramFocused: (ProgramDto) -> Unit,
-    onProgramSelected: (ProgramDto) -> Unit
+    onProgramSelected: (ProgramDto) -> Unit,
+    onProgramLongClick: (ProgramDto) -> Unit
 ) {
     val rowState = rememberLazyListState()
 
-    LaunchedEffect(channel.id, nowMins) {
-        val liveIdx = channel.programs.indexOfFirst {
-            EpgTimeHelper.getStatus(it, nowMins) == ProgramStatus.LIVE
+    // Alleen bij het openen (en bij een nieuwe gids) naar 'nu' scrollen. Voorheen gebeurde dit
+    // elke minuut, waardoor de rij terugsprong terwijl je door de gids navigeerde.
+    LaunchedEffect(channel.programs) {
+        val idx = channel.programs.indexOfFirst {
+            EpgTimeHelper.getStatus(it, nowMins) != ProgramStatus.PAST
         }
-        if (liveIdx > 0) {
-            rowState.scrollToItem(liveIdx)
+        val target = if (idx >= 0) idx else channel.programs.lastIndex
+        if (target > 0) {
+            rowState.scrollToItem(target)
         }
     }
 
@@ -344,7 +437,7 @@ private fun ChannelTimelineRow(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        Column(modifier = Modifier.width(156.dp)) {
+        Column(modifier = Modifier.width(150.dp)) {
             Text(
                 text = if (isFavorite) "${channel.name} ★" else channel.name,
                 color = Color.White,
@@ -356,13 +449,17 @@ private fun ChannelTimelineRow(
             Text(
                 text = channel.app,
                 color = Color(0xFF94A3B8),
-                fontSize = 12.sp
+                fontSize = 12.sp,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
             )
         }
 
         LazyRow(
             state = rowState,
-            horizontalArrangement = Arrangement.spacedBy(12.dp)
+            horizontalArrangement = Arrangement.spacedBy(10.dp),
+            // Ruimte rond de tegels voor de focus-rand en -vergroting
+            contentPadding = PaddingValues(horizontal = 6.dp, vertical = 6.dp)
         ) {
             items(channel.programs) { program ->
                 var focused by remember { mutableStateOf(false) }
@@ -371,7 +468,9 @@ private fun ChannelTimelineRow(
 
                 Surface(
                     onClick = { onProgramSelected(program) },
+                    onLongClick = { onProgramLongClick(program) },
                     shape = ClickableSurfaceDefaults.shape(RoundedCornerShape(12.dp)),
+                    scale = ClickableSurfaceDefaults.scale(focusedScale = 1.03f),
                     colors = ClickableSurfaceDefaults.colors(
                         containerColor = when {
                             isLive -> Color(0xFF1D2434)
@@ -390,8 +489,9 @@ private fun ChannelTimelineRow(
                         focusedBorder = Border(BorderStroke(2.dp, Color(0xFFF59E0B)))
                     ),
                     modifier = Modifier
-                        .width((program.durationMins.coerceIn(30, 180) * 3.4f).dp)
-                        .height(78.dp)
+                        // Breedte ~ duur, maar nooit smaller dan nodig om een titel te lezen
+                        .width((program.durationMins * 3.2f).coerceIn(150f, 520f).dp)
+                        .height(TileHeight)
                         .onFocusChanged { state ->
                             focused = state.isFocused
                             if (state.isFocused) onProgramFocused(program)
@@ -400,7 +500,7 @@ private fun ChannelTimelineRow(
                     Column(
                         modifier = Modifier
                             .fillMaxSize()
-                            .padding(horizontal = 12.dp, vertical = 10.dp),
+                            .padding(horizontal = 12.dp, vertical = 8.dp),
                         verticalArrangement = Arrangement.SpaceBetween
                     ) {
                         Text(
@@ -411,14 +511,15 @@ private fun ChannelTimelineRow(
                                 else -> Color(0xFF94A3B8)
                             },
                             fontSize = 12.sp,
-                            fontWeight = if (isLive) FontWeight.SemiBold else FontWeight.Normal
+                            fontWeight = if (isLive) FontWeight.SemiBold else FontWeight.Normal,
+                            maxLines = 1
                         )
                         Text(
                             text = program.title,
                             color = if (status == ProgramStatus.PAST && !focused) Color(0xFF94A3B8) else Color.White,
-                            fontSize = 14.sp,
+                            fontSize = 13.sp,
                             fontWeight = FontWeight.SemiBold,
-                            maxLines = 1,
+                            maxLines = 2,
                             overflow = TextOverflow.Ellipsis
                         )
                     }

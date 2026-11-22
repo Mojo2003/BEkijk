@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Haalt de Belgische TV-gids (XMLTV van open-epg.com) op en schrijft guide.json.
 
-Het formaat van guide.json komt overeen met buildLegacyGuideExport() in
-src/server/epgService.ts: primetime-venster van 17:00 tot 02:00 (Brusselse tijd).
+Het formaat van guide.json lijkt op buildLegacyGuideExport() in
+src/server/epgService.ts, maar het venster is langer: een "tv-dag" begint om 06:00
+(Brusselse tijd) en het venster loopt 42 uur. Zo zijn er altijd programma's na "nu".
+windowStartTs (ms sinds epoch, UTC) laat de app de huidige tijd exact berekenen.
 
 Gebruik:
     python fetch_epg.py                 # live ophalen, schrijft guide.json
@@ -21,8 +23,8 @@ from zoneinfo import ZoneInfo
 EPG_URL = "https://www.open-epg.com/files/belgium.xml.gz"
 TZ = ZoneInfo("Europe/Brussels")
 OUTPUT = Path("guide.json")
-WINDOW_START_HOUR = 17
-WINDOW_HOURS = 9  # 17:00 -> 02:00
+WINDOW_START_HOUR = 6   # een tv-dag begint om 06:00
+WINDOW_HOURS = 42       # tv-dag + 18 uur van de volgende dag
 
 # (id, name, category, app, androidPackage, deepLink, exactIds, keywords, excludeKeywords)
 CHANNELS = [
@@ -165,8 +167,12 @@ def main():
             claimed.add(key)
 
     now = datetime.now(TZ)
-    window_start = now.replace(hour=WINDOW_START_HOUR, minute=0, second=0, microsecond=0)
-    window_end = window_start + timedelta(hours=WINDOW_HOURS)
+    # Voor 06:00 hoort "nu" nog bij de tv-dag van gisteren.
+    day_start = (now - timedelta(hours=WINDOW_START_HOUR)).replace(hour=0, minute=0, second=0, microsecond=0)
+    window_start = day_start.replace(hour=WINDOW_START_HOUR)
+    # Reken in UTC: aftrekken van tijden met dezelfde tzinfo negeert zomer-/wintertijd.
+    window_start_utc = window_start.astimezone(timezone.utc)
+    window_end_utc = window_start_utc + timedelta(hours=WINDOW_HOURS)
 
     programs = {ch[0]: [] for ch in CHANNELS}
     for prog in root.findall("programme"):
@@ -176,21 +182,21 @@ def main():
         start, end = parse_ts(prog.get("start")), parse_ts(prog.get("stop"))
         if not start or not end or end <= start:
             continue
-        start, end = start.astimezone(TZ), end.astimezone(TZ)
-        if end <= window_start or start >= window_end:
+        if end <= window_start_utc or start >= window_end_utc:
             continue
 
         title = first_text(prog, "title") or "Geen titel"
         desc = first_text(prog, "desc") or "Geen beschrijving beschikbaar."
         if len(desc) > 320:
             desc = desc[:317] + "..."
-        clamped_start, clamped_end = max(start, window_start), min(end, window_end)
+        clamped_start, clamped_end = max(start, window_start_utc), min(end, window_end_utc)
+        start_local, end_local = start.astimezone(TZ), end.astimezone(TZ)
         duration = round((clamped_end - clamped_start).total_seconds() / 60)
         programs[key].append({
             "title": title,
-            "start": start.strftime("%H:%M"),
-            "end": end.strftime("%H:%M"),
-            "startMins": max(0, int((clamped_start - window_start).total_seconds() // 60)),
+            "start": start_local.strftime("%H:%M"),
+            "end": end_local.strftime("%H:%M"),
+            "startMins": max(0, int((clamped_start - window_start_utc).total_seconds() // 60)),
             "durationMins": max(15, duration),
             "genre": infer_genre(first_text(prog, "category"), title, desc, key),
             "desc": desc,
@@ -220,9 +226,14 @@ def main():
     OUTPUT.write_text(json.dumps({
         "updatedAt": now.strftime("%Y-%m-%d %H:%M"),
         "windowStartHour": WINDOW_START_HOUR,
+        "windowStartTs": int(window_start_utc.timestamp() * 1000),
         "channels": channels,
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"guide.json geschreven: {len(channels)} zenders, {total} programma's")
+    with_icon = sum(1 for p in root.findall("programme") if p.find("icon") is not None)
+    all_progs = len(root.findall("programme"))
+    print(f"guide.json geschreven: {len(channels)} zenders, {total} programma's "
+          f"(venster vanaf {window_start:%Y-%m-%d %H:%M}, {WINDOW_HOURS} uur)")
+    print(f"Programma's met afbeelding in de feed: {with_icon} van {all_progs}")
 
 
 if __name__ == "__main__":
