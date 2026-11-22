@@ -43,7 +43,7 @@ enum class TvFilter(val label: String) {
 private val HeroHeight = 176.dp
 private val TileHeight = 72.dp
 
-private val ColorAmber = Color(0xFFF59E0B)
+private val ColorAccent = Color(0xFFFFD21F)
 private val ColorMuted = Color(0xFF94A3B8)
 
 /** Een uitzending van een favoriet programma, voor de lijst "★ Programma's". */
@@ -122,7 +122,7 @@ fun TvGuideScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF0B0E14))
+            .background(Color(0xFF081321))
             .padding(horizontal = 36.dp, vertical = 16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
@@ -255,14 +255,14 @@ private fun FilterChipButton(
         onClick = onClick,
         shape = ClickableSurfaceDefaults.shape(RoundedCornerShape(10.dp)),
         colors = ClickableSurfaceDefaults.colors(
-            containerColor = if (selected) ColorAmber else Color(0xFF161C28),
+            containerColor = if (selected) ColorAccent else Color(0xFF161C28),
             contentColor = if (selected) Color(0xFF0B0E14) else Color(0xFFCBD5E1),
-            focusedContainerColor = if (selected) Color(0xFFFBBF24) else Color(0xFF222B3E),
+            focusedContainerColor = if (selected) Color(0xFFFFDE5C) else Color(0xFF222B3E),
             focusedContentColor = if (selected) Color(0xFF0B0E14) else Color.White
         ),
         border = ClickableSurfaceDefaults.border(
             border = Border(BorderStroke(1.dp, Color(0x18FFFFFF))),
-            focusedBorder = Border(BorderStroke(2.dp, ColorAmber))
+            focusedBorder = Border(BorderStroke(2.dp, ColorAccent))
         )
     ) {
         Text(
@@ -362,7 +362,7 @@ private fun ProgramHeroBanner(
                 Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
                     Text(
                         text = "$statusLabel · ${channel.name} · ${program.start} – ${program.end} · ${program.genre}",
-                        color = if (status == ProgramStatus.LIVE) ColorAmber else ColorMuted,
+                        color = if (status == ProgramStatus.LIVE) ColorAccent else ColorMuted,
                         fontSize = 13.sp,
                         fontWeight = FontWeight.SemiBold,
                         maxLines = 1,
@@ -399,7 +399,7 @@ private fun ProgramHeroBanner(
                             val remaining = EpgTimeHelper.getRemainingMinutes(program, nowMins)
                             LinearProgressIndicator(
                                 progress = { progress },
-                                color = ColorAmber,
+                                color = ColorAccent,
                                 trackColor = Color(0xFF263044),
                                 modifier = Modifier
                                     .width(140.dp)
@@ -450,7 +450,7 @@ private fun ProgramHeroBanner(
                 Button(
                     onClick = onWatchClick,
                     colors = ButtonDefaults.colors(
-                        containerColor = ColorAmber,
+                        containerColor = ColorAccent,
                         contentColor = Color(0xFF0B0E14)
                     )
                 ) {
@@ -514,7 +514,7 @@ private fun ChannelTimelineRow(
             ) {
                 ChannelBadge(channel)
                 if (isFavorite) {
-                    Text(text = "★", color = ColorAmber, fontSize = 14.sp)
+                    Text(text = "★", color = ColorAccent, fontSize = 14.sp)
                 }
             }
             Text(
@@ -564,13 +564,13 @@ private fun ChannelTimelineRow(
                             BorderStroke(
                                 1.dp,
                                 when {
-                                    isFavoriteProgram -> Color(0xAAF59E0B)
-                                    isLive -> Color(0x66F59E0B)
+                                    isFavoriteProgram -> Color(0xAAFFD21F)
+                                    isLive -> Color(0x66FFD21F)
                                     else -> Color(0x1FFFFFFF)
                                 }
                             )
                         ),
-                        focusedBorder = Border(BorderStroke(2.dp, ColorAmber))
+                        focusedBorder = Border(BorderStroke(2.dp, ColorAccent))
                     ),
                     modifier = Modifier
                         // Breedte ~ duur, maar nooit smaller dan nodig om een titel te lezen
@@ -591,7 +591,7 @@ private fun ChannelTimelineRow(
                         Text(
                             text = if (isFavoriteProgram) "★ $timeText" else timeText,
                             color = when {
-                                focused || isLive || isFavoriteProgram -> ColorAmber
+                                focused || isLive || isFavoriteProgram -> ColorAccent
                                 status == ProgramStatus.PAST -> Color(0xFF64748B)
                                 else -> ColorMuted
                             },
@@ -660,7 +660,7 @@ private fun FavoriteProgramsList(
                 ),
                 border = ClickableSurfaceDefaults.border(
                     border = Border(BorderStroke(1.dp, Color(0x1FFFFFFF))),
-                    focusedBorder = Border(BorderStroke(2.dp, ColorAmber))
+                    focusedBorder = Border(BorderStroke(2.dp, ColorAccent))
                 ),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -682,7 +682,7 @@ private fun FavoriteProgramsList(
                         )
                         Text(
                             text = "${program.start} – ${program.end}",
-                            color = ColorAmber,
+                            color = ColorAccent,
                             fontSize = 13.sp,
                             fontWeight = FontWeight.SemiBold,
                             maxLines = 1
@@ -708,7 +708,7 @@ private fun FavoriteProgramsList(
                     }
                     Text(
                         text = "★",
-                        color = if (isFavorite) ColorAmber else Color(0xFF475569),
+                        color = if (isFavorite) ColorAccent else Color(0xFF475569),
                         fontSize = 16.sp
                     )
                 }
