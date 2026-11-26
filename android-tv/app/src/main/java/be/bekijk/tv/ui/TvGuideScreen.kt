@@ -1,21 +1,29 @@
 package be.bekijk.tv.ui
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.drawWithContent
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.focus.onFocusChanged
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -29,6 +37,7 @@ import be.bekijk.tv.data.ProgramStatus
 import be.bekijk.tv.data.programFavoriteKey
 import be.bekijk.tv.launcher.TvAppLauncher
 import kotlinx.coroutines.delay
+import kotlin.math.roundToInt
 
 enum class TvFilter(val label: String) {
     ALL("Alle"),
@@ -42,6 +51,17 @@ enum class TvFilter(val label: String) {
 // wanneer je naar een programma met een kortere of langere beschrijving gaat.
 private val HeroHeight = 176.dp
 private val TileHeight = 72.dp
+
+// Tijdlijn: tegelbreedte ~ duur (min. 150 dp), vaste tussenruimte en startmarge van de rij
+private val TileGap = 10.dp
+private val RowPadStart = 6.dp
+
+// Zo ver van de linkerrand van de tijdlijn staat de "nu"-lijn (waar mogelijk) in elke zender,
+// zodat de lijnen van alle zenders onder elkaar komen en samen één gele lijn vormen.
+private val NowAnchor = 240.dp
+
+private fun tileWidthDp(program: ProgramDto): Float =
+    (program.durationMins * 3.2f).coerceIn(150f, 520f)
 
 private val ColorAccent = Color(0xFFFFD21F)
 private val ColorMuted = Color(0xFF94A3B8)
@@ -117,6 +137,19 @@ fun TvGuideScreen(
     var selectedChannel by remember(filteredChannels) { mutableStateOf(filteredChannels.firstOrNull()) }
     var selectedProgram by remember(filteredChannels) {
         mutableStateOf(pickCurrentProgram(filteredChannels.firstOrNull(), nowMins))
+    }
+
+    // Terug: eerst naar "nu" springen (alle rijen scrollen terug en de focus gaat naar het
+    // huidige programma van de geselecteerde zender). Sta je daar al, dan sluit Terug de app.
+    var jumpSignal by remember { mutableStateOf(0) }
+    val isAtNow = selectedProgram == pickCurrentProgram(selectedChannel, nowMins)
+    BackHandler(
+        enabled = activeFilter != TvFilter.FAVORITE_PROGRAMS && filteredChannels.isNotEmpty() && !isAtNow
+    ) {
+        // De selectie meteen op "nu" zetten, ook als de focus er niet lukt: zo sluit een
+        // tweede keer Terug de app altijd, en blijft Terug nooit "hangen".
+        selectedProgram = pickCurrentProgram(selectedChannel, nowMins)
+        jumpSignal += 1
     }
 
     Column(
@@ -226,6 +259,8 @@ fun TvGuideScreen(
                             nowMins = nowMins,
                             isFavorite = favorites.contains(channel.id),
                             favoritePrograms = favoritePrograms,
+                            isSelectedRow = channel.id == selectedChannel?.id,
+                            jumpSignal = jumpSignal,
                             onProgramFocused = { prog ->
                                 selectedChannel = channel
                                 selectedProgram = prog
@@ -481,21 +516,69 @@ private fun ChannelTimelineRow(
     nowMins: Int,
     isFavorite: Boolean,
     favoritePrograms: Set<String>,
+    isSelectedRow: Boolean,
+    jumpSignal: Int,
     onProgramFocused: (ProgramDto) -> Unit,
     onProgramSelected: (ProgramDto) -> Unit,
     onProgramLongClick: (ProgramDto) -> Unit
 ) {
     val rowState = rememberLazyListState()
+    val density = LocalDensity.current
+    val latestNowMins by rememberUpdatedState(nowMins)
+    val latestIsSelectedRow by rememberUpdatedState(isSelectedRow)
+    val nowFocus = remember { FocusRequester() }
 
-    // Alleen bij het openen (en bij een nieuwe gids) naar 'nu' scrollen. Voorheen gebeurde dit
-    // elke minuut, waardoor de rij terugsprong terwijl je door de gids navigeerde.
-    LaunchedEffect(channel.programs) {
+    // Het programma van "nu": het lopende programma, of anders het eerstvolgende.
+    val nowIndex = remember(channel.programs, nowMins) {
         val idx = channel.programs.indexOfFirst {
             EpgTimeHelper.getStatus(it, nowMins) != ProgramStatus.PAST
         }
-        val target = if (idx >= 0) idx else channel.programs.lastIndex
-        if (target > 0) {
-            rowState.scrollToItem(target)
+        if (idx >= 0) idx else channel.programs.lastIndex
+    }
+
+    // Scrollt de rij zo dat "nu" op een vaste plek staat (NowAnchor). Gebeurt bij het openen, bij
+    // een nieuwe gids en wanneer je op Terug drukt, maar niet elke minuut: anders zou de rij
+    // terugspringen terwijl je door de gids navigeert.
+    LaunchedEffect(channel.programs, jumpSignal) {
+        val programs = channel.programs
+        if (programs.isEmpty()) return@LaunchedEffect
+        val now = latestNowMins
+        val idx = programs.indexOfFirst {
+            EpgTimeHelper.getStatus(it, now) != ProgramStatus.PAST
+        }.let { if (it >= 0) it else programs.lastIndex }
+
+        val gapPx = with(density) { TileGap.toPx() }
+        val padPx = with(density) { RowPadStart.toPx() }
+        val anchorPx = with(density) { NowAnchor.toPx() }
+        fun widthPx(i: Int) = with(density) { tileWidthDp(programs[i]).dp.toPx() }
+
+        // pos[i] = begin van tegel i, gerekend vanaf het begin van de lijst (zonder startmarge)
+        val pos = FloatArray(programs.size)
+        var acc = 0f
+        for (i in programs.indices) {
+            pos[i] = acc
+            acc += widthPx(i) + gapPx
+        }
+
+        val program = programs[idx]
+        val isLive = EpgTimeHelper.getStatus(program, now) == ProgramStatus.LIVE
+        val nowPos = pos[idx] + if (isLive) EpgTimeHelper.getProgress(program, now) * widthPx(idx) else 0f
+        // "nu" op de ankerplek, maar het begin van het huidige programma blijft in beeld
+        // (anders zie je de titel niet): nooit verder scrollen dan tegel `idx` op de startmarge.
+        val target = minOf(nowPos + padPx - anchorPx, pos[idx])
+
+        if (target <= 0f) {
+            rowState.scrollToItem(0)
+        } else {
+            var k = 0
+            while (k < programs.lastIndex && pos[k + 1] <= target) k++
+            rowState.scrollToItem(k, (target - pos[k]).roundToInt())
+        }
+
+        // Na Terug: de focus naar het huidige programma van de geselecteerde zender
+        if (jumpSignal > 0 && latestIsSelectedRow) {
+            withFrameNanos { }
+            runCatching { nowFocus.requestFocus() }
         }
     }
 
@@ -536,14 +619,15 @@ private fun ChannelTimelineRow(
 
         LazyRow(
             state = rowState,
-            horizontalArrangement = Arrangement.spacedBy(10.dp),
+            horizontalArrangement = Arrangement.spacedBy(TileGap),
             // Ruimte rond de tegels voor de focus-rand en -vergroting
-            contentPadding = PaddingValues(horizontal = 6.dp, vertical = 6.dp)
+            contentPadding = PaddingValues(horizontal = RowPadStart, vertical = 6.dp)
         ) {
-            items(channel.programs) { program ->
+            itemsIndexed(channel.programs) { index, program ->
                 var focused by remember { mutableStateOf(false) }
                 val status = EpgTimeHelper.getStatus(program, nowMins)
                 val isLive = status == ProgramStatus.LIVE
+                val progress = if (isLive) EpgTimeHelper.getProgress(program, nowMins) else 0f
                 val isFavoriteProgram = favoritePrograms.contains(programFavoriteKey(program.title))
 
                 Surface(
@@ -574,11 +658,29 @@ private fun ChannelTimelineRow(
                     ),
                     modifier = Modifier
                         // Breedte ~ duur, maar nooit smaller dan nodig om een titel te lezen
-                        .width((program.durationMins * 3.2f).coerceIn(150f, 520f).dp)
+                        .width(tileWidthDp(program).dp)
                         .height(TileHeight)
+                        .then(if (index == nowIndex) Modifier.focusRequester(nowFocus) else Modifier)
                         .onFocusChanged { state ->
                             focused = state.isFocused
                             if (state.isFocused) onProgramFocused(program)
+                        }
+                        // De gele "nu"-lijn: staat in het lopende programma op de plek van de
+                        // voortgang en loopt een stukje door boven en onder de tegel, zodat de
+                        // lijnen van de zenders onder elkaar één lijn lijken.
+                        .drawWithContent {
+                            drawContent()
+                            if (isLive) {
+                                val x = size.width * progress
+                                val extend = 6.dp.toPx()
+                                drawLine(
+                                    color = ColorAccent,
+                                    start = Offset(x, -extend),
+                                    end = Offset(x, size.height + extend),
+                                    strokeWidth = 3.dp.toPx(),
+                                    cap = StrokeCap.Round
+                                )
+                            }
                         }
                 ) {
                     Column(
