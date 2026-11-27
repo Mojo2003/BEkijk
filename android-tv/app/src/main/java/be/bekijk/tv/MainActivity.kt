@@ -1,6 +1,5 @@
 package be.bekijk.tv
 
-import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -28,42 +27,19 @@ import kotlinx.coroutines.launch
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val prefs = getSharedPreferences("bekijk_tv_prefs", Context.MODE_PRIVATE)
-        val initialFavs = prefs.getStringSet("favorite_channels", setOf("vrt1", "canvas", "vtm", "play4"))
-            ?: setOf("vrt1", "canvas", "vtm", "play4")
-
-        val initialProgramFavs = prefs.getStringSet("favorite_programs", emptySet<String>())
-            ?: emptySet()
-
         setContent {
-            BEkijkTvApp(
-                initialFavorites = initialFavs,
-                onPersistFavorites = { updated ->
-                    prefs.edit().putStringSet("favorite_channels", updated).apply()
-                },
-                initialFavoritePrograms = initialProgramFavs,
-                onPersistFavoritePrograms = { updated ->
-                    prefs.edit().putStringSet("favorite_programs", updated).apply()
-                }
-            )
+            BEkijkTvApp()
         }
     }
 }
 
 @OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
-private fun BEkijkTvApp(
-    initialFavorites: Set<String>,
-    onPersistFavorites: (Set<String>) -> Unit,
-    initialFavoritePrograms: Set<String>,
-    onPersistFavoritePrograms: (Set<String>) -> Unit
-) {
+private fun BEkijkTvApp() {
     val scope = rememberCoroutineScope()
     var guide by remember { mutableStateOf<GuidePayload?>(null) }
     var loading by remember { mutableStateOf(true) }
     var errorMsg by remember { mutableStateOf<String?>(null) }
-    var favorites by remember { mutableStateOf(initialFavorites) }
-    var favoritePrograms by remember { mutableStateOf(initialFavoritePrograms) }
 
     fun loadGuide() {
         scope.launch {
@@ -142,26 +118,6 @@ private fun BEkijkTvApp(
             guide != null -> {
                 TvGuideScreen(
                     guide = guide!!,
-                    favorites = favorites,
-                    onToggleFavorite = { channelId ->
-                        val next = if (favorites.contains(channelId)) {
-                            favorites - channelId
-                        } else {
-                            favorites + channelId
-                        }
-                        favorites = next
-                        onPersistFavorites(next)
-                    },
-                    favoritePrograms = favoritePrograms,
-                    onToggleFavoriteProgram = { key ->
-                        val next = if (favoritePrograms.contains(key)) {
-                            favoritePrograms - key
-                        } else {
-                            favoritePrograms + key
-                        }
-                        favoritePrograms = next
-                        onPersistFavoritePrograms(next)
-                    },
                     onRefresh = { loadGuide() }
                 )
             }

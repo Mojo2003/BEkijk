@@ -233,7 +233,7 @@ def main():
             "start": start_local.strftime("%H:%M"),
             "end": end_local.strftime("%H:%M"),
             "startMins": max(0, int((clamped_start - window_start_utc).total_seconds() // 60)),
-            "durationMins": max(15, duration),
+            "durationMins": max(1, duration),
             "genre": infer_genre(first_text(prog, "category"), title, desc, key),
             "desc": desc,
             "_sort": start,

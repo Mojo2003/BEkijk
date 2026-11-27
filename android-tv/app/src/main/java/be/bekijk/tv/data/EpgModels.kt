@@ -43,9 +43,6 @@ data class ProgramDto(
     val desc: String
 )
 
-/** Favoriete programma's worden op titel bewaard (hoofdletterongevoelig). */
-fun programFavoriteKey(title: String): String = title.trim().lowercase()
-
 enum class ProgramStatus {
     LIVE,
     UPCOMING,
@@ -66,21 +63,6 @@ object EpgTimeHelper {
             hour += 24
         }
         return (hour - windowStartHour) * 60 + minute
-    }
-
-    /** "Vandaag" / "Morgen" / "Later" voor een programma, op basis van Brusselse kalenderdagen. */
-    fun dayLabel(windowStartTs: Long, startMins: Int): String {
-        if (windowStartTs <= 0L) return ""
-        fun localDay(c: Calendar): Long =
-            (c.timeInMillis + c.get(Calendar.ZONE_OFFSET) + c.get(Calendar.DST_OFFSET)) / 86_400_000L
-        val target = Calendar.getInstance(brusselsTz).apply { timeInMillis = windowStartTs + startMins * 60_000L }
-        val today = Calendar.getInstance(brusselsTz)
-        return when (localDay(target) - localDay(today)) {
-            -1L -> "Gisteren"
-            0L -> "Vandaag"
-            1L -> "Morgen"
-            else -> "Later"
-        }
     }
 
     fun getStatus(program: ProgramDto, nowMinsSinceWindow: Int): ProgramStatus {
