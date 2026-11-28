@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27 14:48",
+  "updatedAt": "2026-11-28 01:00",
   "windowStartHour": 6,
   "windowStartTs": 1795755600000,
   "channels": [
@@ -18,7 +18,7 @@
           "start": "06:00",
           "end": "06:05",
           "startMins": 0,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Programma",
           "desc": "Kat en Wezel in hetzelfde schuitje, Een slechtziend mannetje laat altijd alles in het honderd lopen."
         },
@@ -27,7 +27,7 @@
           "start": "06:05",
           "end": "06:15",
           "startMins": 5,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Programma",
           "desc": "Op Zoek Naar De Verloren Shaker, De internetverbinding is weggevallen en Gwen heeft dringend foto's nodig voor haar presentatie over rotsformaties. Justin roept Pad-a-Lot op, een monster dat in elk materiaal kan veranderen. Er staat echter een grote rode waarschuwing in het boek die Justin in alle haast vergeet te l..."
         },
@@ -45,7 +45,7 @@
           "start": "06:30",
           "end": "06:40",
           "startMins": 30,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Programma",
           "desc": "De nacht van de bibbers, Animatiereeks over het dagelijkse leven van het 12-jarige meisje Lou en haar vrienden die op de drempel van de adolescentie staan. Gebaseerd op de gelijknamige stripreeks van Julien Neel."
         },
@@ -63,7 +63,7 @@
           "start": "06:55",
           "end": "07:00",
           "startMins": 55,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Programma",
           "desc": ", Kinderprogramma over de meest zotte dieren."
         },
@@ -72,7 +72,7 @@
           "start": "07:00",
           "end": "07:10",
           "startMins": 60,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Jeugd",
           "desc": "Infomagazine voor de jeugd. Getolkt in Vlaamse Gebarentaal (VGT). Ook beschikbaar op Ketnet.be, via de KetnetVideo-app en via Net gemist."
         },
@@ -90,7 +90,7 @@
           "start": "07:25",
           "end": "07:30",
           "startMins": 85,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Programma",
           "desc": "Choco-coco, Grappige animatiereeks over de beer Grizzy, wiens rustige leven grondig verstoord wordt door een groep vervelende lemmings - op avontuur in Polynesië"
         },
@@ -117,7 +117,7 @@
           "start": "08:05",
           "end": "08:15",
           "startMins": 125,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Programma",
           "desc": "Dubbeldate, Theo en William hebben een dubbeldate geregeld met de meiden maar de andere jongens gooien roet in het eten."
         },
@@ -126,7 +126,7 @@
           "start": "08:15",
           "end": "08:20",
           "startMins": 135,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Jeugd",
           "desc": "Samson en Marie, Kunnen Sarah en Nidal uitdokteren hoe het komt dat de burgemeester buikkrampen heeft?"
         },
@@ -153,7 +153,7 @@
           "start": "08:50",
           "end": "09:00",
           "startMins": 170,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Programma",
           "desc": "Crazy stunts, Komische animatiereeks over een mooie zeemeermin, een hongerige hyena en een verliefde haai."
         },
@@ -216,7 +216,7 @@
           "start": "13:25",
           "end": "13:30",
           "startMins": 445,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Nieuws & Actua",
           "desc": "Het weerbericht voor vandaag en de komende dagen."
         },
@@ -288,7 +288,7 @@
           "start": "18:04",
           "end": "18:10",
           "startMins": 724,
-          "durationMins": 15,
+          "durationMins": 6,
           "genre": "Nieuws & Actua",
           "desc": "Het weerbericht voor vandaag en de komende dagen."
         },
@@ -333,7 +333,7 @@
           "start": "20:22",
           "end": "20:30",
           "startMins": 862,
-          "durationMins": 15,
+          "durationMins": 8,
           "genre": "Nieuws & Actua",
           "desc": "Het weerbericht voor vandaag en de komende dagen."
         },
@@ -378,7 +378,7 @@
           "start": "22:30",
           "end": "22:35",
           "startMins": 990,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Nieuws & Actua",
           "desc": "Het weerbericht voor vandaag en de komende dagen."
         },
@@ -405,7 +405,7 @@
           "start": "23:51",
           "end": "23:52",
           "startMins": 1071,
-          "durationMins": 15,
+          "durationMins": 1,
           "genre": "Programma",
           "desc": "Uitslagen van de Keno."
         },
@@ -414,7 +414,7 @@
           "start": "23:52",
           "end": "23:55",
           "startMins": 1072,
-          "durationMins": 15,
+          "durationMins": 3,
           "genre": "Programma",
           "desc": "Trekking Euromillions."
         },
@@ -441,7 +441,7 @@
           "start": "06:00",
           "end": "06:05",
           "startMins": 1440,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Programma",
           "desc": "Kapitein Kitty, Een slechtziend mannetje laat altijd alles in het honderd lopen."
         },
@@ -459,7 +459,7 @@
           "start": "06:20",
           "end": "06:30",
           "startMins": 1460,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Programma",
           "desc": "Even de feniks opladen, Een gigantische, energievretende vogel zuigt de energiecentrales van Griezelbeek leeg. De Van Altens gaan de lucht in om dit prachtige maar gevaarlijke wezen aan te vallen."
         },
@@ -477,7 +477,7 @@
           "start": "06:45",
           "end": "06:55",
           "startMins": 1485,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Programma",
           "desc": "Problemen, Komische animatieserie over de dagelijkse belevenissen van de 11-jarige scholier Joe Connolly."
         },
@@ -486,7 +486,7 @@
           "start": "06:55",
           "end": "07:00",
           "startMins": 1495,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Programma",
           "desc": ", Kinderprogramma over de meest zotte dieren."
         },
@@ -495,7 +495,7 @@
           "start": "07:00",
           "end": "07:10",
           "startMins": 1500,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Jeugd",
           "desc": "Infomagazine voor de jeugd. Getolkt in Vlaamse Gebarentaal (VGT). Ook beschikbaar op Ketnet.be, via de KetnetVideo-app en via Net gemist."
         },
@@ -504,7 +504,7 @@
           "start": "07:10",
           "end": "07:20",
           "startMins": 1510,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Programma",
           "desc": "Dierenaura, Margreet en Floor gaan met school naar de geitenboerderij. Margreet heeft blijkbaar een dierenaura, dus alle dieren komen altijd naar haar toe. Tot ergernis van Floor, want zij wil ook knuffelen met de geitjes. Dus doet ze er alles aan om ook een dierenaura te krijgen. Maar of dat nu zo slim is ..."
         },
@@ -513,7 +513,7 @@
           "start": "07:20",
           "end": "07:32",
           "startMins": 1520,
-          "durationMins": 15,
+          "durationMins": 12,
           "genre": "Programma",
           "desc": "Hoornaar, De hoornaar is een gigantische wesp! Sien en Naomi maken kennis met 2 soorten hoornaars: de Europese en de Aziatische. Door welke wordt Naomi gestoken en hoeveel pijn doet dat?"
         },
@@ -522,7 +522,7 @@
           "start": "07:32",
           "end": "07:40",
           "startMins": 1532,
-          "durationMins": 15,
+          "durationMins": 8,
           "genre": "Programma",
           "desc": "Yummy-piraten, Grappige animatiereeks over de beer Grizzy, wiens rustige leven grondig verstoord wordt door een groep vervelende lemmings - op avontuur in Polynesië"
         },
@@ -576,7 +576,7 @@
           "start": "09:40",
           "end": "09:50",
           "startMins": 1660,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Programma",
           "desc": "The last figurine, Komische animatiereeks over een mooie zeemeermin, een hongerige hyena en een verliefde haai."
         },
@@ -585,7 +585,7 @@
           "start": "09:50",
           "end": "10:00",
           "startMins": 1670,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Programma",
           "desc": "Neat freak!, Komische animatiereeks over een mooie zeemeermin, een hongerige hyena en een verliefde haai."
         },
@@ -639,7 +639,7 @@
           "start": "13:25",
           "end": "13:30",
           "startMins": 1885,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Nieuws & Actua",
           "desc": "Het weerbericht voor vandaag en de komende dagen."
         },
@@ -711,7 +711,7 @@
           "start": "17:55",
           "end": "18:00",
           "startMins": 2155,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Programma",
           "desc": "Veilig motorrijden met de juiste uitrusting, Motorrijders blijven een kwetsbare groep in het verkeer. Hoewel het aantal letselongevallen bij motorrijders in de eerste helft van 2026 met bijna 6% daalde, blijft een goede beschermende uitrusting essentieel om de ernst van verwondingen te beperken. Waar moet je op lett..."
         },
@@ -720,7 +720,7 @@
           "start": "18:00",
           "end": "18:10",
           "startMins": 2160,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Nieuws & Actua",
           "desc": ", Nieuws en sport."
         },
@@ -747,7 +747,7 @@
           "start": "19:40",
           "end": "19:45",
           "startMins": 2260,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Nieuws & Actua",
           "desc": "Het weerbericht voor vandaag en de komende dagen."
         },
@@ -756,7 +756,7 @@
           "start": "19:45",
           "end": "19:50",
           "startMins": 2265,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Programma",
           "desc": "Trekking van de Joker+ en Lotto."
         },
@@ -810,7 +810,7 @@
           "start": "23:21",
           "end": "23:22",
           "startMins": 2481,
-          "durationMins": 15,
+          "durationMins": 1,
           "genre": "Programma",
           "desc": "Winstverdeling van de joker- en lottotrekking."
         },
@@ -819,7 +819,7 @@
           "start": "23:22",
           "end": "23:23",
           "startMins": 2482,
-          "durationMins": 15,
+          "durationMins": 1,
           "genre": "Programma",
           "desc": "Uitslagen van de Keno."
         },
@@ -828,7 +828,7 @@
           "start": "23:23",
           "end": "23:25",
           "startMins": 2483,
-          "durationMins": 15,
+          "durationMins": 2,
           "genre": "Programma",
           "desc": "Verdeling van de winst van Euromillions."
         },
@@ -837,7 +837,7 @@
           "start": "23:25",
           "end": "23:30",
           "startMins": 2485,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Nieuws & Actua",
           "desc": "Het weerbericht voor vandaag en de komende dagen."
         },
@@ -948,7 +948,7 @@
           "start": "20:30",
           "end": "20:35",
           "startMins": 870,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Nieuws & Actua",
           "desc": "Dagelijks programma waarin de weersvoorspelling wordt gepresenteerd."
         },
@@ -993,7 +993,7 @@
           "start": "00:38",
           "end": "00:40",
           "startMins": 1118,
-          "durationMins": 15,
+          "durationMins": 2,
           "genre": "Nieuws & Actua",
           "desc": "Dagelijks programma waarin de weersvoorspelling wordt gepresenteerd."
         },
@@ -1056,7 +1056,7 @@
           "start": "19:55",
           "end": "20:00",
           "startMins": 2275,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Nieuws & Actua",
           "desc": "Dagelijks programma waarin de weersvoorspelling wordt gepresenteerd."
         },
@@ -1104,7 +1104,7 @@
           "start": "06:00",
           "end": "06:01",
           "startMins": 0,
-          "durationMins": 15,
+          "durationMins": 1,
           "genre": "Jeugd",
           "desc": "Het springtouw, Plop probeert het springtouw uit, dat hij van Lui heeft gekregen. De kabouter wordt gestoord door een boze Kwebbel. Zij beweert dat het springtouw haar eigendom is en verdenkt er Plop van in haar paddestoeltje te hebben ingebroken."
         },
@@ -1113,7 +1113,7 @@
           "start": "06:01",
           "end": "06:10",
           "startMins": 1,
-          "durationMins": 15,
+          "durationMins": 9,
           "genre": "Programma",
           "desc": "Sportivus, de Sportdraak, Flo vindt dat Flin moet werken aan zijn conditie en laat hem oefeningen doen. Flin heeft daar geen zin in en verzint allerlei smoesjes en trucjes om de oefeningen te ontlopen. Om Flin over te halen vertelt Flo over de Sportdraak."
         },
@@ -1122,7 +1122,7 @@
           "start": "06:10",
           "end": "06:20",
           "startMins": 10,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Programma",
           "desc": "Fantoom, de Spookdraak, Het is Halloween. Flin is verkleed als vampier, Flo als spook. Flo maakt Flin aan het schrikken, maar die beweert dat hij helemaal niet bang was. Trouwens, spoken bestaan niet! Oh nee? Flo heeft ooit een Spookdraak gekend!"
         },
@@ -1140,7 +1140,7 @@
           "start": "06:35",
           "end": "06:45",
           "startMins": 35,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Jeugd",
           "desc": "Zus weet het best, Animatieserie over het vrolijke bijtje Maya, dat samen met haar vriendje Willy allerlei spannende avonturen beleeft."
         },
@@ -1266,7 +1266,7 @@
           "start": "13:30",
           "end": "13:40",
           "startMins": 450,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Nieuws & Actua",
           "desc": "Blik op het weer in Vlaanderen en daarbuiten. Met Frank Duboccage, David Dehenauw of Jill Peeters."
         },
@@ -1338,7 +1338,7 @@
           "start": "19:55",
           "end": "20:05",
           "startMins": 835,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Nieuws & Actua",
           "desc": "Blik op het weer in Vlaanderen en daarbuiten. Met Frank Duboccage, David Dehenauw of Jill Peeters."
         },
@@ -1419,7 +1419,7 @@
           "start": "06:10",
           "end": "06:20",
           "startMins": 1450,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Programma",
           "desc": "Het Cadeautje, De dieren krijgen van Plop een zelf geboetseerde vaas cadeau. Probleem: ze vinden hem alle drie spuuglelijk maar durven het niet te zeggen aan Plop. Wat moeten ze nu doen?"
         },
@@ -1428,7 +1428,7 @@
           "start": "06:20",
           "end": "06:30",
           "startMins": 1460,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Programma",
           "desc": "Tartula, de Spindraak, Flo komt terug van een missie en is te moe om alles te vertellen. Maar Flin moet en zal het verhaal horen! Na een list geeft Flo uiteindelijk toe. Hij vertelt het verhaal van Tartula de Spindraak, die hij enkele uren eerder heeft verslagen."
         },
@@ -1437,7 +1437,7 @@
           "start": "06:30",
           "end": "06:35",
           "startMins": 1470,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Programma",
           "desc": "De vlag, Twini is een klein meisje dat gek is op dansen. Gelukkig is haar grote zus de beste leermeester. In het theater oefenen ze voortdurend nieuwe dansjes, terwijl hun kleine broer Toni kattenkwaad uithaalt of speelt. Met hun drietjes beleven ze de gekste avonturen."
         },
@@ -1455,7 +1455,7 @@
           "start": "06:50",
           "end": "07:00",
           "startMins": 1490,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Jeugd",
           "desc": "Animatieserie over het vrolijke bijtje Maya, dat samen met haar vriendje Willy allerlei spannende avonturen beleeft."
         },
@@ -1545,7 +1545,7 @@
           "start": "13:25",
           "end": "13:35",
           "startMins": 1885,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Nieuws & Actua",
           "desc": "Blik op het weer in Vlaanderen en daarbuiten. Met Frank Duboccage, David Dehenauw of Jill Peeters."
         },
@@ -1608,7 +1608,7 @@
           "start": "19:45",
           "end": "19:55",
           "startMins": 2265,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Nieuws & Actua",
           "desc": "Blik op het weer in Vlaanderen en daarbuiten. Met Frank Duboccage, David Dehenauw of Jill Peeters."
         },
@@ -2283,7 +2283,7 @@
           "start": "06:50",
           "end": "07:00",
           "startMins": 1490,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Programma",
           "desc": "Volgend programma om 07:00"
         },
@@ -2964,7 +2964,7 @@
           "start": "04:50",
           "end": "05:00",
           "startMins": 1370,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Programma",
           "desc": "Geen uitzending."
         },
@@ -3000,7 +3000,7 @@
           "start": "09:15",
           "end": "09:25",
           "startMins": 1635,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Programma",
           "desc": "Pluggen 2, Tooldokter - Ep. 4 - Pluggen 2 - Waar moet je allemaal aan denken als je iets aan de muur wilt bevestigen met pluggen? De Tooldokter legt in dit tweede deel uit welke pluggen geschikt zijn bij het bevestigen in snelbouwsteen en beton."
         },
@@ -3462,7 +3462,7 @@
           "start": "05:00",
           "end": "05:10",
           "startMins": 1380,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Programma",
           "desc": "Geen uitzending."
         },
@@ -3681,7 +3681,7 @@
           "start": "05:00",
           "end": "06:10",
           "startMins": 0,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Programma",
           "desc": "Geen uitzending."
         },
@@ -4224,7 +4224,7 @@
           "start": "08:55",
           "end": "09:05",
           "startMins": 175,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Programma",
           "desc": "Bart Desmidt - Kabeljauw met spinazie, brandade, ei, Bart Desmidt mixt drie smaken die de meesten onder jullie enkel in hun puurste vorm kennen. Maar hij bewijst dat de combinatie van kabeljauw, spinazie en ei geeft het geheel een echte smaakboost geeft."
         },
@@ -4968,7 +4968,7 @@
           "start": "11:55",
           "end": "12:00",
           "startMins": 355,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Programma",
           "desc": "Flamiche de Dinant, Flamiche de Dinant : une tarte dorée à la garniture crémeuse et fondante au fromage"
         },
@@ -5004,7 +5004,7 @@
           "start": "13:30",
           "end": "13:38",
           "startMins": 450,
-          "durationMins": 15,
+          "durationMins": 8,
           "genre": "Nieuws & Actua",
           "desc": "Météo And Climat 13h30"
         },
@@ -5067,7 +5067,7 @@
           "start": "18:21",
           "end": "18:26",
           "startMins": 741,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Programma",
           "desc": "Cramique, Cramique : pain brioché tendre, parsemé de raisins gourmands"
         },
@@ -5085,7 +5085,7 @@
           "start": "19:17",
           "end": "19:21",
           "startMins": 797,
-          "durationMins": 15,
+          "durationMins": 4,
           "genre": "Programma",
           "desc": "Ciel Partagé 19h25"
         },
@@ -5094,7 +5094,7 @@
           "start": "19:21",
           "end": "19:30",
           "startMins": 801,
-          "durationMins": 15,
+          "durationMins": 9,
           "genre": "Programma",
           "desc": ", Qui a dit que les maisons de retraite rimaient avec ennui et naphtaline ? Entre fous rires, confidences et petits drames du quotidien, cette série courte vous embarque dans un univers où l'humour côtoie l'émotion, où les amitiés se nouent et où la vie continue de s'écrire. On y découvre des personnages hauts en co..."
         },
@@ -5121,7 +5121,7 @@
           "start": "20:20",
           "end": "20:27",
           "startMins": 860,
-          "durationMins": 15,
+          "durationMins": 7,
           "genre": "Nieuws & Actua",
           "desc": "Météo And Climat 20h20"
         },
@@ -5148,7 +5148,7 @@
           "start": "23:36",
           "end": "23:40",
           "startMins": 1056,
-          "durationMins": 15,
+          "durationMins": 4,
           "genre": "Programma",
           "desc": "Retrouvez les tirages de l'Euromillions."
         },
@@ -5184,7 +5184,7 @@
           "start": "01:07",
           "end": "01:11",
           "startMins": 1147,
-          "durationMins": 15,
+          "durationMins": 4,
           "genre": "Nieuws & Actua",
           "desc": "Les prévisions météorologiques."
         },
@@ -5202,7 +5202,7 @@
           "start": "01:41",
           "end": "01:54",
           "startMins": 1181,
-          "durationMins": 15,
+          "durationMins": 13,
           "genre": "Programma",
           "desc": ", Chaque semaine, François de Brigode recevra une personnalité du monde artistique : musicien, acteur, humoriste, artiste plasticien...L'entretien d'une dizaine de minutes tournera autour du parcours professionnel et de l'actualité de l'invité, mais surtout, ils échangeront leurs coups de cœur culturels (expos, livr..."
         },
@@ -5220,7 +5220,7 @@
           "start": "02:38",
           "end": "02:40",
           "startMins": 1238,
-          "durationMins": 15,
+          "durationMins": 2,
           "genre": "Nieuws & Actua",
           "desc": "Les prévisions météorologiques."
         },
@@ -5238,7 +5238,7 @@
           "start": "03:10",
           "end": "03:22",
           "startMins": 1270,
-          "durationMins": 15,
+          "durationMins": 12,
           "genre": "Programma",
           "desc": ", Chaque semaine, François de Brigode recevra une personnalité du monde artistique : musicien, acteur, humoriste, artiste plasticien...L'entretien d'une dizaine de minutes tournera autour du parcours professionnel et de l'actualité de l'invité, mais surtout, ils échangeront leurs coups de cœur culturels (expos, livr..."
         },
@@ -5256,7 +5256,7 @@
           "start": "04:07",
           "end": "04:09",
           "startMins": 1327,
-          "durationMins": 15,
+          "durationMins": 2,
           "genre": "Nieuws & Actua",
           "desc": "Les prévisions météorologiques."
         },
@@ -5274,7 +5274,7 @@
           "start": "04:39",
           "end": "04:51",
           "startMins": 1359,
-          "durationMins": 15,
+          "durationMins": 12,
           "genre": "Programma",
           "desc": ", Chaque semaine, François de Brigode recevra une personnalité du monde artistique : musicien, acteur, humoriste, artiste plasticien...L'entretien d'une dizaine de minutes tournera autour du parcours professionnel et de l'actualité de l'invité, mais surtout, ils échangeront leurs coups de cœur culturels (expos, livr..."
         },
@@ -5292,7 +5292,7 @@
           "start": "05:35",
           "end": "05:37",
           "startMins": 1415,
-          "durationMins": 15,
+          "durationMins": 2,
           "genre": "Nieuws & Actua",
           "desc": "Les prévisions météorologiques."
         },
@@ -5310,7 +5310,7 @@
           "start": "06:07",
           "end": "06:19",
           "startMins": 1447,
-          "durationMins": 15,
+          "durationMins": 12,
           "genre": "Programma",
           "desc": ", Chaque semaine, François de Brigode recevra une personnalité du monde artistique : musicien, acteur, humoriste, artiste plasticien...L'entretien d'une dizaine de minutes tournera autour du parcours professionnel et de l'actualité de l'invité, mais surtout, ils échangeront leurs coups de cœur culturels (expos, livr..."
         },
@@ -5382,7 +5382,7 @@
           "start": "12:41",
           "end": "12:44",
           "startMins": 1841,
-          "durationMins": 15,
+          "durationMins": 3,
           "genre": "Programma",
           "desc": "Retrouvez les tirages de l'Euromillions."
         },
@@ -5391,7 +5391,7 @@
           "start": "12:44",
           "end": "12:51",
           "startMins": 1844,
-          "durationMins": 15,
+          "durationMins": 7,
           "genre": "Programma",
           "desc": "Panel de la route : Attention ! On me coupe la route, Deux vidéos à examiner, et deux situations dans lesquelles des conducteurs coupent la route à d'autres qui suivait simplement leur petit bonhomme de chemin. Notre panel et nos experts en ont tiré les conclusions qui s'imposent."
         },
@@ -5400,7 +5400,7 @@
           "start": "12:51",
           "end": "12:58",
           "startMins": 1851,
-          "durationMins": 15,
+          "durationMins": 7,
           "genre": "Programma",
           "desc": "Ciel Partagé 12h50"
         },
@@ -5418,7 +5418,7 @@
           "start": "13:29",
           "end": "13:37",
           "startMins": 1889,
-          "durationMins": 15,
+          "durationMins": 8,
           "genre": "Nieuws & Actua",
           "desc": "Météo And Climat 13h30"
         },
@@ -5481,7 +5481,7 @@
           "start": "19:21",
           "end": "19:30",
           "startMins": 2241,
-          "durationMins": 15,
+          "durationMins": 9,
           "genre": "Programma",
           "desc": "Ciel Partagé 19h25"
         },
@@ -5499,7 +5499,7 @@
           "start": "20:06",
           "end": "20:12",
           "startMins": 2286,
-          "durationMins": 15,
+          "durationMins": 6,
           "genre": "Programma",
           "desc": "Retrouvez les tirages du Joker et du Lotto."
         },
@@ -5508,7 +5508,7 @@
           "start": "20:12",
           "end": "20:18",
           "startMins": 2292,
-          "durationMins": 15,
+          "durationMins": 6,
           "genre": "Nieuws & Actua",
           "desc": "Météo And Climat 20h20"
         },
@@ -5535,7 +5535,7 @@
           "start": "22:30",
           "end": "22:35",
           "startMins": 2430,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Programma",
           "desc": "Retrouvez les tirages du Joker et du Lotto."
         },
@@ -5601,7 +5601,7 @@
           "start": "12:35",
           "end": "12:40",
           "startMins": 395,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Programma",
           "desc": "Sophie Pendeville présente quotidiennement « Dans votre canap' » afin d'informer les téléspectateurs des moments forts de la journée. « Dans votre canap' » est un nouveau rendez-vous 360 pour tout savoir sur ce qui va vous faire vibrer dans votre canap' !Au programme : les émissions des trois chaînes télé, les conte..."
         },
@@ -5637,7 +5637,7 @@
           "start": "13:40",
           "end": "13:50",
           "startMins": 460,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Nieuws & Actua",
           "desc": "Quel temps fera-t-il demain ? Nos bulletins météo vous tiennent au courant des prévisions. La pluie et le beau temps, annoncés par nos spécialistes. La pluie et le beau temps, annoncés par nos spécialistes."
         },
@@ -5646,7 +5646,7 @@
           "start": "13:50",
           "end": "13:55",
           "startMins": 470,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Programma",
           "desc": "Mini-Portraits J'irai où tu iras : l'amour au bout du monde"
         },
@@ -5664,7 +5664,7 @@
           "start": "15:30",
           "end": "15:35",
           "startMins": 570,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Programma",
           "desc": "Faux Soir, Sophie Pendeville présente quotidiennement « Dans votre canap' » afin d'informer les téléspectateurs des moments forts de la journée. « Dans votre canap' » est un nouveau rendez-vous 360 pour tout savoir sur ce qui va vous faire vibrer dans votre canap' !Au programme : les émissions des trois chaînes télé..."
         },
@@ -5682,7 +5682,7 @@
           "start": "16:46",
           "end": "16:50",
           "startMins": 646,
-          "durationMins": 15,
+          "durationMins": 4,
           "genre": "Serie & Fictie",
           "desc": "Episode 8, Programme court."
         },
@@ -5709,7 +5709,7 @@
           "start": "18:16",
           "end": "18:20",
           "startMins": 736,
-          "durationMins": 15,
+          "durationMins": 4,
           "genre": "Programma",
           "desc": "Sophie Pendeville présente quotidiennement « Dans votre canap' » afin d'informer les téléspectateurs des moments forts de la journée. « Dans votre canap' » est un nouveau rendez-vous 360 pour tout savoir sur ce qui va vous faire vibrer dans votre canap' !Au programme : les émissions des trois chaînes télé, les conte..."
         },
@@ -5736,7 +5736,7 @@
           "start": "19:45",
           "end": "19:50",
           "startMins": 825,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Nieuws & Actua",
           "desc": "Quel temps fera-t-il demain ? Nos bulletins météo vous tiennent au courant des prévisions. La pluie et le beau temps, annoncés par nos spécialistes. La pluie et le beau temps, annoncés par nos spécialistes."
         },
@@ -5772,7 +5772,7 @@
           "start": "23:30",
           "end": "23:31",
           "startMins": 1050,
-          "durationMins": 15,
+          "durationMins": 1,
           "genre": "Programma",
           "desc": "Mini-Portraits J'irai où tu iras : l'amour au bout du monde"
         },
@@ -5781,7 +5781,7 @@
           "start": "23:31",
           "end": "23:35",
           "startMins": 1051,
-          "durationMins": 15,
+          "durationMins": 4,
           "genre": "Nieuws & Actua",
           "desc": "Quel temps fera-t-il demain ? Nos bulletins météo vous tiennent au courant des prévisions. La pluie et le beau temps, annoncés par nos spécialistes. La pluie et le beau temps, annoncés par nos spécialistes."
         },
@@ -5790,7 +5790,7 @@
           "start": "23:35",
           "end": "23:45",
           "startMins": 1055,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Film",
           "desc": "Accès VIP 27/11/26, Jean-Michel Zecca et Sandrine Dans se succèdent, à tour de rôle, à la présentation d'« Accès VIP » pour recevoir une personnalité issue du cinéma, de la musique, de la littérature, du théâtre, de l'humour ou encore des arts visuels. En sept minutes, l'invité partage son actualité, un film, un liv..."
         },
@@ -5835,7 +5835,7 @@
           "start": "03:14",
           "end": "03:15",
           "startMins": 1274,
-          "durationMins": 15,
+          "durationMins": 1,
           "genre": "Nieuws & Actua",
           "desc": "Quel temps fera-t-il demain ? Nos bulletins météo vous tiennent au courant des prévisions. La pluie et le beau temps, annoncés par nos spécialistes. La pluie et le beau temps, annoncés par nos spécialistes."
         },
@@ -5853,7 +5853,7 @@
           "start": "03:57",
           "end": "03:58",
           "startMins": 1317,
-          "durationMins": 15,
+          "durationMins": 1,
           "genre": "Nieuws & Actua",
           "desc": "Quel temps fera-t-il demain ? Nos bulletins météo vous tiennent au courant des prévisions. La pluie et le beau temps, annoncés par nos spécialistes. La pluie et le beau temps, annoncés par nos spécialistes."
         },
@@ -5871,7 +5871,7 @@
           "start": "04:39",
           "end": "04:42",
           "startMins": 1359,
-          "durationMins": 15,
+          "durationMins": 3,
           "genre": "Nieuws & Actua",
           "desc": "Quel temps fera-t-il demain ? Nos bulletins météo vous tiennent au courant des prévisions. La pluie et le beau temps, annoncés par nos spécialistes. La pluie et le beau temps, annoncés par nos spécialistes."
         },
@@ -5934,7 +5934,7 @@
           "start": "13:25",
           "end": "13:34",
           "startMins": 1885,
-          "durationMins": 15,
+          "durationMins": 9,
           "genre": "Nieuws & Actua",
           "desc": "Quel temps fera-t-il demain ? Nos bulletins météo vous tiennent au courant des prévisions. La pluie et le beau temps, annoncés par nos spécialistes. La pluie et le beau temps, annoncés par nos spécialistes."
         },
@@ -5943,7 +5943,7 @@
           "start": "13:34",
           "end": "13:35",
           "startMins": 1894,
-          "durationMins": 15,
+          "durationMins": 1,
           "genre": "Programma",
           "desc": "Sophie Pendeville présente quotidiennement « Dans votre canap' » afin d'informer les téléspectateurs des moments forts de la journée. « Dans votre canap' » est un nouveau rendez-vous 360 pour tout savoir sur ce qui va vous faire vibrer dans votre canap' !Au programme : les émissions des trois chaînes télé, les conte..."
         },
@@ -5961,7 +5961,7 @@
           "start": "14:08",
           "end": "14:11",
           "startMins": 1928,
-          "durationMins": 15,
+          "durationMins": 3,
           "genre": "Serie & Fictie",
           "desc": "Episode 8, Programme court."
         },
@@ -5970,7 +5970,7 @@
           "start": "14:11",
           "end": "14:12",
           "startMins": 1931,
-          "durationMins": 15,
+          "durationMins": 1,
           "genre": "Programma",
           "desc": "Yapaka est un programme de prévention de la maltraitance à l'initiative du Ministère de la Fédération Wallonie-Bruxelles de Belgique."
         },
@@ -5988,7 +5988,7 @@
           "start": "16:12",
           "end": "16:13",
           "startMins": 2052,
-          "durationMins": 15,
+          "durationMins": 1,
           "genre": "Programma",
           "desc": "Yapaka est un programme de prévention de la maltraitance à l'initiative du Ministère de la Fédération Wallonie-Bruxelles de Belgique."
         },
@@ -6006,7 +6006,7 @@
           "start": "17:58",
           "end": "18:00",
           "startMins": 2158,
-          "durationMins": 15,
+          "durationMins": 2,
           "genre": "Programma",
           "desc": "Sophie Pendeville présente quotidiennement « Dans votre canap' » afin d'informer les téléspectateurs des moments forts de la journée. « Dans votre canap' » est un nouveau rendez-vous 360 pour tout savoir sur ce qui va vous faire vibrer dans votre canap' !Au programme : les émissions des trois chaînes télé, les conte..."
         },
@@ -6015,7 +6015,7 @@
           "start": "18:00",
           "end": "18:01",
           "startMins": 2160,
-          "durationMins": 15,
+          "durationMins": 1,
           "genre": "Programma",
           "desc": "Faux Soir, Sophie Pendeville présente quotidiennement « Dans votre canap' » afin d'informer les téléspectateurs des moments forts de la journée. « Dans votre canap' » est un nouveau rendez-vous 360 pour tout savoir sur ce qui va vous faire vibrer dans votre canap' !Au programme : les émissions des trois chaînes télé..."
         },
@@ -6033,7 +6033,7 @@
           "start": "18:19",
           "end": "18:20",
           "startMins": 2179,
-          "durationMins": 15,
+          "durationMins": 1,
           "genre": "Programma",
           "desc": "Deux Hugues, deux anecdotes sur une chanson : l'une vraie, l'autre inventée. Deux décors s'affrontent, rouge et blanc. Un seul survit, révélant la véritable histoire de la chanson."
         },
@@ -6051,7 +6051,7 @@
           "start": "18:50",
           "end": "19:00",
           "startMins": 2210,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Serie & Fictie",
           "desc": "Episode 8, Programme court."
         },
@@ -6069,7 +6069,7 @@
           "start": "19:40",
           "end": "19:45",
           "startMins": 2260,
-          "durationMins": 15,
+          "durationMins": 5,
           "genre": "Nieuws & Actua",
           "desc": "Quel temps fera-t-il demain ? Nos bulletins météo vous tiennent au courant des prévisions. La pluie et le beau temps, annoncés par nos spécialistes. La pluie et le beau temps, annoncés par nos spécialistes."
         },
@@ -6105,7 +6105,7 @@
           "start": "22:39",
           "end": "22:40",
           "startMins": 2439,
-          "durationMins": 15,
+          "durationMins": 1,
           "genre": "Programma",
           "desc": "Faux Soir, Sophie Pendeville présente quotidiennement « Dans votre canap' » afin d'informer les téléspectateurs des moments forts de la journée. « Dans votre canap' » est un nouveau rendez-vous 360 pour tout savoir sur ce qui va vous faire vibrer dans votre canap' !Au programme : les émissions des trois chaînes télé..."
         },
@@ -6144,7 +6144,7 @@
           "start": "05:25",
           "end": "06:10",
           "startMins": 0,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Programma",
           "desc": "Paradis pour les randonneurs et les spéléologues, la Silésie mêle reliefs escarpés, nature grandiose et légendes. Rencontre avec des passionnés qui s'attachent à préserver les traditions de cette région polonaise."
         },
@@ -6324,7 +6324,7 @@
           "start": "20:52",
           "end": "20:55",
           "startMins": 892,
-          "durationMins": 15,
+          "durationMins": 3,
           "genre": "Programma",
           "desc": "Une famille en Nord, Un géant avec un marteau, une déesse qui drague en suédois, une walkyrie à cheval et un blond qui se change en mouche : ce n'est pas la reformation du groupe Abba, c'est la mythologie scandinave !"
         },
@@ -6585,7 +6585,7 @@
           "start": "23:50",
           "end": "00:50",
           "startMins": 2510,
-          "durationMins": 15,
+          "durationMins": 10,
           "genre": "Programma",
           "desc": "En 1936, l'écrivain allemand Klaus Mann, en exil, fustige les artistes ralliés au nazisme dans un roman inspiré de personnages réels. Retour sur la genèse d'un ouvrage qui résonne puissamment avec le présent."
         }
